@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/DdsModeler.feature_1.0.0.201705071656.jar" id="DdsModeler.feature" version="1.0.0.201705071656">
+      <category name="DdsModeler"/>
+   </feature>
+   <category-def name="DdsModeler" label="DDS Modeler">
+      <description>
+         Update site for a DDS application modeler and code generator.
+      </description>
+   </category-def>
+</site>

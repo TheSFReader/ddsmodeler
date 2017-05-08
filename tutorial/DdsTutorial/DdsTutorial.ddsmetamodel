@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ddsMetamodel:DdsSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddsMetamodel="http://www.example.org/ddsMetamodel" systemName="ChatSystem">
+  <hosts hostName="ChatterHost">
+    <applications applicationName="Chatter">
+      <domainParticipants domainParticipantName="ChatterDomainParticipant">
+        <ddspublisher publisherName="ChatterPublisher">
+          <ddsdatawriter dataWriterName="NameServiceDataWriter" publiableTopic="//@topics.0"/>
+          <ddsdatawriter dataWriterName="ChatMessageDataWriter" publiableTopic="//@topics.1"/>
+        </ddspublisher>
+      </domainParticipants>
+    </applications>
+  </hosts>
+  <hosts hostName="ReceiverHost">
+    <applications applicationName="MessageBoard">
+      <domainParticipants domainParticipantName="MessageBoardParticipant">
+        <ddssubscriber subscriberName="MessageBoardSubscriber">
+          <ddsdatareader dataReaderName="ChatMessageDataReader" readableTopic="//@topics.1"/>
+          <ddsdatareader dataReaderName="NameServiceDataReader" readableTopic="//@topics.0"/>
+        </ddssubscriber>
+      </domainParticipants>
+      <waitset name="MessageBoardWaitset">
+        <readConditions view_state_mask="ANY_VIEW_STATE" sample_state_mask="NOT_READ_SAMPLE_STATE" dataReader="//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.1"/>
+        <readConditions view_state_mask="ANY_VIEW_STATE" sample_state_mask="NOT_READ_SAMPLE_STATE" dataReader="//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+      </waitset>
+    </applications>
+    <applications applicationName="UserLoad">
+      <domainParticipants domainParticipantName="UserLoadParticipant">
+        <ddssubscriber subscriberName="UserLoadSubscriber">
+          <ddsdatareader dataReaderName="NameServiceDataReader" readableTopic="//@topics.0">
+            <dataReaderListener name="NameServiceDataReaderListener">
+              <listenedStatus>DATA_AVAILABLE_STATUS</listenedStatus>
+            </dataReaderListener>
+          </ddsdatareader>
+        </ddssubscriber>
+      </domainParticipants>
+    </applications>
+  </hosts>
+  <qosProfiles xsi:type="ddsMetamodel:DdsTopicQosProfile" profileName="NameServiceQosProfile">
+    <durabilityQos kind="TRANSIENT_DURABILITY_QOS"/>
+    <reliabilityQos/>
+  </qosProfiles>
+  <qosProfiles xsi:type="ddsMetamodel:DdsTopicQosProfile" profileName="ChatMessageQosProfile">
+    <durabilityQos/>
+    <reliabilityQos/>
+  </qosProfiles>
+  <dataModules moduleName="ChatModule">
+    <dataStructures structureName="NameService">
+      <fields fieldType="long" fieldName="id" isKey="true"/>
+      <fields fieldType="string" fieldName="Name"/>
+    </dataStructures>
+    <dataStructures structureName="ChatMessage">
+      <fields fieldType="long" fieldName="senderId" isKey="true"/>
+      <fields fieldType="long" fieldName="messageIndex" isKey="true"/>
+      <fields fieldType="string" fieldName="message"/>
+    </dataStructures>
+  </dataModules>
+  <topics topicName="NameServiceTopic" topicQosProfile="//@qosProfiles.0" ddsdatastructure="//@dataModules.0/@dataStructures.0"/>
+  <topics topicName="ChatMessageTopic" topicQosProfile="//@qosProfiles.1" ddsdatastructure="//@dataModules.0/@dataStructures.1"/>
+</ddsMetamodel:DdsSystem>

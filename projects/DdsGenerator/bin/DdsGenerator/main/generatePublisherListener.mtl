@@ -1,0 +1,27 @@
+[comment encoding = UTF-8 /]
+[module generatePublisherListener('http://www.example.org/ddsMetamodel')]
+
+
+[template public generatePublisherListener(aDdsPublisherListener : DdsPublisherListener)]
+new PublisherListener() {
+	
+	public void on_offered_deadline_missed(DataWriter writer, OfferedDeadlineMissedStatus status) {
+		//[protected ('User defined on_offered_deadline_missed method')]
+		//[/protected]
+	}
+
+	public void on_offered_incompatible_qos(DataWriter writer, OfferedIncompatibleQosStatus status) {
+		//[protected ('User defined on_offered_incompatible_qos method')]
+		//[/protected]
+	}
+
+	public void on_liveliness_lost(DataWriter writer, LivelinessLostStatus status) {
+		//[protected ('User defined on_liveliness_lost method')]
+		//[/protected]
+	}
+
+	public void on_publication_matched(DataWriter writer, PublicationMatchedStatus status) {
+		//[protected ('User defined on_publication_matched method')]
+		//[/protected]
+	}
+}[/template]

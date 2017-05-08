@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[module generateWaitsetDeclaration('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateWaitsetDeclaration(aDdsWaitSet : DdsWaitSet)]
+//Attributes for Waitset [aDdsWaitSet.name/]
+private WaitSet [aDdsWaitSet.name/];
+[for (aStatusCondition : DdsStatusCondition | aDdsWaitSet.statusConditions)]
+[if (aStatusCondition.oclIsTypeOf(DdsDomainParticipantStatusCondition))]
+[let aDPStatusCondition : DdsDomainParticipantStatusCondition = aStatusCondition]
+private StatusCondition [aDPStatusCondition.domainParticipant.domainParticipantName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsPublisherStatusCondition))]
+[let aPublisherStatusCondition : DdsPublisherStatusCondition = aStatusCondition]
+private StatusCondition [aPublisherStatusCondition.publisher.publisherName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataWriterStatusCondition))]
+[let aDWStatusCondition : DdsDataWriterStatusCondition = aStatusCondition]
+private StatusCondition [aDWStatusCondition.dataWriter.dataWriterName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsSubscriberStatusCondition))]
+[let aSubscriberStatusCondition : DdsSubscriberStatusCondition = aStatusCondition]
+private StatusCondition [aSubscriberStatusCondition.subscriber.subscriberName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataReaderStatusCondition))]
+[let aDRStatusCondition : DdsDataReaderStatusCondition = aStatusCondition]
+private StatusCondition [aDRStatusCondition.dataReader.dataReaderName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsTopicStatusCondition))]
+[let aTopicStatusCondition : DdsTopicStatusCondition = aStatusCondition]
+private StatusCondition [aTopicStatusCondition.topic.topicName/]SC;
+[/let]
+[/if]
+[/for]
+[for (aReadCondition : DdsReadCondition | aDdsWaitSet.readConditions)]
+[if (aReadCondition.oclIsTypeOf(DdsReadCondition))]
+private ReadCondition [aReadCondition.dataReader.dataReaderName/]RC;
+[elseif (aReadCondition.oclIsTypeOf(QueryCondition))]
+[let aQueryCondition : QueryCondition = aReadCondition]
+private QueryCondition [aQueryCondition.dataReader.dataReaderName/]QC;
+[/let]
+[/if]
+[/for]
+[for (aGuardCondition : GuardCondition | aDdsWaitSet.guardConditions)]
+private GuardCondition [aGuardCondition.name/];
+[/for]
+[/template]

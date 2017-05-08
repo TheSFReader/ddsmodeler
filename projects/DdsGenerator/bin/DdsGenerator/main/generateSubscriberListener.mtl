@@ -1,0 +1,46 @@
+[comment encoding = UTF-8 /]
+[module generateSubscriberListener('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateSubscriberListener(aDdsSubscriberListener : DdsSubscriberListener)]
+new SubscriberListener() {
+	public void on_requested_deadline_missed(DataReader reader, RequestedDeadlineMissedStatus status) {
+		//[protected ('User defined on_requested_deadline_missed method')]
+		//[/protected]
+	}
+
+	public void on_requested_incompatible_qos(DataReader reader, RequestedIncompatibleQosStatus status) {
+		//[protected ('User defined on_requested_incompatible_qos method')]
+		//[/protected]
+	}
+
+	public void on_sample_rejected(DataReader reader, SampleRejectedStatus status) {
+		//[protected ('User defined on_sample_rejected method')]
+		//[/protected]
+	}
+
+	public void on_liveliness_changed(DataReader reader, LivelinessChangedStatus status) {
+		//[protected ('User defined on_liveliness_changed method')]
+		//[/protected]
+	}
+
+	public void on_data_available(DataReader reader) {
+		//[protected ('User defined on_data_available method')]
+		//[/protected]
+	}
+
+	public void on_subscription_matched(DataReader reader, SubscriptionMatchedStatus status) {
+		//[protected ('User defined on_subscription_matched method')]
+		//[/protected]
+	}
+
+	public void on_sample_lost(DataReader reader, SampleLostStatus status) {
+		//[protected ('User defined on_sample_lost method')]
+		//[/protected]
+	}
+
+	public void on_data_on_readers(Subscriber subs) {
+		//[protected ('User defined on_data_on_readers method')]
+		//[/protected]
+	}
+}[/template]

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ddsMetamodel" nsURI="http://www.example.org/ddsMetamodel" nsPrefix="ddsMetamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="DdsApplication">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainParticipants" upperBound="-1"
+        eType="#//DdsDomainParticipant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waitset" eType="#//DdsWaitSet"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDomainParticipant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainParticipantName"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddssubscriber" upperBound="-1"
+        eType="#//DdsSubscriber" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddspublisher" upperBound="-1"
+        eType="#//DdsPublisher" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddsdomainparticipantqosprofile"
+        eType="#//DdsDomainParticipantQosProfile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainParticipantListener"
+        eType="#//DdsDomainParticipantListener" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="domainId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTopic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="topicName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topicListener" eType="#//DdsTopicListener"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topicQosProfile" eType="#//DdsTopicQosProfile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddsdatastructure" eType="#//DdsDataStructure"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsSubscriber">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscriberName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddsdatareader" upperBound="-1"
+        eType="#//DdsDataReader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberListener" eType="#//DdsSubscriberListener"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberQosProfile" eType="#//DdsSubscriberQosProfile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataReader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataReaderName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="readableTopic" lowerBound="1"
+        eType="#//DdsTopic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataReaderListener" eType="#//DdsDataReaderListener"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataReaderQosProfile" eType="#//DdsDataReaderQosProfile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPublisher">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisherName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ddsdatawriter" upperBound="-1"
+        eType="#//DdsDataWriter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisherListener" eType="#//DdsPublisherListener"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisherQosProfile" eType="#//DdsPublisherQosProfile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataWriter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataWriterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publiableTopic" lowerBound="1"
+        eType="#//DdsTopic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataWriterListener" eType="#//DdsDataWriterListener"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataWriterQosProfile" eType="#//DdsDataWriterQosProfile"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataStructures" upperBound="-1"
+        eType="#//DdsDataStructure" containment="true" eOpposite="#//DdsDataStructure/containerDataModule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="innerModules" upperBound="-1"
+        eType="#//DdsDataModule" containment="true" eOpposite="#//DdsDataModule/containingModule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingSystem" eType="#//DdsSystem"
+        eOpposite="#//DdsSystem/dataModules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingModule" eType="#//DdsDataModule"
+        eOpposite="#//DdsDataModule/innerModules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataStructure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="structureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//DdsDataField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="structuredFields" upperBound="-1"
+        eType="#//DdsStructuredField" containment="true" eOpposite="#//DdsStructuredField/dataStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containerDataModule" eType="#//DdsDataModule"
+        eOpposite="#//DdsDataModule/dataStructures"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxMultiplicity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDomainParticipantQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDataQos" eType="#//DdsUserDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityFactoryQos" eType="#//DdsEntityFactoryQos"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsUserDataQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsEntityFactoryQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoenable_created_entities"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTopicQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topicDataQos" eType="#//DdsTopicDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="durabilityQos" eType="#//DdsDurabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="durabilityServiceQos" eType="#//DdsDurabilityServiceQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latencyBudgetQos" eType="#//DdsLatencyBudgetQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="livelinessQos" eType="#//DdsLivelinessQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownershipQos" eType="#//DdsOwnershipQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reliabilityQos" eType="#//DdsReliabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationOrderQos" eType="#//DdsDestinationOrderQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="historyQos" eType="#//DdsHistoryQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceLimitsQos" eType="#//DdsResourceLimits"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transportPriorityQos" eType="#//DdsTransportPriorityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifespanQos" eType="#//DdsLifespan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deadlineQos" eType="#//DdsDeadlineQos"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTopicDataQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDurabilityQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//DurabilityQosPolicyKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DurabilityQosPolicyKind">
+    <eLiterals name="VOLATILE_DURABILITY_QOS" literal="VOLATILE_DURABILITY_QOS"/>
+    <eLiterals name="TRANSIENT_LOCAL_DURABILITY_QOS" value="1"/>
+    <eLiterals name="TRANSIENT_DURABILITY_QOS" value="2"/>
+    <eLiterals name="PERSISTENT_DURABILITY_QOS" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDurabilityServiceQos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service_cleanup_delay"
+        eType="#//DdsDuration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="history_kind" eType="#//HistoryQosPolicyKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="history_depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_samples" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_instances" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_samples_per_instances"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDuration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nanoSec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HistoryQosPolicyKind">
+    <eLiterals name="KEEP_LAST_HISTORY_QOS"/>
+    <eLiterals name="KEEP_ALL_HISTORY_QOS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PresentationQosPolicyAccessScopeKind">
+    <eLiterals name="INSTANCE_PRESENTATION_QOS"/>
+    <eLiterals name="TOPIC_PRESENTATION_QOS" value="1"/>
+    <eLiterals name="GROUP_PRESENTATION_QOS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPresentationQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="access_scope" eType="#//PresentationQosPolicyAccessScopeKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coherent_access" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordered_access" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDeadlineQos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="period" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsLatencyBudgetQos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsOwnershipQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//OwnershipQosPolicyKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OwnershipQosPolicyKind">
+    <eLiterals name="SHARED_OWNERSHIP_QOS"/>
+    <eLiterals name="EXCLUSIVE_OWNERSHIP_QOS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsOwnershipStrengthQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LivelinessQosPolicyKind">
+    <eLiterals name="AUTOMATIC_LIVELINESS_QOS"/>
+    <eLiterals name="MANUAL_LIVELINESS_QOS" value="1"/>
+    <eLiterals name="MANUAL_BY_PARTICIPANT_LIVELINESS_QOS" value="2"/>
+    <eLiterals name="MANUAL_BY_TOPIC_LIVELINESS_QOS" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsLivelinessQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//LivelinessQosPolicyKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lease_duration" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTimeBasedFilterQos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimum_separation" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPartitionQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ReliabilityQosPolicyKind">
+    <eLiterals name="RELIABLE_RELIABILITY_QOS"/>
+    <eLiterals name="BEST_EFFORT_RELIABILITY_QOS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsReliabilityQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ReliabilityQosPolicyKind"
+        defaultValueLiteral="BEST_EFFORT"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max_blocking_time" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTransportPriorityQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsLifespan">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//DdsDuration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DestinationOrderQosPolicyKind">
+    <eLiterals name="BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS"/>
+    <eLiterals name="BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsHistoryQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//HistoryQosPolicyKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsResourceLimits">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_samples" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_instances" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max_samples_per_instances"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataWriterLifecycleQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autodispose_unregistered_instances"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autopurge_suspended_samples_delay"
+        eType="#//DdsDuration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autounregister_instance_delay"
+        eType="#//DdsDuration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataReaderLifecycleQos">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autopurge_nowriters_samples_delay"
+        eType="#//DdsDuration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autopurge_disposed_samples_delay"
+        eType="#//DdsDuration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autopurge_dispose_all"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enable_invalid_samples"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InvalidSampleVisibilityQosPolicy">
+    <eLiterals name="NO_INVALID_SAMPLES"/>
+    <eLiterals name="MINIMUM_INVALID_SAMPLES" value="1"/>
+    <eLiterals name="ALL_INVALID_SAMPLES" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDestinationOrderQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//DestinationOrderQosPolicyKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPublisherQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupDataQos" eType="#//DdsGroupDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityFactoryQos" eType="#//DdsEntityFactoryQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presentationQos" eType="#//DdsPresentationQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partitionQos" eType="#//DdsPartitionQos"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsGroupDataQos">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataWriterQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDataQos" eType="#//DdsUserDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="durabilityQos" eType="#//DdsDurabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deadlineQos" eType="#//DdsDeadlineQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latencyBudgetQos" eType="#//DdsLatencyBudgetQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownershipQos" eType="#//DdsOwnershipQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownershipStrength" eType="#//DdsOwnershipStrengthQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="livelinessQos" eType="#//DdsLivelinessQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reliabilityQos" eType="#//DdsReliabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transportPriorityQos" eType="#//DdsTransportPriorityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifespanQos" eType="#//DdsLifespan"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationOrderQos" eType="#//DdsDestinationOrderQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="historyQos" eType="#//DdsHistoryQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceLimitsQos" eType="#//DdsResourceLimits"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataWriterLifecycleQos"
+        eType="#//DdsDataWriterLifecycleQos" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsSubscriberQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupDataQos" eType="#//DdsGroupDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityFactoryQos" eType="#//DdsEntityFactoryQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presentationQos" eType="#//DdsPresentationQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partitionQos" eType="#//DdsPartitionQos"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataReaderQosProfile" eSuperTypes="#//DdsQosProfile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userDataQos" eType="#//DdsUserDataQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="durabilityQos" eType="#//DdsDurabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deadlineQos" eType="#//DdsDeadlineQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latencyBudgetQos" eType="#//DdsLatencyBudgetQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="livelinessQos" eType="#//DdsLivelinessQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownershipQos" eType="#//DdsOwnershipQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeBasedFilterQos" eType="#//DdsTimeBasedFilterQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reliabilityQos" eType="#//DdsReliabilityQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinationOrderQos" eType="#//DdsDestinationOrderQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="historyQos" eType="#//DdsHistoryQos"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceLimitsQos" eType="#//DdsResourceLimits"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataReaderLifecycleQos"
+        eType="#//DdsDataReaderLifecycleQos" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDomainParticipantListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//DomainParticipantStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsSubscriberListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//SubscriberStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPublisherListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//PublisherStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataReaderListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//DataReaderStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataWriterListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//DataWriterStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTopicListener">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listenedStatus" upperBound="-1"
+        eType="#//TopicStatus"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsWaitSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="readConditions" upperBound="-1"
+        eType="#//DdsReadCondition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statusConditions" upperBound="-1"
+        eType="#//DdsStatusCondition" containment="true" eOpposite="#//DdsStatusCondition/containingWaitset"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guardConditions" upperBound="-1"
+        eType="#//GuardCondition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsReadCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view_state_mask" eType="#//ViewStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance_state_mask" eType="#//InstanceStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sample_state_mask" eType="#//SampleStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataReader" eType="#//DdsDataReader"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ViewStateKind">
+    <eLiterals name="NEW_VIEW_STATE"/>
+    <eLiterals name="NOT_NEW_VIEW_STATE" value="1"/>
+    <eLiterals name="ANY_VIEW_STATE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InstanceStateKind">
+    <eLiterals name="ALIVE_INSTANCE_STATE"/>
+    <eLiterals name="NOT_ALIVE_DISPOSED_INSTANCE_STATE" value="1"/>
+    <eLiterals name="NOT_ALIVE_NO_WRITERS_INSTANCE_STATE" value="2"/>
+    <eLiterals name="ANY_INSTANCE_STATE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SampleStateKind">
+    <eLiterals name="READ_SAMPLE_STATE"/>
+    <eLiterals name="NOT_READ_SAMPLE_STATE" value="1"/>
+    <eLiterals name="ANY_READ_SAMPLE_STATE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsStructuredField">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedType" eType="#//DdsDataStructure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataStructure" eType="#//DdsDataStructure"
+        eOpposite="#//DdsDataStructure/structuredFields"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxMultiplicity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DomainParticipantStatus">
+    <eLiterals name="INCONSISTENT_TOPIC_STATUS"/>
+    <eLiterals name="LIVELINESS_LOST_STATUS" value="1"/>
+    <eLiterals name="OFFERED_DEADLINE_MISSED_STATUS" value="2"/>
+    <eLiterals name="OFFERED_INCOMPATIBLE_QOS_STATUS" value="3"/>
+    <eLiterals name="PUBLICATION_MATCHED_STATUS" value="4"/>
+    <eLiterals name="SAMPLE_REJECTED_STATUS" value="5"/>
+    <eLiterals name="LIVELINESS_CHANGED_STATUS" value="6"/>
+    <eLiterals name="REQUESTED_DEADLINE_MISSED_STATUS" value="7"/>
+    <eLiterals name="REQUESTED_INCOMPATIBLE_QOS_STATUS" value="8"/>
+    <eLiterals name="DATA_AVAILABLE_STATUS" value="9"/>
+    <eLiterals name="SAMPLE_LOST_STATUS" value="10"/>
+    <eLiterals name="SUBSCRIPTION_MATCHED_STATUS" value="11"/>
+    <eLiterals name="DATA_ON_READERS_STATUS" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SubscriberStatus">
+    <eLiterals name="DATA_ON_READERS_STATUS"/>
+    <eLiterals name="DATA_AVAILABLE_STATUS" value="1"/>
+    <eLiterals name="LIVELINESS_CHANGED_STATUS" value="2"/>
+    <eLiterals name="REQUESTED_DEADLINE_MISSED_STATUS" value="3"/>
+    <eLiterals name="REQUESTED_INCOMPATIBLE_QOS_STATUS" value="4"/>
+    <eLiterals name="SAMPLE_LOST_STATUS" value="5"/>
+    <eLiterals name="SAMPLE_REJECTED_STATUS" value="6"/>
+    <eLiterals name="SUBSCRIPTION_MATCHED_STATUS" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PublisherStatus">
+    <eLiterals name="LIVELINESS_LOST_STATUS"/>
+    <eLiterals name="OFFERED_DEADLINE_MISSED_STATUS" value="1"/>
+    <eLiterals name="OFFERED_INCOMPATIBLE_QOS_STATUS" value="2"/>
+    <eLiterals name="PUBLICATION_MATCHED_STATUS" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataWriterStatus">
+    <eLiterals name="LIVELINESS_LOST_STATUS"/>
+    <eLiterals name="OFFERED_DEADLINE_MISSED_STATUS" value="1"/>
+    <eLiterals name="OFFERED_INCOMPATIBLE_QOS_STATUS" value="2"/>
+    <eLiterals name="PUBLICATION_MATCHED_STATUS" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataReaderStatus">
+    <eLiterals name="DATA_AVAILABLE_STATUS"/>
+    <eLiterals name="LIVELINESS_CHANGED_STATUS" value="1"/>
+    <eLiterals name="SAMPLE_REJECTED_STATUS" value="2"/>
+    <eLiterals name="REQUESTED_DEADLINE_MISSED_STATUS" value="3"/>
+    <eLiterals name="REQUESTED_INCOMPATIBLE_QOS_STATUS" value="4"/>
+    <eLiterals name="SAMPLE_LOST_STATUS" value="5"/>
+    <eLiterals name="SUBSCRIPTION_MATCHED_STATUS" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TopicStatus">
+    <eLiterals name="INCONSISTENT_TOPIC_STATUS"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingWaitset" eType="#//DdsWaitSet"
+        eOpposite="#//DdsWaitSet/statusConditions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDomainParticipantStatusCondition"
+      eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//DomainParticipantStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainParticipant" lowerBound="1"
+        eType="#//DdsDomainParticipant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsPublisherStatusCondition" eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//PublisherStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publisher" lowerBound="1"
+        eType="#//DdsPublisher"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsSubscriberStatusCondition" eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//SubscriberStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subscriber" lowerBound="1"
+        eType="#//DdsSubscriber"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataWriterStatusCondition" eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//DataWriterStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataWriter" lowerBound="1"
+        eType="#//DdsDataWriter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsDataReaderStatusCondition" eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//DataReaderStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataReader" lowerBound="1"
+        eType="#//DdsDataReader"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsTopicStatusCondition" eSuperTypes="#//DdsStatusCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled_status" upperBound="-1"
+        eType="#//TopicStatus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topic" lowerBound="1" eType="#//DdsTopic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryCondition" eSuperTypes="#//DdsReadCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryParameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GuardCondition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsSystem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="systemName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hosts" upperBound="-1"
+        eType="#//DdsHost" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qosProfiles" upperBound="-1"
+        eType="#//DdsQosProfile" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataModules" upperBound="-1"
+        eType="#//DdsDataModule" containment="true" eOpposite="#//DdsDataModule/containingSystem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topics" upperBound="-1"
+        eType="#//DdsTopic" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DdsHost">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
+        eType="#//DdsApplication" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateSubscriberListener" nsURI="DdsGenerator::main::generateSubscriberListener" startHeaderPosition="29" endHeaderPosition="-1">
+    <input>
+      <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateSubscriberListener" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="new SubscriberListener() {&#xA;&#x9;public void on_requested_deadline_missed(DataReader reader, RequestedDeadlineMissedStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_requested_deadline_missed method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_requested_incompatible_qos(DataReader reader, RequestedIncompatibleQosStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_requested_incompatible_qos method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_sample_rejected(DataReader reader, SampleRejectedStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_sample_rejected method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_liveliness_changed(DataReader reader, LivelinessChangedStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_liveliness_changed method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_data_available(DataReader reader) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_data_available method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_subscription_matched(DataReader reader, SubscriptionMatchedStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_subscription_matched method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_sample_lost(DataReader reader, SampleLostStatus status) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_sample_lost method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void on_data_on_readers(Subscriber subs) {&#xA;&#x9;&#x9;//"/>
+      <body xsi:type="mtl:ProtectedAreaBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+        <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined on_data_on_readers method">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </marker>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;}"/>
+      <parameter name="aDdsSubscriberListener">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateSubscriberListener">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateSubscriberListener"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aDdsSubscriberListener">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsSubscriberListener_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateSubscriberListener">
+      <details key="start" value="106"/>
+      <details key="end" value="1544"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateSubscriberListener/%">
+      <details key="start" value="199"/>
+      <details key="end" value="331"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateSubscriberListener/%.1">
+      <details key="start" value="331"/>
+      <details key="end" value="412"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateSubscriberListener/%.1/%">
+      <details key="start" value="395"/>
+      <details key="end" value="400"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateSubscriberListener/%.1/%.1">
+      <details key="start" value="343"/>
+      <details key="end" value="393"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateSubscriberListener/%.2">
+      <details key="start" value="412"/>
+      <details key="end" value="524"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateSubscriberListener/%.3">
+      <details key="start" value="524"/>
+      <details key="end" value="606"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateSubscriberListener/%.3/%">
+      <details key="start" value="589"/>
+      <details key="end" value="594"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateSubscriberListener/%.3/%.1">
+      <details key="start" value="536"/>
+      <details key="end" value="587"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateSubscriberListener/%.4">
+      <details key="start" value="606"/>
+      <details key="end" value="697"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateSubscriberListener/%.5">
+      <details key="start" value="697"/>
+      <details key="end" value="768"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateSubscriberListener/%.5/%">
+      <details key="start" value="751"/>
+      <details key="end" value="756"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateSubscriberListener/%.5/%.1">
+      <details key="start" value="709"/>
+      <details key="end" value="749"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateSubscriberListener/%.6">
+      <details key="start" value="768"/>
+      <details key="end" value="865"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateSubscriberListener/%.7">
+      <details key="start" value="865"/>
+      <details key="end" value="939"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateSubscriberListener/%.7/%">
+      <details key="start" value="922"/>
+      <details key="end" value="927"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateSubscriberListener/%.7/%.1">
+      <details key="start" value="877"/>
+      <details key="end" value="920"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateSubscriberListener/%.8">
+      <details key="start" value="939"/>
+      <details key="end" value="1000"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateSubscriberListener/%.9">
+      <details key="start" value="1000"/>
+      <details key="end" value="1070"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateSubscriberListener/%.9/%">
+      <details key="start" value="1053"/>
+      <details key="end" value="1058"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateSubscriberListener/%.9/%.1">
+      <details key="start" value="1012"/>
+      <details key="end" value="1051"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateSubscriberListener/%.10">
+      <details key="start" value="1070"/>
+      <details key="end" value="1171"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateSubscriberListener/%.11">
+      <details key="start" value="1171"/>
+      <details key="end" value="1247"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateSubscriberListener/%.11/%">
+      <details key="start" value="1230"/>
+      <details key="end" value="1235"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateSubscriberListener/%.11/%.1">
+      <details key="start" value="1183"/>
+      <details key="end" value="1228"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateSubscriberListener/%.12">
+      <details key="start" value="1247"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateSubscriberListener/%.13">
+      <details key="start" value="1330"/>
+      <details key="end" value="1397"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateSubscriberListener/%.13/%">
+      <details key="start" value="1380"/>
+      <details key="end" value="1385"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateSubscriberListener/%.13/%.1">
+      <details key="start" value="1342"/>
+      <details key="end" value="1378"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateSubscriberListener/%.14">
+      <details key="start" value="1397"/>
+      <details key="end" value="1457"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateSubscriberListener/%.15">
+      <details key="start" value="1457"/>
+      <details key="end" value="1528"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateSubscriberListener/%.15/%">
+      <details key="start" value="1511"/>
+      <details key="end" value="1516"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateSubscriberListener/%.15/%.1">
+      <details key="start" value="1469"/>
+      <details key="end" value="1509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateSubscriberListener/%.16">
+      <details key="start" value="1528"/>
+      <details key="end" value="1533"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateSubscriberListener/aDdsSubscriberListener">
+      <details key="start" value="150"/>
+      <details key="end" value="196"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

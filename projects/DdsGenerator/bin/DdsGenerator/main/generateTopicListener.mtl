@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generateTopicListener('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateTopicListener(aDdsTopicListener : DdsTopicListener)]
+new TopicListener() {
+	public void on_inconsistent_topic(Topic the_topic, InconsistentTopicStatus status) {
+		//[protected ('User defined on_inconsistent_topic method')]
+		//[/protected]
+	}
+}[/template]

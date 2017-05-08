@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/DdsMetamodel/src" modelPluginID="DdsMetamodel"
+    modelName="DdsMetamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ddsMetamodel.ecore</foreignModel>
+  <genPackages prefix="DdsMetamodel" disposableProviderFactory="true" ecorePackage="ddsMetamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//DurabilityQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DurabilityQosPolicyKind/VOLATILE_DURABILITY_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DurabilityQosPolicyKind/TRANSIENT_LOCAL_DURABILITY_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DurabilityQosPolicyKind/TRANSIENT_DURABILITY_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DurabilityQosPolicyKind/PERSISTENT_DURABILITY_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//HistoryQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//HistoryQosPolicyKind/KEEP_LAST_HISTORY_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//HistoryQosPolicyKind/KEEP_ALL_HISTORY_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//PresentationQosPolicyAccessScopeKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PresentationQosPolicyAccessScopeKind/INSTANCE_PRESENTATION_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PresentationQosPolicyAccessScopeKind/TOPIC_PRESENTATION_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PresentationQosPolicyAccessScopeKind/GROUP_PRESENTATION_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//OwnershipQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//OwnershipQosPolicyKind/SHARED_OWNERSHIP_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//OwnershipQosPolicyKind/EXCLUSIVE_OWNERSHIP_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//LivelinessQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//LivelinessQosPolicyKind/AUTOMATIC_LIVELINESS_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//LivelinessQosPolicyKind/MANUAL_LIVELINESS_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//LivelinessQosPolicyKind/MANUAL_BY_PARTICIPANT_LIVELINESS_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//LivelinessQosPolicyKind/MANUAL_BY_TOPIC_LIVELINESS_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//ReliabilityQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//ReliabilityQosPolicyKind/RELIABLE_RELIABILITY_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//ReliabilityQosPolicyKind/BEST_EFFORT_RELIABILITY_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//DestinationOrderQosPolicyKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DestinationOrderQosPolicyKind/BY_RECEPTION_TIMESTAMP_DESTINATIONORDER_QOS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DestinationOrderQosPolicyKind/BY_SOURCE_TIMESTAMP_DESTINATIONORDER_QOS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//InvalidSampleVisibilityQosPolicy">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InvalidSampleVisibilityQosPolicy/NO_INVALID_SAMPLES"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InvalidSampleVisibilityQosPolicy/MINIMUM_INVALID_SAMPLES"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InvalidSampleVisibilityQosPolicy/ALL_INVALID_SAMPLES"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//ViewStateKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//ViewStateKind/NEW_VIEW_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//ViewStateKind/NOT_NEW_VIEW_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//ViewStateKind/ANY_VIEW_STATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//InstanceStateKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InstanceStateKind/ALIVE_INSTANCE_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InstanceStateKind/NOT_ALIVE_DISPOSED_INSTANCE_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InstanceStateKind/NOT_ALIVE_NO_WRITERS_INSTANCE_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//InstanceStateKind/ANY_INSTANCE_STATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//SampleStateKind">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SampleStateKind/READ_SAMPLE_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SampleStateKind/NOT_READ_SAMPLE_STATE"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SampleStateKind/ANY_READ_SAMPLE_STATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//DomainParticipantStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/INCONSISTENT_TOPIC_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/LIVELINESS_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/OFFERED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/OFFERED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/PUBLICATION_MATCHED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/SAMPLE_REJECTED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/LIVELINESS_CHANGED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/REQUESTED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/REQUESTED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/DATA_AVAILABLE_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/SAMPLE_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/SUBSCRIPTION_MATCHED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DomainParticipantStatus/DATA_ON_READERS_STATUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//SubscriberStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/DATA_ON_READERS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/DATA_AVAILABLE_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/LIVELINESS_CHANGED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/REQUESTED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/REQUESTED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/SAMPLE_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/SAMPLE_REJECTED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//SubscriberStatus/SUBSCRIPTION_MATCHED_STATUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//PublisherStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PublisherStatus/LIVELINESS_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PublisherStatus/OFFERED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PublisherStatus/OFFERED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//PublisherStatus/PUBLICATION_MATCHED_STATUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//DataWriterStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataWriterStatus/LIVELINESS_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataWriterStatus/OFFERED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataWriterStatus/OFFERED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataWriterStatus/PUBLICATION_MATCHED_STATUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//DataReaderStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/DATA_AVAILABLE_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/LIVELINESS_CHANGED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/SAMPLE_REJECTED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/REQUESTED_DEADLINE_MISSED_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/REQUESTED_INCOMPATIBLE_QOS_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/SAMPLE_LOST_STATUS"/>
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//DataReaderStatus/SUBSCRIPTION_MATCHED_STATUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ddsMetamodel.ecore#//TopicStatus">
+      <genEnumLiterals ecoreEnumLiteral="ddsMetamodel.ecore#//TopicStatus/INCONSISTENT_TOPIC_STATUS"/>
+    </genEnums>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsApplication">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsApplication/applicationName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsApplication/domainParticipants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsApplication/waitset"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDomainParticipant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDomainParticipant/domainParticipantName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipant/ddssubscriber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipant/ddspublisher"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipant/ddsdomainparticipantqosprofile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipant/domainParticipantListener"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDomainParticipant/domainId"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTopic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTopic/topicName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopic/topicListener"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopic/topicQosProfile"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopic/ddsdatastructure"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsQosProfile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsQosProfile/profileName"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsSubscriber">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsSubscriber/subscriberName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriber/ddsdatareader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriber/subscriberListener"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriber/subscriberQosProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataReader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReader/dataReaderName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/readableTopic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/dataReaderListener"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/dataReaderQosProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPublisher">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPublisher/publisherName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisher/ddsdatawriter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisher/publisherListener"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisher/publisherQosProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataWriter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataWriter/dataWriterName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriter/publiableTopic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriter/dataWriterListener"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriter/dataWriterQosProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataModule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataModule/moduleName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataModule/dataStructures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataModule/innerModules"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataModule/containingSystem"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataModule/containingModule"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataStructure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataStructure/structureName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataStructure/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataStructure/structuredFields"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataStructure/containerDataModule"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataField/fieldType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataField/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataField/isKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataField/maxMultiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDomainParticipantQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipantQosProfile/userDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipantQosProfile/entityFactoryQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsUserDataQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsUserDataQos/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsEntityFactoryQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsEntityFactoryQos/autoenable_created_entities"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTopicQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/topicDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/durabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/durabilityServiceQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/latencyBudgetQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/livelinessQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/ownershipQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/reliabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/destinationOrderQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/historyQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/resourceLimitsQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/transportPriorityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/lifespanQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicQosProfile/deadlineQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTopicDataQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTopicDataQos/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDurabilityQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityQos/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDurabilityServiceQos">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDurabilityServiceQos/service_cleanup_delay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityServiceQos/history_kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityServiceQos/history_depth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityServiceQos/max_samples"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityServiceQos/max_instances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDurabilityServiceQos/max_samples_per_instances"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDuration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDuration/sec"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDuration/nanoSec"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPresentationQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPresentationQos/access_scope"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPresentationQos/coherent_access"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPresentationQos/ordered_access"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDeadlineQos">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDeadlineQos/period"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsLatencyBudgetQos">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsLatencyBudgetQos/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsOwnershipQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsOwnershipQos/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsOwnershipStrengthQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsOwnershipStrengthQos/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsLivelinessQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsLivelinessQos/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsLivelinessQos/lease_duration"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTimeBasedFilterQos">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTimeBasedFilterQos/minimum_separation"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPartitionQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPartitionQos/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsReliabilityQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsReliabilityQos/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsReliabilityQos/max_blocking_time"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTransportPriorityQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTransportPriorityQos/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsLifespan">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsLifespan/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsHistoryQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsHistoryQos/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsHistoryQos/depth"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsResourceLimits">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsResourceLimits/max_samples"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsResourceLimits/max_instances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsResourceLimits/max_samples_per_instances"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataWriterLifecycleQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataWriterLifecycleQos/autodispose_unregistered_instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterLifecycleQos/autopurge_suspended_samples_delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterLifecycleQos/autounregister_instance_delay"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataReaderLifecycleQos">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderLifecycleQos/autopurge_nowriters_samples_delay"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderLifecycleQos/autopurge_disposed_samples_delay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReaderLifecycleQos/autopurge_dispose_all"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReaderLifecycleQos/enable_invalid_samples"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDestinationOrderQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDestinationOrderQos/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPublisherQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisherQosProfile/groupDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisherQosProfile/entityFactoryQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisherQosProfile/presentationQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisherQosProfile/partitionQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsGroupDataQos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsGroupDataQos/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataWriterQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/userDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/durabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/deadlineQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/latencyBudgetQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/ownershipQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/ownershipStrength"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/livelinessQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/reliabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/transportPriorityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/lifespanQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/destinationOrderQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/historyQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/resourceLimitsQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterQosProfile/dataWriterLifecycleQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsSubscriberQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriberQosProfile/groupDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriberQosProfile/entityFactoryQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriberQosProfile/presentationQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriberQosProfile/partitionQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataReaderQosProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/userDataQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/durabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/deadlineQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/latencyBudgetQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/livelinessQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/ownershipQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/timeBasedFilterQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/reliabilityQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/destinationOrderQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/historyQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/resourceLimitsQos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderQosProfile/dataReaderLifecycleQos"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDomainParticipantListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDomainParticipantListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDomainParticipantListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsSubscriberListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsSubscriberListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsSubscriberListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPublisherListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPublisherListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPublisherListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataReaderListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReaderListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReaderListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataWriterListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataWriterListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataWriterListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTopicListener">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTopicListener/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTopicListener/listenedStatus"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsWaitSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsWaitSet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsWaitSet/readConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsWaitSet/statusConditions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsWaitSet/guardConditions"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsReadCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsReadCondition/view_state_mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsReadCondition/instance_state_mask"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsReadCondition/sample_state_mask"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsReadCondition/dataReader"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsStructuredField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsStructuredField/isKey"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsStructuredField/referencedType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsStructuredField/dataStructure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsStructuredField/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsStructuredField/maxMultiplicity"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsStatusCondition">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsStatusCondition/containingWaitset"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDomainParticipantStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDomainParticipantStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDomainParticipantStatusCondition/domainParticipant"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPublisherStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPublisherStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsPublisherStatusCondition/publisher"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsSubscriberStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsSubscriberStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSubscriberStatusCondition/subscriber"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataWriterStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataWriterStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataWriterStatusCondition/dataWriter"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsDataReaderStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsDataReaderStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReaderStatusCondition/dataReader"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsTopicStatusCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsTopicStatusCondition/enabled_status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsTopicStatusCondition/topic"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//QueryCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//QueryCondition/query"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//QueryCondition/queryParameters"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//GuardCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//GuardCondition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsSystem/systemName"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSystem/hosts"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSystem/qosProfiles"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSystem/dataModules"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsSystem/topics"/>
+    </genClasses>
+    <genClasses ecoreClass="ddsMetamodel.ecore#//DdsHost">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsHost/hostName"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsHost/applications"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

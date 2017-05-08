@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/ddsMetamodel')]
+[import DdsGenerator::main::generateJavaCode /]
+[import DdsGenerator::main::generateProfiles /]
+[import DdsGenerator::main::generateIdl /]
+
+
+[template public generateElement(aDdsSystem : DdsSystem)]
+[comment @main/]
+[for (aDdsHost : DdsHost | aDdsSystem.hosts)]
+[generateProfiles(aDdsSystem, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/'))/]
+[generateIdl(aDdsSystem, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/'))/]
+[/for]
+[generateJavaCode(aDdsSystem)/]
+[/template]

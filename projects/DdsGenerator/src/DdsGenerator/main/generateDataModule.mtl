@@ -1,0 +1,45 @@
+[comment encoding = UTF-8 /]
+[module generateDataModule('http://www.example.org/ddsMetamodel')]
+
+[import DdsGenerator::requests::ddsModel2Code /]
+
+
+[template public generateDataModule(aDdsDataModule : DdsDataModule)]
+module [aDdsDataModule.moduleName/] {
+[for (innerModule : DdsDataModule | aDdsDataModule.innerModules)]
+[generateDataModule(innerModule)/]
+[/for]
+
+//[protected ('user defined types')]
+//[/protected]
+
+[for (aStructure : DdsDataStructure | aDdsDataModule.dataStructures)]
+struct [aStructure.structureName/] {
+	[for (aField : DdsDataField | aStructure.fields)]
+	[if (aField.maxMultiplicity = -1)]
+	sequence<[aField.fieldType/]> [aField.fieldName/];
+	[elseif (aField.maxMultiplicity > 1)]
+	sequence<[aField.fieldType/], [aField.maxMultiplicity/]> [aField.fieldName/];
+	[else]
+	[aField.fieldType/] [aField.fieldName/];
+	[/if]
+	[/for]
+	[for (aStructuredField : DdsStructuredField | aStructure.structuredFields)]
+	[if (aStructuredField.maxMultiplicity = -1)]
+	sequence<[for (aDataModule : DdsDataModule | getModulesHierarchy(aStructuredField.referencedType)) separator ('::')][aDataModule.moduleName/][/for]::[aStructuredField.referencedType.structureName/]> [aStructuredField.fieldName/];
+	[elseif (aStructuredField.maxMultiplicity > 1)]
+	sequence<[for (aDataModule : DdsDataModule | getModulesHierarchy(aStructuredField.referencedType)) separator ('::')][aDataModule.moduleName/][/for]::[aStructuredField.referencedType.structureName/], [aStructuredField.maxMultiplicity/]> [aStructuredField.fieldName/];
+	[else]
+	[for (aDataModule : DdsDataModule | getModulesHierarchy(aStructuredField.referencedType)) separator ('::')][aDataModule.moduleName/][/for]::[aStructuredField.referencedType.structureName/] [aStructuredField.fieldName/];
+	[/if]
+	[/for]
+};
+[let keys : Sequence(String) = aStructure.fields->select(f | f.isKey)->collect(f | f.fieldName)->addAll(aStructure.structuredFields->select(f| f.isKey)->collect(f| (f.referencedType.fields->collect(f1|f.fieldName.concat('.').concat(f1.fieldName)))->flatten()))]
+[if (keys->notEmpty())]
+#pragma keylist [aStructure.structureName/] [for (aKey : String | keys) separator(' ')][aKey/][/for]
+[/if]
+[/let]
+
+[/for]
+};
+[/template]

@@ -1,0 +1,72 @@
+[comment encoding = UTF-8 /]
+[module generateParticipantListener('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateParticipantListener(aListener : DdsDomainParticipantListener)]
+new DomainParticipantListener() {
+
+	public void on_inconsistent_topic(Topic the_topic, InconsistentTopicStatus status) {
+		// [protected('User defined on_inconsistent_topic method')]
+		// [/protected]
+	}
+
+	public void on_offered_deadline_missed(DataWriter writer, OfferedDeadlineMissedStatus status) {
+		// [protected('User defined on_offered_deadline_missed method')]
+		// [/protected]
+	}
+
+	public void on_offered_incompatible_qos(DataWriter writer, OfferedIncompatibleQosStatus status) {
+		// [protected('User defined on_offered_incompatible_qos method')]
+		// [/protected]
+	}
+
+	public void on_liveliness_lost(DataWriter writer, LivelinessLostStatus status) {
+		// [protected('User defined on_liveliness_lost method')]
+		// [/protected]
+	}
+
+	public void on_publication_matched(DataWriter writer, PublicationMatchedStatus status) {
+		// [protected('User defined on_publication_match method')]
+		// [/protected]
+	}
+
+	public void on_data_on_readers(Subscriber subs) {
+		// [protected('User defined on_data_on_readers method')]
+		// [/protected]
+	}
+
+	public void on_requested_deadline_missed(DataReader reader, RequestedDeadlineMissedStatus status) {
+		// [protected('User defined on_requested_deadline_missed method')]
+		// [/protected]
+	}
+
+	public void on_requested_incompatible_qos(DataReader reader, RequestedIncompatibleQosStatus status) {
+		// [protected('User defined on_requested_incompatible_qos method')]
+		// [/protected]
+	}
+
+	public void on_sample_rejected(DataReader reader, SampleRejectedStatus status) {
+		// [protected('User defined on_sample_rejected method')]
+		// [/protected]
+	}
+
+	public void on_liveliness_changed(DataReader reader, LivelinessChangedStatus status) {
+		// [protected('User defined on_liveliness_changed method')]
+		// [/protected]
+	}
+
+	public void on_data_available(DataReader reader) {
+		// [protected('User defined on_data_available method')]
+		// [/protected]
+	}
+
+	public void on_sample_lost(DataReader reader, SampleLostStatus status) {
+		// [protected('User defined on_sample_status method')]
+		// [/protected]
+	}
+
+	public void on_subscription_matched(DataReader reader, SubscriptionMatchedStatus status) {
+		// [protected('User defined on_subscription_matched method')]
+		// [/protected]
+	}
+}[/template]
