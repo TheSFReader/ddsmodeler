@@ -1,0 +1,49 @@
+[comment encoding = UTF-8 /]
+[module generateWaitsetDeclaration('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateWaitsetDeclaration(aDdsWaitSet : DdsWaitSet)]
+//Attributes for Waitset [aDdsWaitSet.name/]
+private WaitSet [aDdsWaitSet.name/];
+[for (aStatusCondition : DdsStatusCondition | aDdsWaitSet.statusConditions)]
+[if (aStatusCondition.oclIsTypeOf(DdsDomainParticipantStatusCondition))]
+[let aDPStatusCondition : DdsDomainParticipantStatusCondition = aStatusCondition]
+private StatusCondition<DomainParticipant> [aDPStatusCondition.domainParticipant.domainParticipantName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsPublisherStatusCondition))]
+[let aPublisherStatusCondition : DdsPublisherStatusCondition = aStatusCondition]
+private StatusCondition<Publisher> [aPublisherStatusCondition.publisher.publisherName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataWriterStatusCondition))]
+[let aDWStatusCondition : DdsDataWriterStatusCondition = aStatusCondition]
+private StatusCondition<DataWriter<[aDWStatusCondition.dataWriter.publiableTopic.ddsdatastructure.structureName.toUpperFirst()/]>> [aDWStatusCondition.dataWriter.dataWriterName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsSubscriberStatusCondition))]
+[let aSubscriberStatusCondition : DdsSubscriberStatusCondition = aStatusCondition]
+private StatusCondition<Subscriber> [aSubscriberStatusCondition.subscriber.subscriberName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataReaderStatusCondition))]
+[let aDRStatusCondition : DdsDataReaderStatusCondition = aStatusCondition]
+private StatusCondition<DataReader<[aDRStatusCondition.dataReader.readableTopic.ddsdatastructure.structureName.toUpperFirst()/]>> [aDRStatusCondition.dataReader.dataReaderName/]SC;
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsTopicStatusCondition))]
+[let aTopicStatusCondition : DdsTopicStatusCondition = aStatusCondition]
+private StatusCondition<Topic<[aTopicStatusCondition.topic.ddsdatastructure.structureName.toUpperFirst()/]>> [aTopicStatusCondition.topic.topicName/]SC;
+[/let]
+[/if]
+[/for]
+[for (aReadCondition : DdsReadCondition | aDdsWaitSet.readConditions)]
+[if (aReadCondition.oclIsTypeOf(DdsReadCondition))]
+private ReadCondition<[aReadCondition.dataReader.readableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aReadCondition.dataReader.dataReaderName/]RC;
+private Subscriber.DataState [aReadCondition.dataReader.dataReaderName/]RCDS;
+[elseif (aReadCondition.oclIsTypeOf(QueryCondition))]
+[let aQueryCondition : QueryCondition = aReadCondition]
+private QueryCondition<[aQueryCondition.dataReader.readableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aQueryCondition.dataReader.dataReaderName/]QC;
+private Subscriber.DataState [aQueryCondition.dataReader.dataReaderName/]QCDS;
+[/let]
+[/if]
+[/for]
+[for (aGuardCondition : GuardCondition | aDdsWaitSet.guardConditions)]
+private GuardCondition [aGuardCondition.name/];
+[/for]
+[/template]

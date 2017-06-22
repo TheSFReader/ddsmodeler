@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generateIdl('http://www.example.org/ddsMetamodel')/]
+
+[import Java5DdsGenerator::main::generateDataModule /]
+
+[template public generateIdl(aDdsSystem : DdsSystem, path : String)]
+	
+[file (path.concat('idl/').concat(aDdsSystem.systemName).concat('.idl'), false, 'UTF-8')]
+[for (aDdsDataModule : DdsDataModule | aDdsSystem.dataModules)]
+[generateDataModule(aDdsDataModule)/]	
+[/for]
+[/file]
+
+	
+[/template]

@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module subscriberStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getSubscriberStatusClassName(arg0 : SubscriberStatus) : String
+	= invoke('Java5DdsGenerator.SubscriberStatus2Code', 'getSubscriberStatusClassName(ddsMetamodel.SubscriberStatus)', Sequence{arg0})
+/]
+
+[query public getSubscriberStatusEventName(arg0 : SubscriberStatus) : String
+	= invoke('Java5DdsGenerator.SubscriberStatus2Code', 'getSubscriberStatusEventName(ddsMetamodel.SubscriberStatus)', Sequence{arg0})
+/]
+

@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -138,7 +137,7 @@ public class DdsSubscriberImpl extends MinimalEObjectImpl.Container implements D
 	 */
 	public EList<DdsDataReader> getDdsdatareader() {
 		if (ddsdatareader == null) {
-			ddsdatareader = new EObjectContainmentEList<DdsDataReader>(DdsDataReader.class, this, DdsMetamodelPackage.DDS_SUBSCRIBER__DDSDATAREADER);
+			ddsdatareader = new EObjectContainmentWithInverseEList<DdsDataReader>(DdsDataReader.class, this, DdsMetamodelPackage.DDS_SUBSCRIBER__DDSDATAREADER, DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER);
 		}
 		return ddsdatareader;
 	}
@@ -222,6 +221,21 @@ public class DdsSubscriberImpl extends MinimalEObjectImpl.Container implements D
 		subscriberQosProfile = newSubscriberQosProfile;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DdsMetamodelPackage.DDS_SUBSCRIBER__SUBSCRIBER_QOS_PROFILE, oldSubscriberQosProfile, subscriberQosProfile));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DdsMetamodelPackage.DDS_SUBSCRIBER__DDSDATAREADER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDdsdatareader()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

@@ -34,7 +34,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DdsSubscriber">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subscriberName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ddsdatareader" upperBound="-1"
-        eType="#//DdsDataReader" containment="true"/>
+        eType="#//DdsDataReader" containment="true" eOpposite="#//DdsDataReader/containingSubscriber"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberListener" eType="#//DdsSubscriberListener"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subscriberQosProfile" eType="#//DdsSubscriberQosProfile"/>
@@ -46,6 +46,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataReaderListener" eType="#//DdsDataReaderListener"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataReaderQosProfile" eType="#//DdsDataReaderQosProfile"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containingSubscriber" lowerBound="1"
+        eType="#//DdsSubscriber" eOpposite="#//DdsSubscriber/ddsdatareader"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DdsPublisher">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="publisherName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -385,9 +387,12 @@
         eType="#//GuardCondition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DdsReadCondition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view_state_mask" eType="#//ViewStateKind"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance_state_mask" eType="#//InstanceStateKind"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sample_state_mask" eType="#//SampleStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view_state_mask" upperBound="-1"
+        eType="#//ViewStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instance_state_mask" upperBound="-1"
+        eType="#//InstanceStateKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sample_state_mask" upperBound="-1"
+        eType="#//SampleStateKind"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataReader" eType="#//DdsDataReader"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ViewStateKind">

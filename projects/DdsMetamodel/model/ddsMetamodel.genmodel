@@ -142,6 +142,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/readableTopic"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/dataReaderListener"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/dataReaderQosProfile"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ddsMetamodel.ecore#//DdsDataReader/containingSubscriber"/>
     </genClasses>
     <genClasses ecoreClass="ddsMetamodel.ecore#//DdsPublisher">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ddsMetamodel.ecore#//DdsPublisher/publisherName"/>

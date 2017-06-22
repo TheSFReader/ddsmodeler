@@ -633,40 +633,73 @@
             </source>
             <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReader/dataReaderName"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".create_readcondition(DDS."/>
-          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:PropertyCallExp">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".create_readcondition("/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DDS."/>
+            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="aSampleState" referredVariable="/0/generateWaitset/%.4/%/%.5/aSampleState">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+              </source>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+            <loopVariable name="aSampleState">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(SampleStateKind)">
               <source xsi:type="ocl.ecore:VariableExp" name="aReadCondition" referredVariable="/0/generateWaitset/%.4/aReadCondition">
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
               </source>
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/sample_state_mask"/>
-            </source>
+            </iterSet>
+            <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" | ">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </each>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value, DDS."/>
-          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:PropertyCallExp">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DDS."/>
+            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="aViewState" referredVariable="/0/generateWaitset/%.4/%/%.7/aViewState">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+              </source>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+            <loopVariable name="aViewState">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(ViewStateKind)">
               <source xsi:type="ocl.ecore:VariableExp" name="aReadCondition" referredVariable="/0/generateWaitset/%.4/aReadCondition">
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
               </source>
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/view_state_mask"/>
-            </source>
+            </iterSet>
+            <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" | ">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </each>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value, DDS."/>
-          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:PropertyCallExp">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DDS."/>
+            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="anInstanceState" referredVariable="/0/generateWaitset/%.4/%/%.9/anInstanceState">
+                <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+              </source>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+            <loopVariable name="anInstanceState">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(InstanceStateKind)">
               <source xsi:type="ocl.ecore:VariableExp" name="aReadCondition" referredVariable="/0/generateWaitset/%.4/aReadCondition">
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
               </source>
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/instance_state_mask"/>
-            </source>
+            </iterSet>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value);&#xA;this."/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;this."/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="aDdsWaitSet" referredVariable="/0/generateWaitset/aDdsWaitSet">
@@ -786,40 +819,73 @@
                 </source>
                 <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReader/dataReaderName"/>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".create_querycondition(DDS."/>
-              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:PropertyCallExp">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".create_querycondition("/>
+              <body xsi:type="mtl:ForBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DDS."/>
+                <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aSampleState" referredVariable="/0/generateWaitset/%.4/%/%.16/%/%.15/aSampleState">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+                  </source>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+                <loopVariable name="aSampleState">
                   <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+                </loopVariable>
+                <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(SampleStateKind)">
                   <source xsi:type="ocl.ecore:VariableExp" name="aQueryCondition" referredVariable="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//QueryCondition"/>
                   </source>
                   <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/sample_state_mask"/>
-                </source>
+                </iterSet>
+                <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" | ">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </each>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value, DDS."/>
-              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:PropertyCallExp">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+              <body xsi:type="mtl:ForBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" DDS."/>
+                <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aViewState" referredVariable="/0/generateWaitset/%.4/%/%.16/%/%.17/aViewState">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+                  </source>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+                <loopVariable name="aViewState">
                   <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+                </loopVariable>
+                <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(ViewStateKind)">
                   <source xsi:type="ocl.ecore:VariableExp" name="aQueryCondition" referredVariable="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//QueryCondition"/>
                   </source>
                   <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/view_state_mask"/>
-                </source>
+                </iterSet>
+                <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" | ">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </each>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value, DDS."/>
-              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:PropertyCallExp">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+              <body xsi:type="mtl:ForBlock">
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DDS."/>
+                <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_OclAny_Class/toString">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="anInstanceState" referredVariable="/0/generateWaitset/%.4/%/%.16/%/%.19/anInstanceState">
+                    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+                  </source>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value"/>
+                <loopVariable name="anInstanceState">
                   <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+                </loopVariable>
+                <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/7/OrderedSet(InstanceStateKind)">
                   <source xsi:type="ocl.ecore:VariableExp" name="aQueryCondition" referredVariable="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//QueryCondition"/>
                   </source>
                   <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsReadCondition/instance_state_mask"/>
-                </source>
+                </iterSet>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".value, "/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
               <body xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:PropertyCallExp">
@@ -863,7 +929,7 @@
                 </source>
                 <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReader/dataReaderName"/>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="QC);&#xA;"/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="QC);&#xA;&#xA;"/>
               <letVariable name="aQueryCondition">
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//QueryCondition"/>
                 <initExpression xsi:type="ocl.ecore:VariableExp" name="aReadCondition" referredVariable="/0/generateWaitset/%.4/aReadCondition">
@@ -1042,6 +1108,15 @@
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(DdsReadCondition)" instanceClassName="java.util.LinkedHashSet">
       <elementType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(SampleStateKind)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(ViewStateKind)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(InstanceStateKind)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(String)" instanceClassName="java.util.LinkedHashSet">
       <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -1344,7 +1419,49 @@
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
@@ -1401,7 +1518,49 @@
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsReadCondition"/>
@@ -1451,7 +1610,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateWaitset">
       <details key="start" value="95"/>
-      <details key="end" value="5484"/>
+      <details key="end" value="5916"/>
       <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateWaitset/%">
@@ -2576,12 +2735,12 @@
     </eAnnotations>
     <eAnnotations source="positions.225" references="/0/generateWaitset/%.4">
       <details key="start" value="3786"/>
-      <details key="end" value="5213"/>
+      <details key="end" value="5645"/>
       <details key="line" value="46"/>
     </eAnnotations>
     <eAnnotations source="positions.226" references="/0/generateWaitset/%.4/%">
       <details key="start" value="3857"/>
-      <details key="end" value="5206"/>
+      <details key="end" value="5638"/>
       <details key="line" value="47"/>
     </eAnnotations>
     <eAnnotations source="positions.227" references="/0/generateWaitset/%.4/%/%">
@@ -2626,555 +2785,725 @@
     </eAnnotations>
     <eAnnotations source="positions.235" references="/0/generateWaitset/%.4/%/%.4">
       <details key="start" value="4010"/>
-      <details key="end" value="4036"/>
+      <details key="end" value="4032"/>
       <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.236" references="/0/generateWaitset/%.4/%/%.5">
-      <details key="start" value="4037"/>
-      <details key="end" value="4080"/>
-      <details key="line" value="0"/>
+      <details key="start" value="4032"/>
+      <details key="end" value="4165"/>
+      <details key="line" value="48"/>
     </eAnnotations>
     <eAnnotations source="positions.237" references="/0/generateWaitset/%.4/%/%.5/%">
-      <details key="start" value="4037"/>
-      <details key="end" value="4069"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.238" references="/0/generateWaitset/%.4/%/%.5/%/aReadCondition">
-      <details key="start" value="4037"/>
-      <details key="end" value="4051"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.239" references="/0/generateWaitset/%.4/%/%.6">
-      <details key="start" value="4082"/>
-      <details key="end" value="4094"/>
+      <details key="start" value="4123"/>
+      <details key="end" value="4127"/>
       <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.240" references="/0/generateWaitset/%.4/%/%.7">
-      <details key="start" value="4095"/>
-      <details key="end" value="4136"/>
+    <eAnnotations source="positions.238" references="/0/generateWaitset/%.4/%/%.5/%.1">
+      <details key="start" value="4128"/>
+      <details key="end" value="4151"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.241" references="/0/generateWaitset/%.4/%/%.7/%">
-      <details key="start" value="4095"/>
-      <details key="end" value="4125"/>
+    <eAnnotations source="positions.239" references="/0/generateWaitset/%.4/%/%.5/%.1/aSampleState">
+      <details key="start" value="4128"/>
+      <details key="end" value="4140"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.242" references="/0/generateWaitset/%.4/%/%.7/%/aReadCondition">
-      <details key="start" value="4095"/>
-      <details key="end" value="4109"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.243" references="/0/generateWaitset/%.4/%/%.8">
-      <details key="start" value="4138"/>
-      <details key="end" value="4150"/>
+    <eAnnotations source="positions.240" references="/0/generateWaitset/%.4/%/%.5/%.2">
+      <details key="start" value="4153"/>
+      <details key="end" value="4159"/>
       <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.244" references="/0/generateWaitset/%.4/%/%.9">
-      <details key="start" value="4151"/>
-      <details key="end" value="4196"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.245" references="/0/generateWaitset/%.4/%/%.9/%">
-      <details key="start" value="4151"/>
-      <details key="end" value="4185"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.246" references="/0/generateWaitset/%.4/%/%.9/%/aReadCondition">
-      <details key="start" value="4151"/>
-      <details key="end" value="4165"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.247" references="/0/generateWaitset/%.4/%/%.10">
-      <details key="start" value="4198"/>
-      <details key="end" value="4212"/>
+    <eAnnotations source="positions.241" references="/0/generateWaitset/%.4/%/%.5/aSampleState">
+      <details key="start" value="4038"/>
+      <details key="end" value="4068"/>
       <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.248" references="/0/generateWaitset/%.4/%/%.11">
-      <details key="start" value="4213"/>
-      <details key="end" value="4229"/>
+    <eAnnotations source="positions.242" references="/0/generateWaitset/%.4/%/%.5/%.3">
+      <details key="start" value="4071"/>
+      <details key="end" value="4103"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.249" references="/0/generateWaitset/%.4/%/%.11/aDdsWaitSet">
-      <details key="start" value="4213"/>
-      <details key="end" value="4224"/>
+    <eAnnotations source="positions.243" references="/0/generateWaitset/%.4/%/%.5/%.3/aReadCondition">
+      <details key="start" value="4071"/>
+      <details key="end" value="4085"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.250" references="/0/generateWaitset/%.4/%/%.12">
-      <details key="start" value="4231"/>
-      <details key="end" value="4254"/>
-      <details key="line" value="49"/>
-    </eAnnotations>
-    <eAnnotations source="positions.251" references="/0/generateWaitset/%.4/%/%.13">
-      <details key="start" value="4255"/>
-      <details key="end" value="4295"/>
+    <eAnnotations source="positions.244" references="/0/generateWaitset/%.4/%/%.5/%.4">
+      <details key="start" value="4116"/>
+      <details key="end" value="4121"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.252" references="/0/generateWaitset/%.4/%/%.13/%">
-      <details key="start" value="4255"/>
-      <details key="end" value="4280"/>
+    <eAnnotations source="positions.245" references="/0/generateWaitset/%.4/%/%.6">
+      <details key="start" value="4165"/>
+      <details key="end" value="4167"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/generateWaitset/%.4/%/%.7">
+      <details key="start" value="4167"/>
+      <details key="end" value="4292"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/generateWaitset/%.4/%/%.7/%">
+      <details key="start" value="4252"/>
+      <details key="end" value="4256"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/generateWaitset/%.4/%/%.7/%.1">
+      <details key="start" value="4257"/>
+      <details key="end" value="4278"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.253" references="/0/generateWaitset/%.4/%/%.13/%/aReadCondition">
-      <details key="start" value="4255"/>
-      <details key="end" value="4269"/>
+    <eAnnotations source="positions.249" references="/0/generateWaitset/%.4/%/%.7/%.1/aViewState">
+      <details key="start" value="4257"/>
+      <details key="end" value="4267"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.254" references="/0/generateWaitset/%.4/%/%.14">
-      <details key="start" value="4297"/>
-      <details key="end" value="4302"/>
-      <details key="line" value="49"/>
+    <eAnnotations source="positions.250" references="/0/generateWaitset/%.4/%/%.7/%.2">
+      <details key="start" value="4280"/>
+      <details key="end" value="4286"/>
+      <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.255" references="/0/generateWaitset/%.4/%/%.15">
-      <details key="start" value="3861"/>
-      <details key="end" value="3907"/>
+    <eAnnotations source="positions.251" references="/0/generateWaitset/%.4/%/%.7/aViewState">
+      <details key="start" value="4173"/>
+      <details key="end" value="4199"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/generateWaitset/%.4/%/%.7/%.3">
+      <details key="start" value="4202"/>
+      <details key="end" value="4232"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.256" references="/0/generateWaitset/%.4/%/%.15/aReadCondition">
-      <details key="start" value="3862"/>
-      <details key="end" value="3876"/>
+    <eAnnotations source="positions.253" references="/0/generateWaitset/%.4/%/%.7/%.3/aReadCondition">
+      <details key="start" value="4202"/>
+      <details key="end" value="4216"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.257" references="/0/generateWaitset/%.4/%/%.15/%">
-      <details key="start" value="3889"/>
-      <details key="end" value="3905"/>
+    <eAnnotations source="positions.254" references="/0/generateWaitset/%.4/%/%.7/%.4">
+      <details key="start" value="4245"/>
+      <details key="end" value="4250"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.258" references="/0/generateWaitset/%.4/%/%.16">
-      <details key="start" value="4302"/>
-      <details key="end" value="5201"/>
-      <details key="line" value="50"/>
+    <eAnnotations source="positions.255" references="/0/generateWaitset/%.4/%/%.8">
+      <details key="start" value="4292"/>
+      <details key="end" value="4294"/>
+      <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.259" references="/0/generateWaitset/%.4/%/%.16/%">
-      <details key="start" value="4356"/>
-      <details key="end" value="5200"/>
-      <details key="line" value="51"/>
-    </eAnnotations>
-    <eAnnotations source="positions.260" references="/0/generateWaitset/%.4/%/%.16/%/%">
-      <details key="start" value="4412"/>
+    <eAnnotations source="positions.256" references="/0/generateWaitset/%.4/%/%.9">
+      <details key="start" value="4294"/>
       <details key="end" value="4419"/>
-      <details key="line" value="52"/>
+      <details key="line" value="48"/>
     </eAnnotations>
-    <eAnnotations source="positions.261" references="/0/generateWaitset/%.4/%/%.16/%/%.1">
-      <details key="start" value="4420"/>
-      <details key="end" value="4461"/>
+    <eAnnotations source="positions.257" references="/0/generateWaitset/%.4/%/%.9/%">
+      <details key="start" value="4374"/>
+      <details key="end" value="4378"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/generateWaitset/%.4/%/%.9/%.1">
+      <details key="start" value="4379"/>
+      <details key="end" value="4405"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.262" references="/0/generateWaitset/%.4/%/%.16/%/%.1/%">
-      <details key="start" value="4420"/>
-      <details key="end" value="4446"/>
+    <eAnnotations source="positions.259" references="/0/generateWaitset/%.4/%/%.9/%.1/anInstanceState">
+      <details key="start" value="4379"/>
+      <details key="end" value="4394"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.263" references="/0/generateWaitset/%.4/%/%.16/%/%.1/%/aQueryCondition">
-      <details key="start" value="4420"/>
-      <details key="end" value="4435"/>
+    <eAnnotations source="positions.260" references="/0/generateWaitset/%.4/%/%.9/%.2">
+      <details key="start" value="4407"/>
+      <details key="end" value="4413"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/generateWaitset/%.4/%/%.9/anInstanceState">
+      <details key="start" value="4300"/>
+      <details key="end" value="4335"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/generateWaitset/%.4/%/%.9/%.3">
+      <details key="start" value="4338"/>
+      <details key="end" value="4372"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.264" references="/0/generateWaitset/%.4/%/%.16/%/%.2">
-      <details key="start" value="4463"/>
-      <details key="end" value="4487"/>
-      <details key="line" value="52"/>
-    </eAnnotations>
-    <eAnnotations source="positions.265" references="/0/generateWaitset/%.4/%/%.16/%/%.3">
-      <details key="start" value="4488"/>
-      <details key="end" value="4509"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.266" references="/0/generateWaitset/%.4/%/%.16/%/%.3/aQueryCondition">
-      <details key="start" value="4488"/>
-      <details key="end" value="4503"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.267" references="/0/generateWaitset/%.4/%/%.16/%/%.4">
-      <details key="start" value="4511"/>
-      <details key="end" value="4521"/>
-      <details key="line" value="52"/>
-    </eAnnotations>
-    <eAnnotations source="positions.268" references="/0/generateWaitset/%.4/%/%.16/%/%.5">
-      <details key="start" value="4522"/>
-      <details key="end" value="4537"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.269" references="/0/generateWaitset/%.4/%/%.16/%/%.5/%">
-      <details key="start" value="4522"/>
-      <details key="end" value="4525"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.270" references="/0/generateWaitset/%.4/%/%.16/%/%.5/%.1">
-      <details key="start" value="4533"/>
-      <details key="end" value="4536"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.271" references="/0/generateWaitset/%.4/%/%.16/%/%.6">
-      <details key="start" value="4539"/>
-      <details key="end" value="4540"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.272" references="/0/generateWaitset/%.4/%/%.16/%/%.7">
-      <details key="start" value="4541"/>
-      <details key="end" value="4582"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.273" references="/0/generateWaitset/%.4/%/%.16/%/%.7/%">
-      <details key="start" value="4541"/>
-      <details key="end" value="4567"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.274" references="/0/generateWaitset/%.4/%/%.16/%/%.7/%/aQueryCondition">
-      <details key="start" value="4541"/>
-      <details key="end" value="4556"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.275" references="/0/generateWaitset/%.4/%/%.16/%/%.8">
-      <details key="start" value="4584"/>
-      <details key="end" value="4594"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.276" references="/0/generateWaitset/%.4/%/%.16/%/%.9">
-      <details key="start" value="4594"/>
-      <details key="end" value="4683"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.277" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%">
-      <details key="start" value="4667"/>
-      <details key="end" value="4668"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.278" references="/0/generateWaitset/%.4/%/%.16/%/%.9/value">
-      <details key="start" value="4669"/>
-      <details key="end" value="4674"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.279" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.1">
-      <details key="start" value="4676"/>
-      <details key="end" value="4677"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.280" references="/0/generateWaitset/%.4/%/%.16/%/%.9/value.1">
-      <details key="start" value="4600"/>
-      <details key="end" value="4614"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.281" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.2">
-      <details key="start" value="4617"/>
-      <details key="end" value="4648"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.282" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.2/aQueryCondition">
-      <details key="start" value="4617"/>
-      <details key="end" value="4632"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.283" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.3">
-      <details key="start" value="4661"/>
-      <details key="end" value="4665"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.284" references="/0/generateWaitset/%.4/%/%.16/%/%.10">
-      <details key="start" value="4683"/>
-      <details key="end" value="4692"/>
-      <details key="line" value="53"/>
-    </eAnnotations>
-    <eAnnotations source="positions.285" references="/0/generateWaitset/%.4/%/%.16/%/%.11">
-      <details key="start" value="4693"/>
-      <details key="end" value="4734"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.286" references="/0/generateWaitset/%.4/%/%.16/%/%.11/%">
-      <details key="start" value="4693"/>
-      <details key="end" value="4719"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.287" references="/0/generateWaitset/%.4/%/%.16/%/%.11/%/aQueryCondition">
-      <details key="start" value="4693"/>
-      <details key="end" value="4708"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.288" references="/0/generateWaitset/%.4/%/%.16/%/%.12">
-      <details key="start" value="4736"/>
-      <details key="end" value="4746"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.289" references="/0/generateWaitset/%.4/%/%.16/%/%.13">
-      <details key="start" value="4747"/>
-      <details key="end" value="4788"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.290" references="/0/generateWaitset/%.4/%/%.16/%/%.13/%">
-      <details key="start" value="4747"/>
-      <details key="end" value="4773"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.291" references="/0/generateWaitset/%.4/%/%.16/%/%.13/%/aQueryCondition">
-      <details key="start" value="4747"/>
-      <details key="end" value="4762"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.292" references="/0/generateWaitset/%.4/%/%.16/%/%.14">
-      <details key="start" value="4790"/>
-      <details key="end" value="4817"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.293" references="/0/generateWaitset/%.4/%/%.16/%/%.15">
-      <details key="start" value="4818"/>
-      <details key="end" value="4862"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.294" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%">
-      <details key="start" value="4818"/>
-      <details key="end" value="4851"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.295" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%/aQueryCondition">
-      <details key="start" value="4818"/>
-      <details key="end" value="4833"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.296" references="/0/generateWaitset/%.4/%/%.16/%/%.16">
-      <details key="start" value="4864"/>
-      <details key="end" value="4876"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.297" references="/0/generateWaitset/%.4/%/%.16/%/%.17">
-      <details key="start" value="4877"/>
-      <details key="end" value="4919"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.298" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%">
-      <details key="start" value="4877"/>
-      <details key="end" value="4908"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.299" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%/aQueryCondition">
-      <details key="start" value="4877"/>
-      <details key="end" value="4892"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.300" references="/0/generateWaitset/%.4/%/%.16/%/%.18">
-      <details key="start" value="4921"/>
-      <details key="end" value="4933"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.301" references="/0/generateWaitset/%.4/%/%.16/%/%.19">
-      <details key="start" value="4934"/>
-      <details key="end" value="4980"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.302" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%">
-      <details key="start" value="4934"/>
-      <details key="end" value="4969"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.303" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%/aQueryCondition">
-      <details key="start" value="4934"/>
-      <details key="end" value="4949"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.304" references="/0/generateWaitset/%.4/%/%.16/%/%.20">
-      <details key="start" value="4982"/>
-      <details key="end" value="4990"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.305" references="/0/generateWaitset/%.4/%/%.16/%/%.21">
-      <details key="start" value="4991"/>
-      <details key="end" value="5032"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.306" references="/0/generateWaitset/%.4/%/%.16/%/%.21/%">
-      <details key="start" value="4991"/>
-      <details key="end" value="5017"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.307" references="/0/generateWaitset/%.4/%/%.16/%/%.21/%/aQueryCondition">
-      <details key="start" value="4991"/>
-      <details key="end" value="5006"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.308" references="/0/generateWaitset/%.4/%/%.16/%/%.22">
-      <details key="start" value="5034"/>
-      <details key="end" value="5045"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.309" references="/0/generateWaitset/%.4/%/%.16/%/%.23">
-      <details key="start" value="5046"/>
-      <details key="end" value="5087"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.310" references="/0/generateWaitset/%.4/%/%.16/%/%.23/%">
-      <details key="start" value="5046"/>
-      <details key="end" value="5072"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.311" references="/0/generateWaitset/%.4/%/%.16/%/%.23/%/aQueryCondition">
-      <details key="start" value="5046"/>
-      <details key="end" value="5061"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.312" references="/0/generateWaitset/%.4/%/%.16/%/%.24">
-      <details key="start" value="5089"/>
-      <details key="end" value="5103"/>
-      <details key="line" value="54"/>
-    </eAnnotations>
-    <eAnnotations source="positions.313" references="/0/generateWaitset/%.4/%/%.16/%/%.25">
-      <details key="start" value="5104"/>
-      <details key="end" value="5120"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.314" references="/0/generateWaitset/%.4/%/%.16/%/%.25/aDdsWaitSet">
-      <details key="start" value="5104"/>
-      <details key="end" value="5115"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.315" references="/0/generateWaitset/%.4/%/%.16/%/%.26">
-      <details key="start" value="5122"/>
-      <details key="end" value="5145"/>
-      <details key="line" value="55"/>
-    </eAnnotations>
-    <eAnnotations source="positions.316" references="/0/generateWaitset/%.4/%/%.16/%/%.27">
-      <details key="start" value="5146"/>
-      <details key="end" value="5187"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.317" references="/0/generateWaitset/%.4/%/%.16/%/%.27/%">
-      <details key="start" value="5146"/>
-      <details key="end" value="5172"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.318" references="/0/generateWaitset/%.4/%/%.16/%/%.27/%/aQueryCondition">
-      <details key="start" value="5146"/>
-      <details key="end" value="5161"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.319" references="/0/generateWaitset/%.4/%/%.16/%/%.28">
-      <details key="start" value="5189"/>
-      <details key="end" value="5194"/>
-      <details key="line" value="55"/>
-    </eAnnotations>
-    <eAnnotations source="positions.320" references="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition">
-      <details key="start" value="4361"/>
-      <details key="end" value="4410"/>
-      <details key="line" value="51"/>
-    </eAnnotations>
-    <eAnnotations source="positions.321" references="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition/aReadCondition">
-      <details key="start" value="4397"/>
-      <details key="end" value="4411"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.322" references="/0/generateWaitset/%.4/%/%.16/%.1">
-      <details key="start" value="4310"/>
-      <details key="end" value="4354"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.323" references="/0/generateWaitset/%.4/%/%.16/%.1/aReadCondition">
-      <details key="start" value="4311"/>
-      <details key="end" value="4325"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.324" references="/0/generateWaitset/%.4/%/%.16/%.1/%">
+    <eAnnotations source="positions.263" references="/0/generateWaitset/%.4/%/%.9/%.3/aReadCondition">
       <details key="start" value="4338"/>
       <details key="end" value="4352"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.325" references="/0/generateWaitset/%.4/aReadCondition">
+    <eAnnotations source="positions.264" references="/0/generateWaitset/%.4/%/%.10">
+      <details key="start" value="4419"/>
+      <details key="end" value="4427"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/generateWaitset/%.4/%/%.11">
+      <details key="start" value="4428"/>
+      <details key="end" value="4444"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/generateWaitset/%.4/%/%.11/aDdsWaitSet">
+      <details key="start" value="4428"/>
+      <details key="end" value="4439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/generateWaitset/%.4/%/%.12">
+      <details key="start" value="4446"/>
+      <details key="end" value="4469"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.268" references="/0/generateWaitset/%.4/%/%.13">
+      <details key="start" value="4470"/>
+      <details key="end" value="4510"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.269" references="/0/generateWaitset/%.4/%/%.13/%">
+      <details key="start" value="4470"/>
+      <details key="end" value="4495"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.270" references="/0/generateWaitset/%.4/%/%.13/%/aReadCondition">
+      <details key="start" value="4470"/>
+      <details key="end" value="4484"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.271" references="/0/generateWaitset/%.4/%/%.14">
+      <details key="start" value="4512"/>
+      <details key="end" value="4517"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.272" references="/0/generateWaitset/%.4/%/%.15">
+      <details key="start" value="3861"/>
+      <details key="end" value="3907"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.273" references="/0/generateWaitset/%.4/%/%.15/aReadCondition">
+      <details key="start" value="3862"/>
+      <details key="end" value="3876"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.274" references="/0/generateWaitset/%.4/%/%.15/%">
+      <details key="start" value="3889"/>
+      <details key="end" value="3905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.275" references="/0/generateWaitset/%.4/%/%.16">
+      <details key="start" value="4517"/>
+      <details key="end" value="5633"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.276" references="/0/generateWaitset/%.4/%/%.16/%">
+      <details key="start" value="4571"/>
+      <details key="end" value="5632"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.277" references="/0/generateWaitset/%.4/%/%.16/%/%">
+      <details key="start" value="4627"/>
+      <details key="end" value="4634"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.278" references="/0/generateWaitset/%.4/%/%.16/%/%.1">
+      <details key="start" value="4635"/>
+      <details key="end" value="4676"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.279" references="/0/generateWaitset/%.4/%/%.16/%/%.1/%">
+      <details key="start" value="4635"/>
+      <details key="end" value="4661"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.280" references="/0/generateWaitset/%.4/%/%.16/%/%.1/%/aQueryCondition">
+      <details key="start" value="4635"/>
+      <details key="end" value="4650"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.281" references="/0/generateWaitset/%.4/%/%.16/%/%.2">
+      <details key="start" value="4678"/>
+      <details key="end" value="4702"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.282" references="/0/generateWaitset/%.4/%/%.16/%/%.3">
+      <details key="start" value="4703"/>
+      <details key="end" value="4724"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.283" references="/0/generateWaitset/%.4/%/%.16/%/%.3/aQueryCondition">
+      <details key="start" value="4703"/>
+      <details key="end" value="4718"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.284" references="/0/generateWaitset/%.4/%/%.16/%/%.4">
+      <details key="start" value="4726"/>
+      <details key="end" value="4736"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.285" references="/0/generateWaitset/%.4/%/%.16/%/%.5">
+      <details key="start" value="4737"/>
+      <details key="end" value="4752"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.286" references="/0/generateWaitset/%.4/%/%.16/%/%.5/%">
+      <details key="start" value="4737"/>
+      <details key="end" value="4740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.287" references="/0/generateWaitset/%.4/%/%.16/%/%.5/%.1">
+      <details key="start" value="4748"/>
+      <details key="end" value="4751"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.288" references="/0/generateWaitset/%.4/%/%.16/%/%.6">
+      <details key="start" value="4754"/>
+      <details key="end" value="4755"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.289" references="/0/generateWaitset/%.4/%/%.16/%/%.7">
+      <details key="start" value="4756"/>
+      <details key="end" value="4797"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.290" references="/0/generateWaitset/%.4/%/%.16/%/%.7/%">
+      <details key="start" value="4756"/>
+      <details key="end" value="4782"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.291" references="/0/generateWaitset/%.4/%/%.16/%/%.7/%/aQueryCondition">
+      <details key="start" value="4756"/>
+      <details key="end" value="4771"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.292" references="/0/generateWaitset/%.4/%/%.16/%/%.8">
+      <details key="start" value="4799"/>
+      <details key="end" value="4809"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.293" references="/0/generateWaitset/%.4/%/%.16/%/%.9">
+      <details key="start" value="4809"/>
+      <details key="end" value="4898"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.294" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%">
+      <details key="start" value="4882"/>
+      <details key="end" value="4883"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.295" references="/0/generateWaitset/%.4/%/%.16/%/%.9/value">
+      <details key="start" value="4884"/>
+      <details key="end" value="4889"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.296" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.1">
+      <details key="start" value="4891"/>
+      <details key="end" value="4892"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.297" references="/0/generateWaitset/%.4/%/%.16/%/%.9/value.1">
+      <details key="start" value="4815"/>
+      <details key="end" value="4829"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.298" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.2">
+      <details key="start" value="4832"/>
+      <details key="end" value="4863"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.299" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.2/aQueryCondition">
+      <details key="start" value="4832"/>
+      <details key="end" value="4847"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.300" references="/0/generateWaitset/%.4/%/%.16/%/%.9/%.3">
+      <details key="start" value="4876"/>
+      <details key="end" value="4880"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.301" references="/0/generateWaitset/%.4/%/%.16/%/%.10">
+      <details key="start" value="4898"/>
+      <details key="end" value="4907"/>
+      <details key="line" value="53"/>
+    </eAnnotations>
+    <eAnnotations source="positions.302" references="/0/generateWaitset/%.4/%/%.16/%/%.11">
+      <details key="start" value="4908"/>
+      <details key="end" value="4949"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.303" references="/0/generateWaitset/%.4/%/%.16/%/%.11/%">
+      <details key="start" value="4908"/>
+      <details key="end" value="4934"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.304" references="/0/generateWaitset/%.4/%/%.16/%/%.11/%/aQueryCondition">
+      <details key="start" value="4908"/>
+      <details key="end" value="4923"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.305" references="/0/generateWaitset/%.4/%/%.16/%/%.12">
+      <details key="start" value="4951"/>
+      <details key="end" value="4961"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.306" references="/0/generateWaitset/%.4/%/%.16/%/%.13">
+      <details key="start" value="4962"/>
+      <details key="end" value="5003"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.307" references="/0/generateWaitset/%.4/%/%.16/%/%.13/%">
+      <details key="start" value="4962"/>
+      <details key="end" value="4988"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.308" references="/0/generateWaitset/%.4/%/%.16/%/%.13/%/aQueryCondition">
+      <details key="start" value="4962"/>
+      <details key="end" value="4977"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.309" references="/0/generateWaitset/%.4/%/%.16/%/%.14">
+      <details key="start" value="5005"/>
+      <details key="end" value="5028"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.310" references="/0/generateWaitset/%.4/%/%.16/%/%.15">
+      <details key="start" value="5028"/>
+      <details key="end" value="5162"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.311" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%">
+      <details key="start" value="5120"/>
+      <details key="end" value="5124"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.312" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.1">
+      <details key="start" value="5125"/>
+      <details key="end" value="5148"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.313" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.1/aSampleState">
+      <details key="start" value="5125"/>
+      <details key="end" value="5137"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.314" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.2">
+      <details key="start" value="5150"/>
+      <details key="end" value="5156"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.315" references="/0/generateWaitset/%.4/%/%.16/%/%.15/aSampleState">
+      <details key="start" value="5034"/>
+      <details key="end" value="5064"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.316" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.3">
+      <details key="start" value="5067"/>
+      <details key="end" value="5100"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.317" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.3/aQueryCondition">
+      <details key="start" value="5067"/>
+      <details key="end" value="5082"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.318" references="/0/generateWaitset/%.4/%/%.16/%/%.15/%.4">
+      <details key="start" value="5113"/>
+      <details key="end" value="5118"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.319" references="/0/generateWaitset/%.4/%/%.16/%/%.16">
+      <details key="start" value="5162"/>
+      <details key="end" value="5164"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.320" references="/0/generateWaitset/%.4/%/%.16/%/%.17">
+      <details key="start" value="5164"/>
+      <details key="end" value="5291"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.321" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%">
+      <details key="start" value="5250"/>
+      <details key="end" value="5255"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.322" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.1">
+      <details key="start" value="5256"/>
+      <details key="end" value="5277"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.323" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.1/aViewState">
+      <details key="start" value="5256"/>
+      <details key="end" value="5266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.324" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.2">
+      <details key="start" value="5279"/>
+      <details key="end" value="5285"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.325" references="/0/generateWaitset/%.4/%/%.16/%/%.17/aViewState">
+      <details key="start" value="5170"/>
+      <details key="end" value="5196"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.326" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.3">
+      <details key="start" value="5199"/>
+      <details key="end" value="5230"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.327" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.3/aQueryCondition">
+      <details key="start" value="5199"/>
+      <details key="end" value="5214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.328" references="/0/generateWaitset/%.4/%/%.16/%/%.17/%.4">
+      <details key="start" value="5243"/>
+      <details key="end" value="5248"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.329" references="/0/generateWaitset/%.4/%/%.16/%/%.18">
+      <details key="start" value="5291"/>
+      <details key="end" value="5293"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.330" references="/0/generateWaitset/%.4/%/%.16/%/%.19">
+      <details key="start" value="5293"/>
+      <details key="end" value="5419"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.331" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%">
+      <details key="start" value="5374"/>
+      <details key="end" value="5378"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.332" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%.1">
+      <details key="start" value="5379"/>
+      <details key="end" value="5405"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.333" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%.1/anInstanceState">
+      <details key="start" value="5379"/>
+      <details key="end" value="5394"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.334" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%.2">
+      <details key="start" value="5407"/>
+      <details key="end" value="5413"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.335" references="/0/generateWaitset/%.4/%/%.16/%/%.19/anInstanceState">
+      <details key="start" value="5299"/>
+      <details key="end" value="5334"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.336" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%.3">
+      <details key="start" value="5337"/>
+      <details key="end" value="5372"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.337" references="/0/generateWaitset/%.4/%/%.16/%/%.19/%.3/aQueryCondition">
+      <details key="start" value="5337"/>
+      <details key="end" value="5352"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.338" references="/0/generateWaitset/%.4/%/%.16/%/%.20">
+      <details key="start" value="5419"/>
+      <details key="end" value="5421"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.339" references="/0/generateWaitset/%.4/%/%.16/%/%.21">
+      <details key="start" value="5422"/>
+      <details key="end" value="5463"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.340" references="/0/generateWaitset/%.4/%/%.16/%/%.21/%">
+      <details key="start" value="5422"/>
+      <details key="end" value="5448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.341" references="/0/generateWaitset/%.4/%/%.16/%/%.21/%/aQueryCondition">
+      <details key="start" value="5422"/>
+      <details key="end" value="5437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.342" references="/0/generateWaitset/%.4/%/%.16/%/%.22">
+      <details key="start" value="5465"/>
+      <details key="end" value="5476"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.343" references="/0/generateWaitset/%.4/%/%.16/%/%.23">
+      <details key="start" value="5477"/>
+      <details key="end" value="5518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.344" references="/0/generateWaitset/%.4/%/%.16/%/%.23/%">
+      <details key="start" value="5477"/>
+      <details key="end" value="5503"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.345" references="/0/generateWaitset/%.4/%/%.16/%/%.23/%/aQueryCondition">
+      <details key="start" value="5477"/>
+      <details key="end" value="5492"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.346" references="/0/generateWaitset/%.4/%/%.16/%/%.24">
+      <details key="start" value="5520"/>
+      <details key="end" value="5534"/>
+      <details key="line" value="54"/>
+    </eAnnotations>
+    <eAnnotations source="positions.347" references="/0/generateWaitset/%.4/%/%.16/%/%.25">
+      <details key="start" value="5535"/>
+      <details key="end" value="5551"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.348" references="/0/generateWaitset/%.4/%/%.16/%/%.25/aDdsWaitSet">
+      <details key="start" value="5535"/>
+      <details key="end" value="5546"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.349" references="/0/generateWaitset/%.4/%/%.16/%/%.26">
+      <details key="start" value="5553"/>
+      <details key="end" value="5576"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.350" references="/0/generateWaitset/%.4/%/%.16/%/%.27">
+      <details key="start" value="5577"/>
+      <details key="end" value="5618"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.351" references="/0/generateWaitset/%.4/%/%.16/%/%.27/%">
+      <details key="start" value="5577"/>
+      <details key="end" value="5603"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.352" references="/0/generateWaitset/%.4/%/%.16/%/%.27/%/aQueryCondition">
+      <details key="start" value="5577"/>
+      <details key="end" value="5592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.353" references="/0/generateWaitset/%.4/%/%.16/%/%.28">
+      <details key="start" value="5620"/>
+      <details key="end" value="5626"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.354" references="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition">
+      <details key="start" value="4576"/>
+      <details key="end" value="4625"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.355" references="/0/generateWaitset/%.4/%/%.16/%/aQueryCondition/aReadCondition">
+      <details key="start" value="4612"/>
+      <details key="end" value="4626"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.356" references="/0/generateWaitset/%.4/%/%.16/%.1">
+      <details key="start" value="4525"/>
+      <details key="end" value="4569"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.357" references="/0/generateWaitset/%.4/%/%.16/%.1/aReadCondition">
+      <details key="start" value="4526"/>
+      <details key="end" value="4540"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.358" references="/0/generateWaitset/%.4/%/%.16/%.1/%">
+      <details key="start" value="4553"/>
+      <details key="end" value="4567"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.359" references="/0/generateWaitset/%.4/aReadCondition">
       <details key="start" value="3792"/>
       <details key="end" value="3825"/>
       <details key="line" value="46"/>
     </eAnnotations>
-    <eAnnotations source="positions.326" references="/0/generateWaitset/%.4/%.1">
+    <eAnnotations source="positions.360" references="/0/generateWaitset/%.4/%.1">
       <details key="start" value="3828"/>
       <details key="end" value="3854"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.327" references="/0/generateWaitset/%.4/%.1/aDdsWaitSet">
+    <eAnnotations source="positions.361" references="/0/generateWaitset/%.4/%.1/aDdsWaitSet">
       <details key="start" value="3828"/>
       <details key="end" value="3839"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.328" references="/0/generateWaitset/%.5">
-      <details key="start" value="5214"/>
-      <details key="end" value="5472"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.329" references="/0/generateWaitset/%.5/%">
-      <details key="start" value="5285"/>
-      <details key="end" value="5290"/>
+    <eAnnotations source="positions.362" references="/0/generateWaitset/%.5">
+      <details key="start" value="5646"/>
+      <details key="end" value="5904"/>
       <details key="line" value="60"/>
     </eAnnotations>
-    <eAnnotations source="positions.330" references="/0/generateWaitset/%.5/%.1">
-      <details key="start" value="5291"/>
-      <details key="end" value="5311"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.331" references="/0/generateWaitset/%.5/%.1/aGuardCondition">
-      <details key="start" value="5291"/>
-      <details key="end" value="5306"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.332" references="/0/generateWaitset/%.5/%.2">
-      <details key="start" value="5313"/>
-      <details key="end" value="5343"/>
-      <details key="line" value="60"/>
-    </eAnnotations>
-    <eAnnotations source="positions.333" references="/0/generateWaitset/%.5/%.3">
-      <details key="start" value="5344"/>
-      <details key="end" value="5364"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.334" references="/0/generateWaitset/%.5/%.3/aGuardCondition">
-      <details key="start" value="5344"/>
-      <details key="end" value="5359"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.335" references="/0/generateWaitset/%.5/%.4">
-      <details key="start" value="5366"/>
-      <details key="end" value="5398"/>
+    <eAnnotations source="positions.363" references="/0/generateWaitset/%.5/%">
+      <details key="start" value="5717"/>
+      <details key="end" value="5722"/>
       <details key="line" value="61"/>
     </eAnnotations>
-    <eAnnotations source="positions.336" references="/0/generateWaitset/%.5/%.5">
-      <details key="start" value="5399"/>
-      <details key="end" value="5415"/>
+    <eAnnotations source="positions.364" references="/0/generateWaitset/%.5/%.1">
+      <details key="start" value="5723"/>
+      <details key="end" value="5743"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.337" references="/0/generateWaitset/%.5/%.5/aDdsWaitSet">
-      <details key="start" value="5399"/>
-      <details key="end" value="5410"/>
+    <eAnnotations source="positions.365" references="/0/generateWaitset/%.5/%.1/aGuardCondition">
+      <details key="start" value="5723"/>
+      <details key="end" value="5738"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.338" references="/0/generateWaitset/%.5/%.6">
-      <details key="start" value="5417"/>
-      <details key="end" value="5440"/>
+    <eAnnotations source="positions.366" references="/0/generateWaitset/%.5/%.2">
+      <details key="start" value="5745"/>
+      <details key="end" value="5775"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.367" references="/0/generateWaitset/%.5/%.3">
+      <details key="start" value="5776"/>
+      <details key="end" value="5796"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.368" references="/0/generateWaitset/%.5/%.3/aGuardCondition">
+      <details key="start" value="5776"/>
+      <details key="end" value="5791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.369" references="/0/generateWaitset/%.5/%.4">
+      <details key="start" value="5798"/>
+      <details key="end" value="5830"/>
       <details key="line" value="62"/>
     </eAnnotations>
-    <eAnnotations source="positions.339" references="/0/generateWaitset/%.5/%.7">
-      <details key="start" value="5441"/>
-      <details key="end" value="5461"/>
+    <eAnnotations source="positions.370" references="/0/generateWaitset/%.5/%.5">
+      <details key="start" value="5831"/>
+      <details key="end" value="5847"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.340" references="/0/generateWaitset/%.5/%.7/aGuardCondition">
-      <details key="start" value="5441"/>
-      <details key="end" value="5456"/>
+    <eAnnotations source="positions.371" references="/0/generateWaitset/%.5/%.5/aDdsWaitSet">
+      <details key="start" value="5831"/>
+      <details key="end" value="5842"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.341" references="/0/generateWaitset/%.5/%.8">
-      <details key="start" value="5463"/>
-      <details key="end" value="5466"/>
-      <details key="line" value="62"/>
+    <eAnnotations source="positions.372" references="/0/generateWaitset/%.5/%.6">
+      <details key="start" value="5849"/>
+      <details key="end" value="5872"/>
+      <details key="line" value="63"/>
     </eAnnotations>
-    <eAnnotations source="positions.342" references="/0/generateWaitset/%.5/aGuardCondition">
-      <details key="start" value="5220"/>
-      <details key="end" value="5252"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.343" references="/0/generateWaitset/%.5/%.9">
-      <details key="start" value="5255"/>
-      <details key="end" value="5282"/>
+    <eAnnotations source="positions.373" references="/0/generateWaitset/%.5/%.7">
+      <details key="start" value="5873"/>
+      <details key="end" value="5893"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.344" references="/0/generateWaitset/%.5/%.9/aDdsWaitSet">
-      <details key="start" value="5255"/>
-      <details key="end" value="5266"/>
+    <eAnnotations source="positions.374" references="/0/generateWaitset/%.5/%.7/aGuardCondition">
+      <details key="start" value="5873"/>
+      <details key="end" value="5888"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.345" references="/0/generateWaitset/aDdsWaitSet">
+    <eAnnotations source="positions.375" references="/0/generateWaitset/%.5/%.8">
+      <details key="start" value="5895"/>
+      <details key="end" value="5898"/>
+      <details key="line" value="63"/>
+    </eAnnotations>
+    <eAnnotations source="positions.376" references="/0/generateWaitset/%.5/aGuardCondition">
+      <details key="start" value="5652"/>
+      <details key="end" value="5684"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.377" references="/0/generateWaitset/%.5/%.9">
+      <details key="start" value="5687"/>
+      <details key="end" value="5714"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.378" references="/0/generateWaitset/%.5/%.9/aDdsWaitSet">
+      <details key="start" value="5687"/>
+      <details key="end" value="5698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.379" references="/0/generateWaitset/aDdsWaitSet">
       <details key="start" value="128"/>
       <details key="end" value="152"/>
       <details key="line" value="5"/>

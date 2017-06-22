@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module generateTopicListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::topicStatus2Code /]
+[import Java5DdsGenerator::requests::ddsModel2Code /]
+
+[template public generateTopicListener(aDdsTopicListener : DdsTopicListener, srcPath : String, packageName : String, dataStructure : DdsDataStructure)]
+[file (srcPath.concat(aDdsTopicListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.topic.TopicAdapter;
+[for (aStatus : TopicStatus | aDdsTopicListener.listenedStatus)]
+import org.omg.dds.core.event.[getTopicStatusClassName(aStatus)/]Event;
+[/for]
+import [for (aDataModule : DdsDataModule | getModulesHierarchy(dataStructure)) separator('.')][aDataModule.moduleName/][/for].[dataStructure.structureName.toUpperFirst()/];
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsTopicListener.name.toUpperFirst()/] extends TopicAdapter<[dataStructure.structureName.toUpperFirst()/]> {
+	//[protected ('User defined attributes')]
+	//[/protected]
+
+	[for (aStatus : TopicStatus | aDdsTopicListener.listenedStatus)]
+	public void on[getTopicStatusClassName(aStatus)/]([getTopicStatusClassName(aStatus)/]Event<[dataStructure.structureName.toUpperFirst()/]> status) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]

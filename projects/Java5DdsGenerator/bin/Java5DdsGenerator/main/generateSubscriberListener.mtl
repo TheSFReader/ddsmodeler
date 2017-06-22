@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module generateSubscriberListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::subscriberStatus2Code /]
+
+[template public generateSubscriberListener(aDdsSubscriberListener : DdsSubscriberListener, srcPath : String, packageName : String)]
+[file (srcPath.concat(aDdsSubscriberListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.sub.SubscriberAdapter;
+[for (aStatus : SubscriberStatus | aDdsSubscriberListener.listenedStatus)]
+import org.omg.dds.core.event.[getSubscriberStatusClassName(aStatus)/]Event;
+[/for]
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsSubscriberListener.name.toUpperFirst()/] extends SubscriberAdapter {
+	//[protected ('User defined attributes')]
+	//[/protected]
+
+	[for (aStatus : SubscriberStatus | aDdsSubscriberListener.listenedStatus)]
+	public void on[getSubscriberStatusClassName(aStatus)/]([getSubscriberStatusEventName(aStatus)/] status) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]

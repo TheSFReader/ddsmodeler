@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module domainParticipantStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getDomainParticipantStatusClassName(arg0 : DomainParticipantStatus) : String
+	= invoke('Java5DdsGenerator.DomainParticipantStatus2Code', 'getDomainParticipantStatusClassName(ddsMetamodel.DomainParticipantStatus)', Sequence{arg0})
+/]
+
+[query public getDomainParticipantStatusMethodName(arg0 : DomainParticipantStatus) : String
+	= invoke('Java5DdsGenerator.DomainParticipantStatus2Code', 'getDomainParticipantStatusMethodName(ddsMetamodel.DomainParticipantStatus)', Sequence{arg0})
+/]
+
+[query public getDomainParticipantStatusEventName(arg0 : DomainParticipantStatus) : String
+	= invoke('Java5DdsGenerator.DomainParticipantStatus2Code', 'getDomainParticipantStatusEventName(ddsMetamodel.DomainParticipantStatus)', Sequence{arg0})
+/]
+

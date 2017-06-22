@@ -45,14 +45,15 @@ this.[aDdsWaitSet.name/].attach_condition(this.[aTopicStatusCondition.topic.topi
 [/for]
 [for (aReadCondition : DdsReadCondition | aDdsWaitSet.readConditions)]
 [if (aReadCondition.oclIsTypeOf(DdsReadCondition))]
-this.[aReadCondition.dataReader.dataReaderName/]RC = this.[aReadCondition.dataReader.dataReaderName/].create_readcondition(DDS.[aReadCondition.sample_state_mask.toString()/].value, DDS.[aReadCondition.view_state_mask.toString()/].value, DDS.[aReadCondition.instance_state_mask.toString()/].value);
+this.[aReadCondition.dataReader.dataReaderName/]RC = this.[aReadCondition.dataReader.dataReaderName/].create_readcondition([for (aSampleState : SampleStateKind | aReadCondition.sample_state_mask) separator (' | ')]DDS.[aSampleState.toString()/].value[/for], [for (aViewState : ViewStateKind | aReadCondition.view_state_mask) separator (' | ')]DDS.[aViewState.toString()/].value[/for], [for (anInstanceState : InstanceStateKind | aReadCondition.instance_state_mask)]DDS.[anInstanceState.toString()/].value[/for]);
 this.[aDdsWaitSet.name/].attach_condition(this.[aReadCondition.dataReader.dataReaderName/]RC);
 [elseif (aReadCondition.oclIsTypeOf(QueryCondition))]
 [let aQueryCondition : QueryCondition = aReadCondition]
 String [aQueryCondition.dataReader.dataReaderName/]Condition = new String("[aQueryCondition.query/]");
 String['['.concat(']')/] [aQueryCondition.dataReader.dataReaderName/]Params = {[for (value : String | aQueryCondition.queryParameters) separator (', ')]"[value/]"[/for]}; 
-this.[aQueryCondition.dataReader.dataReaderName/]QC = this.[aQueryCondition.dataReader.dataReaderName/].create_querycondition(DDS.[aQueryCondition.sample_state_mask.toString()/].value, DDS.[aQueryCondition.view_state_mask.toString()/].value, DDS.[aQueryCondition.instance_state_mask.toString()/].value, [aQueryCondition.dataReader.dataReaderName/]Condition, [aQueryCondition.dataReader.dataReaderName/]Params);
+this.[aQueryCondition.dataReader.dataReaderName/]QC = this.[aQueryCondition.dataReader.dataReaderName/].create_querycondition([for (aSampleState : SampleStateKind | aQueryCondition.sample_state_mask) separator (' | ')]DDS.[aSampleState.toString()/].value[/for], [for (aViewState : ViewStateKind | aQueryCondition.view_state_mask) separator (' | ')] DDS.[aViewState.toString()/].value[/for], [for (anInstanceState : InstanceStateKind | aQueryCondition.instance_state_mask)]DDS.[anInstanceState.toString()/].value[/for], [aQueryCondition.dataReader.dataReaderName/]Condition, [aQueryCondition.dataReader.dataReaderName/]Params);
 this.[aDdsWaitSet.name/].attach_condition(this.[aQueryCondition.dataReader.dataReaderName/]QC);
+
 [/let]
 [/if]
 [/for]

@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module dataReaderStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getDataReaderStatusClassName(arg0 : DataReaderStatus) : String
+	= invoke('Java5DdsGenerator.DataReaderStatus2Code', 'getDataReaderStatusClassName(ddsMetamodel.DataReaderStatus)', Sequence{arg0})
+/]
+

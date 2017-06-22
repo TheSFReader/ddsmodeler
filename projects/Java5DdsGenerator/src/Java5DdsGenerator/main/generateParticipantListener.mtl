@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module generateParticipantListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::domainParticipantStatus2Code /]
+
+[template public generateElement(aDdsDomainParticipantListener : DdsDomainParticipantListener, srcPath : String, packageName : String)]
+[file (srcPath.concat(aDdsDomainParticipantListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.domain.DomainParticipantAdapter;
+[for (aStatus : DomainParticipantStatus | aDdsDomainParticipantListener.listenedStatus)]
+import org.omg.dds.core.event.[getDomainParticipantStatusClassName(aStatus)/]Event;
+[/for]
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsDomainParticipantListener.name.toUpperFirst()/] extends DomainParticipantAdapter {
+	//[protected ('User defined attributes')]
+	//[/protected]
+	
+	[for (aStatus : DomainParticipantStatus | aDdsDomainParticipantListener.listenedStatus)]
+	public void on[getDomainParticipantStatusClassName(aStatus)/]([getDomainParticipantStatusEventName(aStatus)/] event) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]

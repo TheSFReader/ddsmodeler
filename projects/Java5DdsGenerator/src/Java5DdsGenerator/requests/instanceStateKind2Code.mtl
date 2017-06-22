@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module instanceStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getInstanceStateName(arg0 : InstanceStateKind) : String
+	= invoke('Java5DdsGenerator.InstanceStateKind2Code', 'getInstanceStateName(ddsMetamodel.InstanceStateKind)', Sequence{arg0})
+/]
+

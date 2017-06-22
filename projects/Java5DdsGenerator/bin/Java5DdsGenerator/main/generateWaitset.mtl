@@ -1,0 +1,97 @@
+[comment encoding = UTF-8 /]
+[module generateWaitset('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::domainParticipantStatus2Code /]
+[import Java5DdsGenerator::requests::publisherStatus2Code /]
+[import Java5DdsGenerator::requests::dataWriterStatus2Code /]
+[import Java5DdsGenerator::requests::subscriberStatus2Code /]
+[import Java5DdsGenerator::requests::dataReaderStatus2Code /]
+[import Java5DdsGenerator::requests::topicStatus2Code /]
+[import Java5DdsGenerator::requests::sampleStateKind2Code /]
+[import Java5DdsGenerator::requests::viewStateKind2Code /]
+[import Java5DdsGenerator::requests::instanceStateKind2Code /]
+
+
+[template public generateWaitset(aDdsWaitSet : DdsWaitSet)]
+this.[aDdsWaitSet.name/] = WaitSet.newWaitSet(env);
+[for (aStatusCondition : DdsStatusCondition | aDdsWaitSet.statusConditions)]
+[if (aStatusCondition.oclIsTypeOf(DdsDomainParticipantStatusCondition))]
+[let aDPStatusCondition : DdsDomainParticipantStatusCondition = aStatusCondition]
+this.[aDPStatusCondition.domainParticipant.domainParticipantName/]SC = this.[aDPStatusCondition.domainParticipant.domainParticipantName/].getStatusCondition();
+this.[aDPStatusCondition.domainParticipant.domainParticipantName/]SC.setEnabledStatuses([for (aStatus : DomainParticipantStatus | aDPStatusCondition.enabled_status) separator (', ')][getDomainParticipantStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aDPStatusCondition.domainParticipant.domainParticipantName/]SC);
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsPublisherStatusCondition))]
+[let aPubStatusCondition : DdsPublisherStatusCondition = aStatusCondition]
+this.[aPubStatusCondition.publisher.publisherName/]SC = this.[aPubStatusCondition.publisher.publisherName/].getStatusCondition();
+this.[aPubStatusCondition.publisher.publisherName/]SC.setEnabledStatuses([for (aStatus : PublisherStatus | aPubStatusCondition.enabled_status) separator (', ')][getPublisherStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aPubStatusCondition.publisher.publisherName/]SC);
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataWriterStatusCondition))]
+[let aDWStatusCondition : DdsDataWriterStatusCondition = aStatusCondition]
+this.[aDWStatusCondition.dataWriter.dataWriterName/]SC = this.[aDWStatusCondition.dataWriter.dataWriterName/].getStatusCondition();
+this.[aDWStatusCondition.dataWriter.dataWriterName/]SC.setEnabledStatuses([for (aStatus : DataWriterStatus | aDWStatusCondition.enabled_status) separator (', ')][getDataWriterStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aDWStatusCondition.dataWriter.dataWriterName/]SC);
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsSubscriberStatusCondition))]
+[let aSubStatusCondition : DdsSubscriberStatusCondition = aStatusCondition]
+this.[aSubStatusCondition.subscriber.subscriberName/]SC = this.[aSubStatusCondition.subscriber.subscriberName/].getStatusCondition();
+this.[aSubStatusCondition.subscriber.subscriberName/]SC.setEnabledStatuses([for (aStatus : SubscriberStatus | aSubStatusCondition.enabled_status) separator (', ')][getSubscriberStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aSubStatusCondition.subscriber.subscriberName/]SC);
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsDataReaderStatusCondition))]
+[let aDRStatusCondition : DdsDataReaderStatusCondition = aStatusCondition]
+this.[aDRStatusCondition.dataReader.dataReaderName/]SC = this.[aDRStatusCondition.dataReader.dataReaderName/].getStatusCondition();
+this.[aDRStatusCondition.dataReader.dataReaderName/]SC.setEnabledStatuses([for (aStatus : DataReaderStatus | aDRStatusCondition.enabled_status) separator (', ')][getDataReaderStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aDRStatusCondition.dataReader.dataReaderName/]SC);
+[/let]
+[elseif (aStatusCondition.oclIsTypeOf(DdsTopicStatusCondition))]
+[let aTopicStatusCondition : DdsTopicStatusCondition = aStatusCondition]
+this.[aTopicStatusCondition.topic.topicName/]SC = this.[aTopicStatusCondition.topic.topicName/].getStatusCondition();
+this.[aTopicStatusCondition.topic.topicName/]SC.setEnabledStatuses([for (aStatus : TopicStatus | aTopicStatusCondition.enabled_status) separator (', ')][getTopicStatusClassName(aStatus)/]Status.class[/for]);
+this.[aDdsWaitSet.name/].attachCondition(this.[aTopicStatusCondition.topic.topicName/]SC);
+[/let]
+[/if]
+[/for]
+[for (aReadCondition : DdsReadCondition | aDdsWaitSet.readConditions)]
+[if (aReadCondition.oclIsTypeOf(DdsReadCondition))]
+this.[aReadCondition.dataReader.dataReaderName/]RCDS = this.[aReadCondition.dataReader.containingSubscriber.subscriberName/].createDataState();
+this.[aReadCondition.dataReader.dataReaderName/]RCDS = this.[aReadCondition.dataReader.dataReaderName/]RCDS
+	[for (aSampleState : SampleStateKind | aReadCondition.sample_state_mask)]
+	[getSampleStateKindClassName(aSampleState)/]
+	[/for]
+	[for (aViewState : ViewStateKind | aReadCondition.view_state_mask)]
+	[getViewStateCondition(aViewState)/]
+	[/for]
+	[for (anInstanceState : InstanceStateKind | aReadCondition.instance_state_mask)]
+	[getInstanceStateName(anInstanceState)/]
+	[/for];
+this.[aReadCondition.dataReader.dataReaderName/]RC = this.[aReadCondition.dataReader.dataReaderName/].createReadCondition([aReadCondition.dataReader.dataReaderName/]RCDS);
+this.[aDdsWaitSet.name/].attachCondition(this.[aReadCondition.dataReader.dataReaderName/]RC);
+[elseif (aReadCondition.oclIsTypeOf(QueryCondition))]
+[let aQueryCondition : QueryCondition = aReadCondition]
+String [aQueryCondition.dataReader.dataReaderName/]Condition = new String("[aQueryCondition.query/]");
+List<String> [aQueryCondition.dataReader.dataReaderName/]Params = new ArrayList<>();
+[for (value : String | aQueryCondition.queryParameters)]
+[aQueryCondition.dataReader.dataReaderName/]Params.add("[value/]");
+[/for]
+this.[aQueryCondition.dataReader.dataReaderName/]QCDS = this.[aReadCondition.dataReader.containingSubscriber.subscriberName/].createDataState();
+this.[aReadCondition.dataReader.dataReaderName/]QCDS = this.[aReadCondition.dataReader.dataReaderName/]QCDS
+	[for (aSampleState : SampleStateKind | aQueryCondition.sample_state_mask)]
+	[getSampleStateKindClassName(aSampleState)/]
+	[/for]
+	[for (aViewState : ViewStateKind | aQueryCondition.view_state_mask)]
+	[getViewStateCondition(aViewState)/]
+	[/for]
+	[for (anInstanceState : InstanceStateKind | aQueryCondition.instance_state_mask)]
+	[getInstanceStateName(anInstanceState)/]
+	[/for];
+this.[aQueryCondition.dataReader.dataReaderName/]QC = this.[aQueryCondition.dataReader.dataReaderName/].createQueryCondition([aQueryCondition.dataReader.dataReaderName/]QCDS, [aQueryCondition.dataReader.dataReaderName/]Condition, [aQueryCondition.dataReader.dataReaderName/]Params);
+this.[aDdsWaitSet.name/].attachCondition(this.[aQueryCondition.dataReader.dataReaderName/]QC);
+[/let]
+[/if]
+[/for]
+[for (aGuardCondition : GuardCondition | aDdsWaitSet.guardConditions)]
+this.[aGuardCondition.name/] = GuardCondition.newGuardCondition(env);
+this.[aDdsWaitSet.name/].attachCondition(this.[aGuardCondition.name/]);
+[/for]
+[/template]

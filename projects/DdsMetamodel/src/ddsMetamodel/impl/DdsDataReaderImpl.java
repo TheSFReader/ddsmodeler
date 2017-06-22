@@ -6,6 +6,7 @@ import ddsMetamodel.DdsDataReader;
 import ddsMetamodel.DdsDataReaderListener;
 import ddsMetamodel.DdsDataReaderQosProfile;
 import ddsMetamodel.DdsMetamodelPackage;
+import ddsMetamodel.DdsSubscriber;
 import ddsMetamodel.DdsTopic;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link ddsMetamodel.impl.DdsDataReaderImpl#getReadableTopic <em>Readable Topic</em>}</li>
  *   <li>{@link ddsMetamodel.impl.DdsDataReaderImpl#getDataReaderListener <em>Data Reader Listener</em>}</li>
  *   <li>{@link ddsMetamodel.impl.DdsDataReaderImpl#getDataReaderQosProfile <em>Data Reader Qos Profile</em>}</li>
+ *   <li>{@link ddsMetamodel.impl.DdsDataReaderImpl#getContainingSubscriber <em>Containing Subscriber</em>}</li>
  * </ul>
  *
  * @generated
@@ -246,13 +249,86 @@ public class DdsDataReaderImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DdsSubscriber getContainingSubscriber() {
+		if (eContainerFeatureID() != DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER) return null;
+		return (DdsSubscriber)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainingSubscriber(DdsSubscriber newContainingSubscriber, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newContainingSubscriber, DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContainingSubscriber(DdsSubscriber newContainingSubscriber) {
+		if (newContainingSubscriber != eInternalContainer() || (eContainerFeatureID() != DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER && newContainingSubscriber != null)) {
+			if (EcoreUtil.isAncestor(this, newContainingSubscriber))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newContainingSubscriber != null)
+				msgs = ((InternalEObject)newContainingSubscriber).eInverseAdd(this, DdsMetamodelPackage.DDS_SUBSCRIBER__DDSDATAREADER, DdsSubscriber.class, msgs);
+			msgs = basicSetContainingSubscriber(newContainingSubscriber, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER, newContainingSubscriber, newContainingSubscriber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetContainingSubscriber((DdsSubscriber)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case DdsMetamodelPackage.DDS_DATA_READER__DATA_READER_LISTENER:
 				return basicSetDataReaderListener(null, msgs);
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				return basicSetContainingSubscriber(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				return eInternalContainer().eInverseRemove(this, DdsMetamodelPackage.DDS_SUBSCRIBER__DDSDATAREADER, DdsSubscriber.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -273,6 +349,8 @@ public class DdsDataReaderImpl extends MinimalEObjectImpl.Container implements D
 			case DdsMetamodelPackage.DDS_DATA_READER__DATA_READER_QOS_PROFILE:
 				if (resolve) return getDataReaderQosProfile();
 				return basicGetDataReaderQosProfile();
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				return getContainingSubscriber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +376,9 @@ public class DdsDataReaderImpl extends MinimalEObjectImpl.Container implements D
 			case DdsMetamodelPackage.DDS_DATA_READER__DATA_READER_QOS_PROFILE:
 				setDataReaderQosProfile((DdsDataReaderQosProfile)newValue);
 				return;
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				setContainingSubscriber((DdsSubscriber)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,6 +403,9 @@ public class DdsDataReaderImpl extends MinimalEObjectImpl.Container implements D
 			case DdsMetamodelPackage.DDS_DATA_READER__DATA_READER_QOS_PROFILE:
 				setDataReaderQosProfile((DdsDataReaderQosProfile)null);
 				return;
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				setContainingSubscriber((DdsSubscriber)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,6 +426,8 @@ public class DdsDataReaderImpl extends MinimalEObjectImpl.Container implements D
 				return dataReaderListener != null;
 			case DdsMetamodelPackage.DDS_DATA_READER__DATA_READER_QOS_PROFILE:
 				return dataReaderQosProfile != null;
+			case DdsMetamodelPackage.DDS_DATA_READER__CONTAINING_SUBSCRIBER:
+				return getContainingSubscriber() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module publisherStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getPublisherStatusClassName(arg0 : PublisherStatus) : String
+	= invoke('Java5DdsGenerator.PublisherStatus2Code', 'getPublisherStatusClassName(ddsMetamodel.PublisherStatus)', Sequence{arg0})
+/]
+
+[query public getPublisherStatusMethodName(arg0 : PublisherStatus) : String
+	= invoke('Java5DdsGenerator.PublisherStatus2Code', 'getPublisherStatusMethodName(ddsMetamodel.PublisherStatus)', Sequence{arg0})
+/]
+
+[query public getPublisherStatusEventName(arg0 : PublisherStatus) : String
+	= invoke('Java5DdsGenerator.PublisherStatus2Code', 'getPublisherStatusEventName(ddsMetamodel.PublisherStatus)', Sequence{arg0})
+/]
+

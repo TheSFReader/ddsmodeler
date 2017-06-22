@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ddsMetamodel.DdsDataReader#getReadableTopic <em>Readable Topic</em>}</li>
  *   <li>{@link ddsMetamodel.DdsDataReader#getDataReaderListener <em>Data Reader Listener</em>}</li>
  *   <li>{@link ddsMetamodel.DdsDataReader#getDataReaderQosProfile <em>Data Reader Qos Profile</em>}</li>
+ *   <li>{@link ddsMetamodel.DdsDataReader#getContainingSubscriber <em>Containing Subscriber</em>}</li>
  * </ul>
  *
  * @see ddsMetamodel.DdsMetamodelPackage#getDdsDataReader()
@@ -127,5 +128,33 @@ public interface DdsDataReader extends EObject {
 	 * @generated
 	 */
 	void setDataReaderQosProfile(DdsDataReaderQosProfile value);
+
+	/**
+	 * Returns the value of the '<em><b>Containing Subscriber</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link ddsMetamodel.DdsSubscriber#getDdsdatareader <em>Ddsdatareader</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Containing Subscriber</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Containing Subscriber</em>' container reference.
+	 * @see #setContainingSubscriber(DdsSubscriber)
+	 * @see ddsMetamodel.DdsMetamodelPackage#getDdsDataReader_ContainingSubscriber()
+	 * @see ddsMetamodel.DdsSubscriber#getDdsdatareader
+	 * @model opposite="ddsdatareader" required="true" transient="false"
+	 * @generated
+	 */
+	DdsSubscriber getContainingSubscriber();
+
+	/**
+	 * Sets the value of the '{@link ddsMetamodel.DdsDataReader#getContainingSubscriber <em>Containing Subscriber</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Containing Subscriber</em>' container reference.
+	 * @see #getContainingSubscriber()
+	 * @generated
+	 */
+	void setContainingSubscriber(DdsSubscriber value);
 
 } // DdsDataReader

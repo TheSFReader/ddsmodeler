@@ -6,9 +6,9 @@
     </input>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateParticipantListener.emtl#/0"/>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generatePublisherListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataWriterListener.emtl#/0"/>
+    <imports href="generateDataWriterListener.emtl#/0"/>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateSubscriberListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataReaderListener.emtl#/0"/>
+    <imports href="generateDataReaderListener.emtl#/0"/>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateTopicListener.emtl#/0"/>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitset.emtl#/0"/>
     <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitsetDeclaration.emtl#/0"/>
@@ -1433,7 +1433,7 @@
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                     <body xsi:type="mtl:TemplateInvocation">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                      <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataWriterListener.emtl#/0/generateDataWriterListener"/>
+                      <definition href="generateDataWriterListener.emtl#/0/generateDataWriterListener"/>
                       <argument xsi:type="ocl.ecore:PropertyCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataWriterListener"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataWriter" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.14/%.5/aDdsDataWriter">
@@ -2195,7 +2195,7 @@
                     <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                     <body xsi:type="mtl:TemplateInvocation">
                       <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                      <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataReaderListener.emtl#/0/generateDataReaderListener"/>
+                      <definition href="generateDataReaderListener.emtl#/0/generateDataReaderListener"/>
                       <argument xsi:type="ocl.ecore:PropertyCallExp">
                         <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
                         <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataReader" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.15/%.5/aDdsDataReader">
@@ -3036,7 +3036,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataWriterListener.emtl#/0/generateDataWriterListener"/>
+          <references href="generateDataWriterListener.emtl#/0/generateDataWriterListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsDataWriterListener">
@@ -3060,7 +3060,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateDataReaderListener.emtl#/0/generateDataReaderListener"/>
+          <references href="generateDataReaderListener.emtl#/0/generateDataReaderListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsDataReaderListener">

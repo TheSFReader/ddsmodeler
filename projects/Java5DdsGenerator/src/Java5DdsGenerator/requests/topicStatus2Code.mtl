@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module topicStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getTopicStatusClassName(arg0 : TopicStatus) : String
+	= invoke('Java5DdsGenerator.TopicStatus2Code', 'getTopicStatusClassName(ddsMetamodel.TopicStatus)', Sequence{arg0})
+/]
+

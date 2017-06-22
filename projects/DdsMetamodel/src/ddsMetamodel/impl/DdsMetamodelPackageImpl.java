@@ -954,6 +954,15 @@ public class DdsMetamodelPackageImpl extends EPackageImpl implements DdsMetamode
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDdsDataReader_ContainingSubscriber() {
+		return (EReference)ddsDataReaderEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDdsPublisher() {
 		return ddsPublisherEClass;
 	}
@@ -3080,6 +3089,7 @@ public class DdsMetamodelPackageImpl extends EPackageImpl implements DdsMetamode
 		createEReference(ddsDataReaderEClass, DDS_DATA_READER__READABLE_TOPIC);
 		createEReference(ddsDataReaderEClass, DDS_DATA_READER__DATA_READER_LISTENER);
 		createEReference(ddsDataReaderEClass, DDS_DATA_READER__DATA_READER_QOS_PROFILE);
+		createEReference(ddsDataReaderEClass, DDS_DATA_READER__CONTAINING_SUBSCRIBER);
 
 		ddsPublisherEClass = createEClass(DDS_PUBLISHER);
 		createEAttribute(ddsPublisherEClass, DDS_PUBLISHER__PUBLISHER_NAME);
@@ -3435,7 +3445,7 @@ public class DdsMetamodelPackageImpl extends EPackageImpl implements DdsMetamode
 
 		initEClass(ddsSubscriberEClass, DdsSubscriber.class, "DdsSubscriber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDdsSubscriber_SubscriberName(), ecorePackage.getEString(), "subscriberName", null, 0, 1, DdsSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDdsSubscriber_Ddsdatareader(), this.getDdsDataReader(), null, "ddsdatareader", null, 0, -1, DdsSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDdsSubscriber_Ddsdatareader(), this.getDdsDataReader(), this.getDdsDataReader_ContainingSubscriber(), "ddsdatareader", null, 0, -1, DdsSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDdsSubscriber_SubscriberListener(), this.getDdsSubscriberListener(), null, "subscriberListener", null, 0, 1, DdsSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDdsSubscriber_SubscriberQosProfile(), this.getDdsSubscriberQosProfile(), null, "subscriberQosProfile", null, 0, 1, DdsSubscriber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3444,6 +3454,7 @@ public class DdsMetamodelPackageImpl extends EPackageImpl implements DdsMetamode
 		initEReference(getDdsDataReader_ReadableTopic(), this.getDdsTopic(), null, "readableTopic", null, 1, 1, DdsDataReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDdsDataReader_DataReaderListener(), this.getDdsDataReaderListener(), null, "dataReaderListener", null, 0, 1, DdsDataReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDdsDataReader_DataReaderQosProfile(), this.getDdsDataReaderQosProfile(), null, "dataReaderQosProfile", null, 0, 1, DdsDataReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDdsDataReader_ContainingSubscriber(), this.getDdsSubscriber(), this.getDdsSubscriber_Ddsdatareader(), "containingSubscriber", null, 1, 1, DdsDataReader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ddsPublisherEClass, DdsPublisher.class, "DdsPublisher", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDdsPublisher_PublisherName(), ecorePackage.getEString(), "publisherName", null, 0, 1, DdsPublisher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3655,9 +3666,9 @@ public class DdsMetamodelPackageImpl extends EPackageImpl implements DdsMetamode
 		initEReference(getDdsWaitSet_GuardConditions(), this.getGuardCondition(), null, "guardConditions", null, 0, -1, DdsWaitSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ddsReadConditionEClass, DdsReadCondition.class, "DdsReadCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDdsReadCondition_View_state_mask(), this.getViewStateKind(), "view_state_mask", null, 0, 1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDdsReadCondition_Instance_state_mask(), this.getInstanceStateKind(), "instance_state_mask", null, 0, 1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDdsReadCondition_Sample_state_mask(), this.getSampleStateKind(), "sample_state_mask", null, 0, 1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDdsReadCondition_View_state_mask(), this.getViewStateKind(), "view_state_mask", null, 0, -1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDdsReadCondition_Instance_state_mask(), this.getInstanceStateKind(), "instance_state_mask", null, 0, -1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDdsReadCondition_Sample_state_mask(), this.getSampleStateKind(), "sample_state_mask", null, 0, -1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDdsReadCondition_DataReader(), this.getDdsDataReader(), null, "dataReader", null, 0, 1, DdsReadCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ddsStructuredFieldEClass, DdsStructuredField.class, "DdsStructuredField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

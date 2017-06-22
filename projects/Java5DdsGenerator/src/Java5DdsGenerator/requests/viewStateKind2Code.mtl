@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module viewStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getViewStateCondition(arg0 : ViewStateKind) : String
+	= invoke('Java5DdsGenerator.ViewStateKind2Code', 'getViewStateCondition(ddsMetamodel.ViewStateKind)', Sequence{arg0})
+/]
+

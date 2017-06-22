@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module ddsModel2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getModulesHierarchy(arg0 : DdsDataStructure) : Sequence(DdsDataModule)
+	= invoke('Java5DdsGenerator.DdsModel2Code', 'getModulesHierarchy(ddsMetamodel.DdsDataStructure)', Sequence{arg0})
+/]
+

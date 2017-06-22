@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddsMetamodel="http://www.example.org/ddsMetamodel" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_oI3soC9ZEee2dKbp20W0Yw" selectedViews="_EokyAC9bEee2dKbp20W0Yw _EpILoC9bEee2dKbp20W0Yw _EpIysC9bEee2dKbp20W0Yw _EpcUsC9bEee2dKbp20W0Yw" version="11.1.0.201608251200">
+    <semanticResources>DdsTutorial.ddsmetamodel</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_EokyAC9bEee2dKbp20W0Yw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_nlKj0C9zEee2dKbp20W0Yw" name="MessageBoardWaitsetRepresentation" representation="_nlLK4C9zEee2dKbp20W0Yw">
+        <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']"/>
+        <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_YC2hcDMhEeeiavPErnhV1A" name="userLoadWaitsetRepresentation" representation="_YC9PIDMhEeeiavPErnhV1A">
+        <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']"/>
+        <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_EpILoC9bEee2dKbp20W0Yw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_pJ58wC9iEee2dKbp20W0Yw" name="DdsTutorialQosProfiles" representation="_pJ7K4C9iEee2dKbp20W0Yw">
+        <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']"/>
+        <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_EpIysC9bEee2dKbp20W0Yw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_hB_eoC9bEee2dKbp20W0Yw" name="chatDataModel" representation="_hCPWQC9bEee2dKbp20W0Yw">
+        <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']"/>
+        <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_EpcUsC9bEee2dKbp20W0Yw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_1_W5UC9vEee2dKbp20W0Yw" name="ChatApplicationsStructure" representation="_1_ajsC9vEee2dKbp20W0Yw">
+        <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']"/>
+        <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_hCPWQC9bEee2dKbp20W0Yw" name="chatDataModel">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hCRLcC9bEee2dKbp20W0Yw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_hCRLcS9bEee2dKbp20W0Yw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hD_pwC9bEee2dKbp20W0Yw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_hD_pwS9bEee2dKbp20W0Yw" type="Sirius" element="_hCPWQC9bEee2dKbp20W0Yw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_3w8bcC9eEee2dKbp20W0Yw" type="2002" element="_3wa3AC9eEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_3xEXQC9eEee2dKbp20W0Yw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_3xFlYC9eEee2dKbp20W0Yw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_HsO-AC9gEee2dKbp20W0Yw" type="3009" element="_Hr9RMC9gEee2dKbp20W0Yw">
+              <children xmi:type="notation:Node" xmi:id="_HsSBUC9gEee2dKbp20W0Yw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_HsSoYC9gEee2dKbp20W0Yw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_NY3wsC9gEee2dKbp20W0Yw" type="3010" element="_NYdhAC9gEee2dKbp20W0Yw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_NY4XwC9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_NY4XwS9gEee2dKbp20W0Yw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_WQR2QC9gEee2dKbp20W0Yw" type="3010" element="_WP9tMC9gEee2dKbp20W0Yw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_WQR2QS9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_WQR2Qi9gEee2dKbp20W0Yw"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_HsSoYS9gEee2dKbp20W0Yw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_HsSoYi9gEee2dKbp20W0Yw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_HsPlEC9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HsPlES9gEee2dKbp20W0Yw" x="5" y="59"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_s2GzoC9gEee2dKbp20W0Yw" type="3009" element="_s15YQC9gEee2dKbp20W0Yw">
+              <children xmi:type="notation:Node" xmi:id="_s2KeAC9gEee2dKbp20W0Yw" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_s2LsIC9gEee2dKbp20W0Yw" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_uY-UkC9gEee2dKbp20W0Yw" type="3010" element="_uYsnwC9gEee2dKbp20W0Yw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_uY-UkS9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_uY-Uki9gEee2dKbp20W0Yw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9kL6gC9gEee2dKbp20W0Yw" type="3010" element="_9j94EC9gEee2dKbp20W0Yw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9kL6gS9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9kL6gi9gEee2dKbp20W0Yw"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_AFy7oC9hEee2dKbp20W0Yw" type="3010" element="_AFhO0C9hEee2dKbp20W0Yw">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_AFy7oS9hEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_AFy7oi9hEee2dKbp20W0Yw"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_s2LsIS9gEee2dKbp20W0Yw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_s2LsIi9gEee2dKbp20W0Yw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_s2GzoS9gEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s2Gzoi9gEee2dKbp20W0Yw" x="130" y="59"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_3xFlYS9eEee2dKbp20W0Yw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_3xFlYi9eEee2dKbp20W0Yw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_3w8bcS9eEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3w8bci9eEee2dKbp20W0Yw" x="230" y="60"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_hD_pwi9bEee2dKbp20W0Yw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_3wa3AC9eEee2dKbp20W0Yw" name="ChatModule">
+      <target xmi:type="ddsMetamodel:DdsDataModule" href="DdsTutorial.ddsmetamodel#//@dataModules.0"/>
+      <semanticElements xmi:type="ddsMetamodel:DdsDataModule" href="DdsTutorial.ddsmetamodel#//@dataModules.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_3wlPEC9eEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="255,245,181" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Hr9RMC9gEee2dKbp20W0Yw" name="NameService">
+        <target xmi:type="ddsMetamodel:DdsDataStructure" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsDataStructure" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Hr94QC9gEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="253,206,137">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NYdhAC9gEee2dKbp20W0Yw" name="id:long">
+          <target xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0/@fields.0"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0/@fields.0"/>
+          <ownedStyle xmi:type="diagram:CustomStyle" xmi:id="_1RSQMC9gEee2dKbp20W0Yw" showIcon="false" labelPosition="node" id="dataFieldKeyStyle">
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']/@conditionnalStyles.0/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_WP9tMC9gEee2dKbp20W0Yw" name="Name:string">
+          <target xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0/@fields.1"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.0/@fields.1"/>
+          <ownedStyle xmi:type="diagram:CustomStyle" xmi:id="_WQAJcC9gEee2dKbp20W0Yw" showIcon="false" labelPosition="node" id="dataFieldNormalStyle">
+            <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_s15YQC9gEee2dKbp20W0Yw" name="ChatMessage">
+        <target xmi:type="ddsMetamodel:DdsDataStructure" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsDataStructure" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_s15_UC9gEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="253,206,137" foregroundColor="253,206,137">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_uYsnwC9gEee2dKbp20W0Yw" name="senderId:long">
+          <target xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.0"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.0"/>
+          <ownedStyle xmi:type="diagram:CustomStyle" xmi:id="_z58CwC9gEee2dKbp20W0Yw" showIcon="false" labelPosition="node" id="dataFieldKeyStyle">
+            <labelFormat>underline</labelFormat>
+            <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']/@conditionnalStyles.0/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9j94EC9gEee2dKbp20W0Yw" name="messageIndex:long">
+          <target xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.1"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.1"/>
+          <ownedStyle xmi:type="diagram:CustomStyle" xmi:id="_0BpqUDI_EeeaRewE6vHG4A" showIcon="false" labelPosition="node" id="dataFieldNormalStyle">
+            <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_AFhO0C9hEee2dKbp20W0Yw" name="message:string">
+          <target xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.2"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDataField" href="DdsTutorial.ddsmetamodel#//@dataModules.0/@dataStructures.1/@fields.2"/>
+          <ownedStyle xmi:type="diagram:CustomStyle" xmi:id="_AFic8C9hEee2dKbp20W0Yw" showIcon="false" labelPosition="node" id="dataFieldNormalStyle">
+            <description xmi:type="style:CustomStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']/@conditionnalStyles.1/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer/@containerMappings[name='DataModule%20node']/@subContainerMappings[name='DataStructure%20node']/@subNodeMappings[name='DataField%20node']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_hCRLci9bEee2dKbp20W0Yw"/>
+    <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='dataStructures']/@ownedRepresentations[name='dataRepresentation']/@defaultLayer"/>
+    <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+  </diagram:DSemanticDiagram>
+  <tree:DTree xmi:id="_pJ7K4C9iEee2dKbp20W0Yw" name="DdsTutorialQosProfiles">
+    <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Ece9IC9jEee2dKbp20W0Yw" name="TopicQoSProfile: NameServiceQosProfile" expanded="true">
+      <target xmi:type="ddsMetamodel:DdsTopicQosProfile" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_hxnEEC9jEee2dKbp20W0Yw" name="Durability: TRANSIENT_DURABILITY_QOS">
+        <target xmi:type="ddsMetamodel:DdsDurabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0/@durabilityQos"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsDurabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0/@durabilityQos"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_hxnEES9jEee2dKbp20W0Yw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='durabilityQos%20item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_LB-DYC9jEee2dKbp20W0Yw" name="Reliability: RELIABLE_RELIABILITY_QOS" expanded="true">
+        <target xmi:type="ddsMetamodel:DdsReliabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0/@reliabilityQos"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsReliabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0/@reliabilityQos"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_LB-DYS9jEee2dKbp20W0Yw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='reliabilityQos%20item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="ddsMetamodel:DdsTopicQosProfile" href="DdsTutorial.ddsmetamodel#//@qosProfiles.0"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Ece9IS9jEee2dKbp20W0Yw" showIcon="false"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']"/>
+    </ownedTreeItems>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_uZ6oYC9jEee2dKbp20W0Yw" name="TopicQoSProfile: ChatMessageQosProfile" expanded="true">
+      <target xmi:type="ddsMetamodel:DdsTopicQosProfile" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_wZG48C9jEee2dKbp20W0Yw" name="Durability: VOLATILE_DURABILITY_QOS">
+        <target xmi:type="ddsMetamodel:DdsDurabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1/@durabilityQos"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsDurabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1/@durabilityQos"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_wZG48S9jEee2dKbp20W0Yw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='durabilityQos%20item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_xQ6qsC9jEee2dKbp20W0Yw" name="Reliability: RELIABLE_RELIABILITY_QOS" expanded="true">
+        <target xmi:type="ddsMetamodel:DdsReliabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1/@reliabilityQos"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsReliabilityQos" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1/@reliabilityQos"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_xQ6qsS9jEee2dKbp20W0Yw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='reliabilityQos%20item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="ddsMetamodel:DdsTopicQosProfile" href="DdsTutorial.ddsmetamodel#//@qosProfiles.1"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_uZ6oYS9jEee2dKbp20W0Yw" showIcon="false"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']"/>
+  </tree:DTree>
+  <diagram:DSemanticDiagram xmi:id="_1_ajsC9vEee2dKbp20W0Yw" name="ChatApplicationsStructure">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1_ajsS9vEee2dKbp20W0Yw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_1_ajsi9vEee2dKbp20W0Yw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_1_k7wC9vEee2dKbp20W0Yw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_1_k7wS9vEee2dKbp20W0Yw" type="Sirius" element="_1_ajsC9vEee2dKbp20W0Yw" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_7NZEcC9vEee2dKbp20W0Yw" type="2002" element="_7NEUUC9vEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_7NZEcy9vEee2dKbp20W0Yw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_7NZrgC9vEee2dKbp20W0Yw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_JZVlwC9wEee2dKbp20W0Yw" type="3008" element="_JY8kMC9wEee2dKbp20W0Yw">
+              <children xmi:type="notation:Node" xmi:id="_JZWM0C9wEee2dKbp20W0Yw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_JZXa8C9wEee2dKbp20W0Yw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_1YZKgC9wEee2dKbp20W0Yw" type="3008" element="_1X-60C9wEee2dKbp20W0Yw">
+                  <children xmi:type="notation:Node" xmi:id="_1YZxkC9wEee2dKbp20W0Yw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_1YZxkS9wEee2dKbp20W0Yw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_-zyG4C9wEee2dKbp20W0Yw" type="3008" element="_-zek4C9wEee2dKbp20W0Yw">
+                      <children xmi:type="notation:Node" xmi:id="_-zyt8C9wEee2dKbp20W0Yw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_-zyt8S9wEee2dKbp20W0Yw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_-zyt8i9wEee2dKbp20W0Yw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_-zyt8y9wEee2dKbp20W0Yw"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_NiMcEC9xEee2dKbp20W0Yw" type="3012" element="_Nhss0C9xEee2dKbp20W0Yw">
+                        <children xmi:type="notation:Node" xmi:id="_NiNqMC9xEee2dKbp20W0Yw" type="5010">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_NiNqMS9xEee2dKbp20W0Yw" y="5"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_NibsoC9xEee2dKbp20W0Yw" type="3003" element="_NhuiAC9xEee2dKbp20W0Yw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_NibsoS9xEee2dKbp20W0Yw" fontName="Cantarell"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nibsoi9xEee2dKbp20W0Yw"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_NiMcES9xEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NiMcEi9xEee2dKbp20W0Yw" x="10" y="60" width="81" height="46"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_VMWrYC9xEee2dKbp20W0Yw" type="3012" element="_VL8bsC9xEee2dKbp20W0Yw">
+                        <children xmi:type="notation:Node" xmi:id="_VMXScC9xEee2dKbp20W0Yw" type="5010">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_VMXScS9xEee2dKbp20W0Yw" y="5"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_VMZHoC9xEee2dKbp20W0Yw" type="3003" element="_VL8bsS9xEee2dKbp20W0Yw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_VMZHoS9xEee2dKbp20W0Yw" fontName="Cantarell"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VMZHoi9xEee2dKbp20W0Yw"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_VMWrYS9xEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VMWrYi9xEee2dKbp20W0Yw" x="115" y="60" width="76" height="46"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_-zyG4S9wEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-zyG4i9wEee2dKbp20W0Yw" x="15" y="39" width="220"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_1YZxki9wEee2dKbp20W0Yw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_1YZxky9wEee2dKbp20W0Yw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_1YZKgS9wEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8" bold="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1YZKgi9wEee2dKbp20W0Yw" x="20" y="24" height="173"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_JZXa8S9wEee2dKbp20W0Yw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_JZXa8i9wEee2dKbp20W0Yw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_JZVlwS9wEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JZVlwi9wEee2dKbp20W0Yw" x="20" y="29" height="223"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_7NZrgS9vEee2dKbp20W0Yw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_7NZrgi9vEee2dKbp20W0Yw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_7NZEcS9vEee2dKbp20W0Yw" fontColor="16777215" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7NZEci9vEee2dKbp20W0Yw" x="60" y="60" height="278"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_DaBusC9wEee2dKbp20W0Yw" type="2002" element="_DZtloC9wEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_DaC80C9wEee2dKbp20W0Yw" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_DaC80S9wEee2dKbp20W0Yw" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_Q-1XgC9wEee2dKbp20W0Yw" type="3008" element="_Q-bH0C9wEee2dKbp20W0Yw">
+              <children xmi:type="notation:Node" xmi:id="_Q-1Xgy9wEee2dKbp20W0Yw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_Q-1XhC9wEee2dKbp20W0Yw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_5mbmUC9yEee2dKbp20W0Yw" type="3008" element="_5mEZ8C9yEee2dKbp20W0Yw">
+                  <children xmi:type="notation:Node" xmi:id="_5mcNYC9yEee2dKbp20W0Yw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_5mcNYS9yEee2dKbp20W0Yw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_81wpEC9yEee2dKbp20W0Yw" type="3008" element="_81QSwC9yEee2dKbp20W0Yw">
+                      <children xmi:type="notation:Node" xmi:id="_81xQIC9yEee2dKbp20W0Yw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_81xQIS9yEee2dKbp20W0Yw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_81xQIi9yEee2dKbp20W0Yw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_81xQIy9yEee2dKbp20W0Yw"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="__AZUoC9yEee2dKbp20W0Yw" type="3012" element="_-_920C9yEee2dKbp20W0Yw">
+                        <children xmi:type="notation:Node" xmi:id="__AZ7sC9yEee2dKbp20W0Yw" type="5010">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="__AZ7sS9yEee2dKbp20W0Yw" y="5"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="__AZ7si9yEee2dKbp20W0Yw" type="3003" element="__AA6IC9yEee2dKbp20W0Yw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="__AZ7sy9yEee2dKbp20W0Yw" fontName="Cantarell"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__AZ7tC9yEee2dKbp20W0Yw"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="__AZUoS9yEee2dKbp20W0Yw" fontColor="16777215" fontName="Cantarell" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="__AZUoi9yEee2dKbp20W0Yw" x="15" y="60" width="71" height="41"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_DsnMIC9zEee2dKbp20W0Yw" type="3012" element="_DsTDEC9zEee2dKbp20W0Yw">
+                        <children xmi:type="notation:Node" xmi:id="_DsnMIy9zEee2dKbp20W0Yw" type="5010">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_DsnMJC9zEee2dKbp20W0Yw" y="5"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_DsnzMC9zEee2dKbp20W0Yw" type="3003" element="_DsTqIC9zEee2dKbp20W0Yw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_DsnzMS9zEee2dKbp20W0Yw" fontName="Cantarell"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsnzMi9zEee2dKbp20W0Yw"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_DsnMIS9zEee2dKbp20W0Yw" fontColor="16777215" fontName="Cantarell" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DsnMIi9zEee2dKbp20W0Yw" x="95" y="60" width="71" height="41"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_81wpES9yEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_81wpEi9yEee2dKbp20W0Yw" x="5" y="29" width="175"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_5mcNYi9yEee2dKbp20W0Yw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_5mcNYy9yEee2dKbp20W0Yw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_5mbmUS9yEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8" bold="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5mbmUi9yEee2dKbp20W0Yw" x="5" y="16"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Q-1XhS9wEee2dKbp20W0Yw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Q-1Xhi9wEee2dKbp20W0Yw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Q-1XgS9wEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q-1Xgi9wEee2dKbp20W0Yw" x="20" y="24"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Uk5fQC9wEee2dKbp20W0Yw" type="3008" element="_UkiS4C9wEee2dKbp20W0Yw">
+              <children xmi:type="notation:Node" xmi:id="_Uk5fQy9wEee2dKbp20W0Yw" type="5005"/>
+              <children xmi:type="notation:Node" xmi:id="_Uk5fRC9wEee2dKbp20W0Yw" type="7002">
+                <children xmi:type="notation:Node" xmi:id="_Q_45kDDzEeel4ffNTKTkYw" type="3008" element="_Q-7QQDDzEeel4ffNTKTkYw">
+                  <children xmi:type="notation:Node" xmi:id="_RAEfwDDzEeel4ffNTKTkYw" type="5005"/>
+                  <children xmi:type="notation:Node" xmi:id="_RAFG0DDzEeel4ffNTKTkYw" type="7002">
+                    <children xmi:type="notation:Node" xmi:id="_Z_DM8DDzEeel4ffNTKTkYw" type="3008" element="_Z-bh4DDzEeel4ffNTKTkYw">
+                      <children xmi:type="notation:Node" xmi:id="_Z_DM8zDzEeel4ffNTKTkYw" type="5005"/>
+                      <children xmi:type="notation:Node" xmi:id="_Z_DM9DDzEeel4ffNTKTkYw" type="7002">
+                        <styles xmi:type="notation:SortingStyle" xmi:id="_Z_DM9TDzEeel4ffNTKTkYw"/>
+                        <styles xmi:type="notation:FilteringStyle" xmi:id="_Z_DM9jDzEeel4ffNTKTkYw"/>
+                      </children>
+                      <children xmi:type="notation:Node" xmi:id="_eI2T4DDzEeel4ffNTKTkYw" type="3012" element="_eIUvcDDzEeel4ffNTKTkYw">
+                        <children xmi:type="notation:Node" xmi:id="_eI-PsDDzEeel4ffNTKTkYw" type="5010">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_eI-PsTDzEeel4ffNTKTkYw" y="5"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_eJDvQDDzEeel4ffNTKTkYw" type="3003" element="_eIVWgDDzEeel4ffNTKTkYw">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_eJDvQTDzEeel4ffNTKTkYw" fontName="Cantarell"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eJDvQjDzEeel4ffNTKTkYw"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_0fnhkDDzEeel4ffNTKTkYw" type="3012" element="_0fKOkDDzEeel4ffNTKTkYw">
+                          <children xmi:type="notation:Node" xmi:id="_0foIoDDzEeel4ffNTKTkYw" type="5010">
+                            <layoutConstraint xmi:type="notation:Location" xmi:id="_0foIoTDzEeel4ffNTKTkYw" y="5"/>
+                          </children>
+                          <children xmi:type="notation:Node" xmi:id="_0fovsDDzEeel4ffNTKTkYw" type="3002" element="_0fLcsDDzEeel4ffNTKTkYw">
+                            <styles xmi:type="notation:ShapeStyle" xmi:id="_0fovsTDzEeel4ffNTKTkYw" fontName="Cantarell"/>
+                            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0fovsjDzEeel4ffNTKTkYw"/>
+                          </children>
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_0fnhkTDzEeel4ffNTKTkYw" fontName="Cantarell" fontHeight="8"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0fnhkjDzEeel4ffNTKTkYw" x="27" y="31" width="69" height="30"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_eI2T4TDzEeel4ffNTKTkYw" fontColor="16777215" fontName="Cantarell" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eI2T4jDzEeel4ffNTKTkYw" x="16" y="60" width="96" height="39"/>
+                      </children>
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_Z_DM8TDzEeel4ffNTKTkYw" fontName="Cantarell" fontHeight="8"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z_DM8jDzEeel4ffNTKTkYw" x="42" y="43"/>
+                    </children>
+                    <styles xmi:type="notation:SortingStyle" xmi:id="_RAFG0TDzEeel4ffNTKTkYw"/>
+                    <styles xmi:type="notation:FilteringStyle" xmi:id="_RAFG0jDzEeel4ffNTKTkYw"/>
+                  </children>
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_Q_45kTDzEeel4ffNTKTkYw" fontName="Cantarell" fontHeight="8" bold="true"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Q_45kjDzEeel4ffNTKTkYw" x="9" y="17"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_Uk5fRS9wEee2dKbp20W0Yw"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_Uk5fRi9wEee2dKbp20W0Yw"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Uk5fQS9wEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Uk5fQi9wEee2dKbp20W0Yw" x="234" y="17"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_DaC80i9wEee2dKbp20W0Yw"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_DaC80y9wEee2dKbp20W0Yw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_DaBusS9wEee2dKbp20W0Yw" fontColor="16777215" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DaBusi9wEee2dKbp20W0Yw" x="425" y="73" width="465"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_fD7NcC9xEee2dKbp20W0Yw" type="2001" element="_fDZpAC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_fD70gC9xEee2dKbp20W0Yw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_fD70gS9xEee2dKbp20W0Yw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fD9CoC9xEee2dKbp20W0Yw" type="3016" element="_fDa3IC9xEee2dKbp20W0Yw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fD9CoS9xEee2dKbp20W0Yw" fontName="Cantarell"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fD9Coi9xEee2dKbp20W0Yw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_fD7NcS9xEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fD7Nci9xEee2dKbp20W0Yw" x="465" y="478" width="146" height="77"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_1n5JoC9xEee2dKbp20W0Yw" type="2001" element="_1ngIEC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_1n5wsC9xEee2dKbp20W0Yw" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_1n5wsS9xEee2dKbp20W0Yw" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_1n7l4C9xEee2dKbp20W0Yw" type="3016" element="_1ngvIC9xEee2dKbp20W0Yw">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_1n7l4S9xEee2dKbp20W0Yw" fontName="Cantarell"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1n7l4i9xEee2dKbp20W0Yw"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_1n5JoS9xEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1n5Joi9xEee2dKbp20W0Yw" x="405" y="300" width="160" height="78"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_1_k7wi9vEee2dKbp20W0Yw"/>
+        <edges xmi:type="notation:Edge" xmi:id="_A1it0C9yEee2dKbp20W0Yw" type="4001" element="_A0-tIC9yEee2dKbp20W0Yw" source="_NiMcEC9xEee2dKbp20W0Yw" target="_fD7NcC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_A1lKEC9yEee2dKbp20W0Yw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A1lKES9yEee2dKbp20W0Yw" x="1" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_A1lxIC9yEee2dKbp20W0Yw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A1lxIS9yEee2dKbp20W0Yw" x="-1" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_A1qCkC9yEee2dKbp20W0Yw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_A1qCkS9yEee2dKbp20W0Yw" x="-1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_A1it0S9yEee2dKbp20W0Yw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_A1it0i9yEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_A1it0y9yEee2dKbp20W0Yw" points="[0, 0, -260, -229]$[260, 229, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A1se0C9yEee2dKbp20W0Yw" id="(0.8024691358024691,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_A1se0S9yEee2dKbp20W0Yw" id="(0.0,0.35064935064935066)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_BkNxsC9yEee2dKbp20W0Yw" type="4001" element="_Bj3MYC9yEee2dKbp20W0Yw" source="_VMWrYC9xEee2dKbp20W0Yw" target="_1n5JoC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_BkNxtC9yEee2dKbp20W0Yw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkNxtS9yEee2dKbp20W0Yw" x="1" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BkNxti9yEee2dKbp20W0Yw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkNxty9yEee2dKbp20W0Yw" x="-2" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BkNxuC9yEee2dKbp20W0Yw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkNxuS9yEee2dKbp20W0Yw" x="-1" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_BkNxsS9yEee2dKbp20W0Yw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_BkNxsi9yEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BkNxsy9yEee2dKbp20W0Yw" points="[0, 0, -164, -50]$[164, 50, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BkOYwC9yEee2dKbp20W0Yw" id="(1.0,0.43478260869565216)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BkOYwS9yEee2dKbp20W0Yw" id="(0.5,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_JvxocC9zEee2dKbp20W0Yw" type="4001" element="_JvbDIC9zEee2dKbp20W0Yw" source="__AZUoC9yEee2dKbp20W0Yw" target="_1n5JoC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_JvyPgC9zEee2dKbp20W0Yw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JvyPgS9zEee2dKbp20W0Yw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JvyPgi9zEee2dKbp20W0Yw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JvyPgy9zEee2dKbp20W0Yw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_JvyPhC9zEee2dKbp20W0Yw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JvyPhS9zEee2dKbp20W0Yw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_JvxocS9zEee2dKbp20W0Yw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Jvxoci9zEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Jvxocy9zEee2dKbp20W0Yw" points="[0, 0, 10, -39]$[-10, 39, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JvyPhi9zEee2dKbp20W0Yw" id="(0.4225352112676056,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JvyPhy9zEee2dKbp20W0Yw" id="(0.625,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_LCbjIC9zEee2dKbp20W0Yw" type="4001" element="_LCDIoC9zEee2dKbp20W0Yw" source="_DsnMIC9zEee2dKbp20W0Yw" target="_fD7NcC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_LCbjJC9zEee2dKbp20W0Yw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LCbjJS9zEee2dKbp20W0Yw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LCbjJi9zEee2dKbp20W0Yw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LCbjJy9zEee2dKbp20W0Yw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LCbjKC9zEee2dKbp20W0Yw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LCbjKS9zEee2dKbp20W0Yw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_LCbjIS9zEee2dKbp20W0Yw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_LCbjIi9zEee2dKbp20W0Yw" fontName="Cantarell" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LCbjIy9zEee2dKbp20W0Yw" points="[0, 0, 40, -199]$[-40, 199, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LCbjKi9zEee2dKbp20W0Yw" id="(0.4225352112676056,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LCbjKy9zEee2dKbp20W0Yw" id="(0.6164383561643836,-0.23376623376623376)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_jYwuUDDzEeel4ffNTKTkYw" type="4001" element="_jYMGkDDzEeel4ffNTKTkYw" source="_eI2T4DDzEeel4ffNTKTkYw" target="_fD7NcC9xEee2dKbp20W0Yw">
+          <children xmi:type="notation:Node" xmi:id="_jYx8cDDzEeel4ffNTKTkYw" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jYx8cTDzEeel4ffNTKTkYw" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_jY0YsDDzEeel4ffNTKTkYw" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jY0YsTDzEeel4ffNTKTkYw" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_jY0_wDDzEeel4ffNTKTkYw" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jY0_wTDzEeel4ffNTKTkYw" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_jYwuUTDzEeel4ffNTKTkYw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_jYwuUjDzEeel4ffNTKTkYw" fontName="Cantarell" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jYwuUzDzEeel4ffNTKTkYw" points="[-16, 20, 183, -232]$[-164, 245, 35, -7]"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jY1m0DDzEeel4ffNTKTkYw" id="(0.8561643835616438,0.2727272727272727)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_7NEUUC9vEee2dKbp20W0Yw" name="ChatterHost">
+      <target xmi:type="ddsMetamodel:DdsHost" href="DdsTutorial.ddsmetamodel#//@hosts.0"/>
+      <semanticElements xmi:type="ddsMetamodel:DdsHost" href="DdsTutorial.ddsmetamodel#//@hosts.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_7NEUUS9vEee2dKbp20W0Yw" labelColor="255,255,255" borderSize="1" borderSizeComputationExpression="1" backgroundColor="39,76,114" foregroundColor="39,76,114">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_JY8kMC9wEee2dKbp20W0Yw" name="Chatter">
+        <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_JY_ngC9wEee2dKbp20W0Yw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="77,137,20" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_1X-60C9wEee2dKbp20W0Yw" name="&lt;&lt;DomainParticipant>>&#xA;ChatterDomainParticipant">
+          <target xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_1YB-IC9wEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166" foregroundColor="204,242,166">
+            <labelFormat>bold</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-zek4C9wEee2dKbp20W0Yw" name="ChatterPublisher">
+            <target xmi:type="ddsMetamodel:DdsPublisher" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0"/>
+            <semanticElements xmi:type="ddsMetamodel:DdsPublisher" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Nhss0C9xEee2dKbp20W0Yw" name="&lt;&lt;DW>>&#xA;NameServiceDataWriter" outgoingEdges="_A0-tIC9yEee2dKbp20W0Yw" width="3" height="3" resizeKind="NSEW">
+              <target xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.0"/>
+              <semanticElements xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.0"/>
+              <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+              <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+              <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_NhuiAC9xEee2dKbp20W0Yw" showIcon="false" labelPosition="node" color="246,139,139">
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']/@borderedNodeMappings[name='DdsDataWriter%20node']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']/@borderedNodeMappings[name='DdsDataWriter%20node']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_VL8bsC9xEee2dKbp20W0Yw" name="&lt;&lt;DW>>&#xA;ChatMessageDataWriter" outgoingEdges="_Bj3MYC9yEee2dKbp20W0Yw" width="3" height="3" resizeKind="NSEW">
+              <target xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.1"/>
+              <semanticElements xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.1"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_VL8bsS9xEee2dKbp20W0Yw" showIcon="false" labelPosition="node" color="246,139,139">
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']/@borderedNodeMappings[name='DdsDataWriter%20node']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']/@borderedNodeMappings[name='DdsDataWriter%20node']"/>
+            </ownedBorderedNodes>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-zek4S9wEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="194,239,255" foregroundColor="194,239,255">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsPublisher%20node']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_DZtloC9wEee2dKbp20W0Yw" name="ReceiverHost">
+      <target xmi:type="ddsMetamodel:DdsHost" href="DdsTutorial.ddsmetamodel#//@hosts.1"/>
+      <semanticElements xmi:type="ddsMetamodel:DdsHost" href="DdsTutorial.ddsmetamodel#//@hosts.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_DZtloS9wEee2dKbp20W0Yw" labelColor="255,255,255" borderSize="1" borderSizeComputationExpression="1" backgroundColor="39,76,114" foregroundColor="39,76,114">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Q-bH0C9wEee2dKbp20W0Yw" name="MessageBoard">
+        <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Q-bu4C9wEee2dKbp20W0Yw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="77,137,20" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_5mEZ8C9yEee2dKbp20W0Yw" name="&lt;&lt;DomainParticipant>>&#xA;MessageBoardParticipant">
+          <target xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5mFBAC9yEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166" foregroundColor="204,242,166">
+            <labelFormat>bold</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_81QSwC9yEee2dKbp20W0Yw" name="MessageBoardSubscriber">
+            <target xmi:type="ddsMetamodel:DdsSubscriber" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0"/>
+            <semanticElements xmi:type="ddsMetamodel:DdsSubscriber" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-_920C9yEee2dKbp20W0Yw" name="&lt;&lt;DR>>&#xA;ChatMessageDataReader" outgoingEdges="_JvbDIC9zEee2dKbp20W0Yw" width="3" height="3" resizeKind="NSEW">
+              <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+              <semanticElements xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="__AA6IC9yEee2dKbp20W0Yw" showIcon="false" labelColor="255,255,255" labelPosition="node" color="0,0,0">
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']"/>
+            </ownedBorderedNodes>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_DsTDEC9zEee2dKbp20W0Yw" name="&lt;&lt;DR>>&#xA;NameServiceDataReader" outgoingEdges="_LCDIoC9zEee2dKbp20W0Yw" width="3" height="3" resizeKind="NSEW">
+              <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.1"/>
+              <semanticElements xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.1"/>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_DsTqIC9zEee2dKbp20W0Yw" showIcon="false" labelColor="255,255,255" labelPosition="node" color="0,0,0">
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']"/>
+            </ownedBorderedNodes>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_81SH8C9yEee2dKbp20W0Yw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="209,209,209">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_UkiS4C9wEee2dKbp20W0Yw" name="UserLoad">
+        <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_UkiS4S9wEee2dKbp20W0Yw" borderSize="1" borderSizeComputationExpression="1" backgroundColor="77,137,20" foregroundColor="77,137,20">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Q-7QQDDzEeel4ffNTKTkYw" name="&lt;&lt;DomainParticipant>>&#xA;UserLoadParticipant">
+          <target xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0"/>
+          <semanticElements xmi:type="ddsMetamodel:DdsDomainParticipant" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Q--6oDDzEeel4ffNTKTkYw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="204,242,166" foregroundColor="204,242,166">
+            <labelFormat>bold</labelFormat>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Z-bh4DDzEeel4ffNTKTkYw" name="UserLoadSubscriber">
+            <target xmi:type="ddsMetamodel:DdsSubscriber" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0"/>
+            <semanticElements xmi:type="ddsMetamodel:DdsSubscriber" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0"/>
+            <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_eIUvcDDzEeel4ffNTKTkYw" name="&lt;&lt;DR>>&#xA;NameServiceDataReader" outgoingEdges="_jYMGkDDzEeel4ffNTKTkYw" width="3" height="3" resizeKind="NSEW">
+              <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+              <semanticElements xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+              <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_0fKOkDDzEeel4ffNTKTkYw" name="NameServiceDataReaderListener" width="3" height="3" resizeKind="NSEW">
+                <target xmi:type="ddsMetamodel:DdsDataReaderListener" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0/@dataReaderListener"/>
+                <semanticElements xmi:type="ddsMetamodel:DdsDataReaderListener" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0/@dataReaderListener"/>
+                <ownedStyle xmi:type="diagram:Dot" xmi:id="_0fLcsDDzEeel4ffNTKTkYw" showIcon="false" labelPosition="node">
+                  <description xmi:type="style:DotDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']/@borderedNodeMappings[name='DdsDataReaderListener%20node']/@style"/>
+                </ownedStyle>
+                <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']/@borderedNodeMappings[name='DdsDataReaderListener%20node']"/>
+              </ownedBorderedNodes>
+              <ownedStyle xmi:type="diagram:Square" xmi:id="_eIVWgDDzEeel4ffNTKTkYw" showIcon="false" labelColor="255,255,255" labelPosition="node" color="0,0,0">
+                <description xmi:type="style:SquareDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@borderedNodeMappings[name='DdsDataReader%20node']"/>
+            </ownedBorderedNodes>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Z-cwADDzEeel4ffNTKTkYw" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundColor="209,209,209">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@containerMappings[name='DdsHost%20node']/@subContainerMappings[name='DdsApplication%20node']/@subContainerMappings[name='DdsParticipant%20node']/@subContainerMappings[name='DdsSubscriber%20node']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fDZpAC9xEee2dKbp20W0Yw" name="NameServiceTopic" incomingEdges="_A0-tIC9yEee2dKbp20W0Yw _LCDIoC9zEee2dKbp20W0Yw _jYMGkDDzEeel4ffNTKTkYw" width="16" height="16" resizeKind="NSEW">
+      <target xmi:type="ddsMetamodel:DdsTopic" href="DdsTutorial.ddsmetamodel#//@topics.0"/>
+      <semanticElements xmi:type="ddsMetamodel:DdsTopic" href="DdsTutorial.ddsmetamodel#//@topics.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_fDa3IC9xEee2dKbp20W0Yw" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@nodeMappings[name='DdsTopic%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@nodeMappings[name='DdsTopic%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_1ngIEC9xEee2dKbp20W0Yw" name="ChatMessageTopic" incomingEdges="_Bj3MYC9yEee2dKbp20W0Yw _JvbDIC9zEee2dKbp20W0Yw" width="16" height="16" resizeKind="NSEW">
+      <target xmi:type="ddsMetamodel:DdsTopic" href="DdsTutorial.ddsmetamodel#//@topics.1"/>
+      <semanticElements xmi:type="ddsMetamodel:DdsTopic" href="DdsTutorial.ddsmetamodel#//@topics.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_1ngvIC9xEee2dKbp20W0Yw" labelPosition="node" color="217,196,215">
+        <description xmi:type="style:EllipseNodeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@nodeMappings[name='DdsTopic%20node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@nodeMappings[name='DdsTopic%20node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_A0-tIC9yEee2dKbp20W0Yw" sourceNode="_Nhss0C9xEee2dKbp20W0Yw" targetNode="_fDZpAC9xEee2dKbp20W0Yw">
+      <target xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_A1BJYC9yEee2dKbp20W0Yw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicPublication%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_A1BJYS9yEee2dKbp20W0Yw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicPublication%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Bj3MYC9yEee2dKbp20W0Yw" sourceNode="_VL8bsC9xEee2dKbp20W0Yw" targetNode="_1ngIEC9xEee2dKbp20W0Yw">
+      <target xmi:type="ddsMetamodel:DdsDataWriter" href="DdsTutorial.ddsmetamodel#//@hosts.0/@applications.0/@domainParticipants.0/@ddspublisher.0/@ddsdatawriter.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Bj3MYS9yEee2dKbp20W0Yw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicPublication%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Bj3MYi9yEee2dKbp20W0Yw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicPublication%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_JvbDIC9zEee2dKbp20W0Yw" sourceNode="_-_920C9yEee2dKbp20W0Yw" targetNode="_1ngIEC9xEee2dKbp20W0Yw">
+      <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_JvbDIS9zEee2dKbp20W0Yw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_JvbDIi9zEee2dKbp20W0Yw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_LCDIoC9zEee2dKbp20W0Yw" sourceNode="_DsTDEC9zEee2dKbp20W0Yw" targetNode="_fDZpAC9xEee2dKbp20W0Yw">
+      <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_LCIBIC9zEee2dKbp20W0Yw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_LCIBIS9zEee2dKbp20W0Yw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_jYMGkDDzEeel4ffNTKTkYw" sourceNode="_eIUvcDDzEeel4ffNTKTkYw" targetNode="_fDZpAC9xEee2dKbp20W0Yw">
+      <target xmi:type="ddsMetamodel:DdsDataReader" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@domainParticipants.0/@ddssubscriber.0/@ddsdatareader.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_jYNUsDDzEeel4ffNTKTkYw" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_jYNUsTDzEeel4ffNTKTkYw"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer/@edgeMappings[name='topicSubscription%20edge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_1_ajsy9vEee2dKbp20W0Yw"/>
+    <activatedLayers xmi:type="description_2:Layer" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='applicationStructure']/@ownedRepresentations[name='applicationStructureRepresentation']/@defaultLayer"/>
+    <target xmi:type="ddsMetamodel:DdsSystem" href="DdsTutorial.ddsmetamodel#/"/>
+  </diagram:DSemanticDiagram>
+  <tree:DTree xmi:id="_nlLK4C9zEee2dKbp20W0Yw" name="MessageBoardWaitsetRepresentation">
+    <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_tqkb0C9zEee2dKbp20W0Yw" name="MessageBoardWaitset" expanded="true">
+      <target xmi:type="ddsMetamodel:DdsWaitSet" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_tUKSYDDxEeel4ffNTKTkYw" name="Read or QueryCondition on NameServiceDataReader">
+        <target xmi:type="ddsMetamodel:DdsReadCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset/@readConditions.0"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsReadCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset/@readConditions.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_tUKSYTDxEeel4ffNTKTkYw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']/@subItemMappings[name='Waitset%20item']/@subItemMappings[name='ReadCondition%20item']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_v3zeYDDyEeel4ffNTKTkYw" name="Read or QueryCondition on ChatMessageDataReader">
+        <target xmi:type="ddsMetamodel:DdsReadCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset/@readConditions.1"/>
+        <semanticElements xmi:type="ddsMetamodel:DdsReadCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset/@readConditions.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_v3zeYTDyEeel4ffNTKTkYw" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']/@subItemMappings[name='Waitset%20item']/@subItemMappings[name='ReadCondition%20item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="ddsMetamodel:DdsWaitSet" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.0/@waitset"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_tqkb0S9zEee2dKbp20W0Yw"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']/@subItemMappings[name='Waitset%20item']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']"/>
+  </tree:DTree>
+  <tree:DTree xmi:id="_YC9PIDMhEeeiavPErnhV1A" name="userLoadWaitsetRepresentation">
+    <target xmi:type="ddsMetamodel:DdsApplication" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_Y_w1oDMhEeeiavPErnhV1A" name="userLoadWaitset" expanded="true">
+      <target xmi:type="ddsMetamodel:DdsWaitSet" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@waitset"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" xmi:id="_bmwtEDMhEeeiavPErnhV1A" name="GuardCondition userLoadGuard">
+        <target xmi:type="ddsMetamodel:GuardCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@waitset/@guardConditions.0"/>
+        <semanticElements xmi:type="ddsMetamodel:GuardCondition" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@waitset/@guardConditions.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_bmwtETMhEeeiavPErnhV1A" showIcon="false"/>
+        <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']/@subItemMappings[name='Waitset%20item']/@subItemMappings[name='GuardCondition%20item']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="ddsMetamodel:DdsWaitSet" href="DdsTutorial.ddsmetamodel#//@hosts.1/@applications.1/@waitset"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" xmi:id="_Y_w1oTMhEeeiavPErnhV1A"/>
+      <actualMapping xmi:type="description_1:TreeItemMapping" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']/@subItemMappings[name='Waitset%20item']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_1:TreeDescription" href="platform:/plugin/ddsmodeler.design/description/ddsmodeler.odesign#//@ownedViewpoints[name='waitset%20Definitions']/@ownedRepresentations[name='WaitsetTreeRepresentation']"/>
+  </tree:DTree>
+</xmi:XMI>

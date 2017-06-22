@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module sampleStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getSampleStateKindClassName(arg0 : SampleStateKind) : String
+	= invoke('Java5DdsGenerator.SampleStateKind2Code', 'getSampleStateKindClassName(ddsMetamodel.SampleStateKind)', Sequence{arg0})
+/]
+

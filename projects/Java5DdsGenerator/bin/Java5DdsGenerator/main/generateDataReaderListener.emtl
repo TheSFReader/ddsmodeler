@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateDataReaderListener" nsURI="Java5DdsGenerator::main::generateDataReaderListener" startHeaderPosition="29" endHeaderPosition="163">
+    <input>
+      <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
+    </input>
+    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0"/>
+    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateDataReaderListener" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
+        <body xsi:type="ocl.ecore:VariableExp" name="packageName" referredVariable="/0/generateDataReaderListener/packageName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;import org.omg.dds.sub.DataReaderAdapter;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import org.omg.dds.core.event."/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateDataReaderListener/%/%.2/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Event;&#xA;"/>
+          <loopVariable name="aStatus">
+            <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(DataReaderStatus)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataReaderListener" referredVariable="/0/generateDataReaderListener/aDdsDataReaderListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener/listenedStatus"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import "/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDataModule" referredVariable="/0/generateDataReaderListener/%/%.4/aDataModule">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataModule/moduleName"/>
+          </body>
+          <loopVariable name="aDataModule">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+          </loopVariable>
+          <iterSet xsi:type="mtl:QueryInvocation" eType="/9/Sequence(DdsDataModule)">
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateDataReaderListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </argument>
+          </iterSet>
+          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </each>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateDataReaderListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User required imports">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;public class "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataReaderListener" referredVariable="/0/generateDataReaderListener/aDdsDataReaderListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" extends DataReaderAdapter&lt;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateDataReaderListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> {&#xA;&#x9;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined attributes">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;public void on"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateDataReaderListener/%/%.16/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateDataReaderListener/%/%.16/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Event&lt;"/>
+          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateDataReaderListener/dataStructure">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+            </source>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> status) {&#xA;&#x9;&#x9;//"/>
+          <body xsi:type="mtl:ProtectedAreaBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+            <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Method body">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </marker>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;"/>
+          <loopVariable name="aStatus">
+            <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(DataReaderStatus)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataReaderListener" referredVariable="/0/generateDataReaderListener/aDdsDataReaderListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener/listenedStatus"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined methods">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;} &#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="srcPath" referredVariable="/0/generateDataReaderListener/srcPath">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsDataReaderListener" referredVariable="/0/generateDataReaderListener/aDdsDataReaderListener">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener/name"/>
+              </source>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".java">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aDdsDataReaderListener">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+      </parameter>
+      <parameter name="srcPath">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="packageName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="dataStructure">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateDataReaderListener">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateDataReaderListener"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aDdsDataReaderListener">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+        </eParameters>
+        <eParameters name="srcPath">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="packageName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="dataStructure">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getDataReaderStatusClassName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getModulesHierarchy">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsDataReaderListener_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DataReaderStatus_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsDataStructure_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(DataReaderStatus)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(DdsDataModule)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataReaderListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateDataReaderListener">
+      <details key="start" value="221"/>
+      <details key="end" value="1513"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateDataReaderListener/%">
+      <details key="start" value="388"/>
+      <details key="end" value="1501"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateDataReaderListener/%/%">
+      <details key="start" value="488"/>
+      <details key="end" value="496"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateDataReaderListener/%/packageName">
+      <details key="start" value="497"/>
+      <details key="end" value="508"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateDataReaderListener/%/%.1">
+      <details key="start" value="510"/>
+      <details key="end" value="555"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateDataReaderListener/%/%.2">
+      <details key="start" value="555"/>
+      <details key="end" value="713"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateDataReaderListener/%/%.2/%">
+      <details key="start" value="630"/>
+      <details key="end" value="660"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateDataReaderListener/%/%.2/%.1">
+      <details key="start" value="661"/>
+      <details key="end" value="698"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateDataReaderListener/%/%.2/%.1/aStatus">
+      <details key="start" value="690"/>
+      <details key="end" value="697"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateDataReaderListener/%/%.2/%.2">
+      <details key="start" value="700"/>
+      <details key="end" value="707"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateDataReaderListener/%/%.2/aStatus">
+      <details key="start" value="561"/>
+      <details key="end" value="587"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateDataReaderListener/%/%.2/%.3">
+      <details key="start" value="590"/>
+      <details key="end" value="627"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateDataReaderListener/%/%.2/%.3/aDdsDataReaderListener">
+      <details key="start" value="590"/>
+      <details key="end" value="612"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateDataReaderListener/%/%.3">
+      <details key="start" value="714"/>
+      <details key="end" value="721"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateDataReaderListener/%/%.4">
+      <details key="start" value="721"/>
+      <details key="end" value="840"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateDataReaderListener/%/%.4/%">
+      <details key="start" value="810"/>
+      <details key="end" value="832"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateDataReaderListener/%/%.4/%/aDataModule">
+      <details key="start" value="810"/>
+      <details key="end" value="821"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateDataReaderListener/%/%.4/aDataModule">
+      <details key="start" value="727"/>
+      <details key="end" value="754"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateDataReaderListener/%/%.4/%.1">
+      <details key="start" value="757"/>
+      <details key="end" value="791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateDataReaderListener/%/%.4/%.1/dataStructure">
+      <details key="start" value="777"/>
+      <details key="end" value="790"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateDataReaderListener/%/%.4/%.2">
+      <details key="start" value="804"/>
+      <details key="end" value="807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateDataReaderListener/%/%.5">
+      <details key="start" value="840"/>
+      <details key="end" value="841"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateDataReaderListener/%/%.6">
+      <details key="start" value="842"/>
+      <details key="end" value="884"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateDataReaderListener/%/%.6/%">
+      <details key="start" value="842"/>
+      <details key="end" value="869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateDataReaderListener/%/%.6/%/dataStructure">
+      <details key="start" value="842"/>
+      <details key="end" value="855"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateDataReaderListener/%/%.7">
+      <details key="start" value="886"/>
+      <details key="end" value="891"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateDataReaderListener/%/%.8">
+      <details key="start" value="891"/>
+      <details key="end" value="943"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateDataReaderListener/%/%.8/%">
+      <details key="start" value="928"/>
+      <details key="end" value="931"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateDataReaderListener/%/%.8/%.1">
+      <details key="start" value="903"/>
+      <details key="end" value="926"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateDataReaderListener/%/%.9">
+      <details key="start" value="943"/>
+      <details key="end" value="958"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateDataReaderListener/%/%.10">
+      <details key="start" value="959"/>
+      <details key="end" value="1001"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateDataReaderListener/%/%.10/%">
+      <details key="start" value="959"/>
+      <details key="end" value="986"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateDataReaderListener/%/%.10/%/aDdsDataReaderListener">
+      <details key="start" value="959"/>
+      <details key="end" value="981"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateDataReaderListener/%/%.11">
+      <details key="start" value="1003"/>
+      <details key="end" value="1030"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateDataReaderListener/%/%.12">
+      <details key="start" value="1031"/>
+      <details key="end" value="1073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateDataReaderListener/%/%.12/%">
+      <details key="start" value="1031"/>
+      <details key="end" value="1058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateDataReaderListener/%/%.12/%/dataStructure">
+      <details key="start" value="1031"/>
+      <details key="end" value="1044"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateDataReaderListener/%/%.13">
+      <details key="start" value="1075"/>
+      <details key="end" value="1082"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateDataReaderListener/%/%.14">
+      <details key="start" value="1082"/>
+      <details key="end" value="1137"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateDataReaderListener/%/%.14/%">
+      <details key="start" value="1121"/>
+      <details key="end" value="1125"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateDataReaderListener/%/%.14/%.1">
+      <details key="start" value="1094"/>
+      <details key="end" value="1119"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateDataReaderListener/%/%.15">
+      <details key="start" value="1137"/>
+      <details key="end" value="1139"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateDataReaderListener/%/%.16">
+      <details key="start" value="1140"/>
+      <details key="end" value="1433"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateDataReaderListener/%/%.16/%">
+      <details key="start" value="1215"/>
+      <details key="end" value="1230"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateDataReaderListener/%/%.16/%.1">
+      <details key="start" value="1231"/>
+      <details key="end" value="1268"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateDataReaderListener/%/%.16/%.1/aStatus">
+      <details key="start" value="1260"/>
+      <details key="end" value="1267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateDataReaderListener/%/%.16/%.2">
+      <details key="start" value="1270"/>
+      <details key="end" value="1271"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateDataReaderListener/%/%.16/%.3">
+      <details key="start" value="1272"/>
+      <details key="end" value="1309"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateDataReaderListener/%/%.16/%.3/aStatus">
+      <details key="start" value="1301"/>
+      <details key="end" value="1308"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateDataReaderListener/%/%.16/%.4">
+      <details key="start" value="1311"/>
+      <details key="end" value="1317"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateDataReaderListener/%/%.16/%.5">
+      <details key="start" value="1318"/>
+      <details key="end" value="1360"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateDataReaderListener/%/%.16/%.5/%">
+      <details key="start" value="1318"/>
+      <details key="end" value="1345"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateDataReaderListener/%/%.16/%.5/%/dataStructure">
+      <details key="start" value="1318"/>
+      <details key="end" value="1331"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateDataReaderListener/%/%.16/%.6">
+      <details key="start" value="1362"/>
+      <details key="end" value="1378"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateDataReaderListener/%/%.16/%.7">
+      <details key="start" value="1378"/>
+      <details key="end" value="1422"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateDataReaderListener/%/%.16/%.7/%">
+      <details key="start" value="1405"/>
+      <details key="end" value="1410"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateDataReaderListener/%/%.16/%.7/%.1">
+      <details key="start" value="1390"/>
+      <details key="end" value="1403"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateDataReaderListener/%/%.16/%.8">
+      <details key="start" value="1422"/>
+      <details key="end" value="1426"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateDataReaderListener/%/%.16/aStatus">
+      <details key="start" value="1146"/>
+      <details key="end" value="1172"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateDataReaderListener/%/%.16/%.9">
+      <details key="start" value="1175"/>
+      <details key="end" value="1212"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateDataReaderListener/%/%.16/%.9/aDdsDataReaderListener">
+      <details key="start" value="1175"/>
+      <details key="end" value="1197"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateDataReaderListener/%/%.17">
+      <details key="start" value="1434"/>
+      <details key="end" value="1438"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateDataReaderListener/%/%.18">
+      <details key="start" value="1438"/>
+      <details key="end" value="1490"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateDataReaderListener/%/%.18/%">
+      <details key="start" value="1474"/>
+      <details key="end" value="1478"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateDataReaderListener/%/%.18/%.1">
+      <details key="start" value="1450"/>
+      <details key="end" value="1472"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateDataReaderListener/%/%.19">
+      <details key="start" value="1490"/>
+      <details key="end" value="1494"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateDataReaderListener/%/%.20">
+      <details key="start" value="395"/>
+      <details key="end" value="469"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateDataReaderListener/%/%.20/%">
+      <details key="start" value="395"/>
+      <details key="end" value="453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateDataReaderListener/%/%.20/%/srcPath">
+      <details key="start" value="395"/>
+      <details key="end" value="402"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateDataReaderListener/%/%.20/%/%">
+      <details key="start" value="410"/>
+      <details key="end" value="452"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateDataReaderListener/%/%.20/%/%/%">
+      <details key="start" value="410"/>
+      <details key="end" value="437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateDataReaderListener/%/%.20/%/%/%/aDdsDataReaderListener">
+      <details key="start" value="410"/>
+      <details key="end" value="432"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateDataReaderListener/%/%.20/%.1">
+      <details key="start" value="461"/>
+      <details key="end" value="468"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateDataReaderListener/%/%.21">
+      <details key="start" value="478"/>
+      <details key="end" value="485"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateDataReaderListener/aDdsDataReaderListener">
+      <details key="start" value="265"/>
+      <details key="end" value="311"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateDataReaderListener/srcPath">
+      <details key="start" value="313"/>
+      <details key="end" value="329"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateDataReaderListener/packageName">
+      <details key="start" value="331"/>
+      <details key="end" value="351"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateDataReaderListener/dataStructure">
+      <details key="start" value="353"/>
+      <details key="end" value="385"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

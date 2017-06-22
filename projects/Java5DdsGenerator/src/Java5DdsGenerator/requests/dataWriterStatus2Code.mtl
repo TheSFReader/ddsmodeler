@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module dataWriterStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getDataWriterStatusClassName(arg0 : DataWriterStatus) : String
+	= invoke('Java5DdsGenerator.DataWriterStatus2Code', 'getDataWriterStatusClassName(ddsMetamodel.DataWriterStatus)', Sequence{arg0})
+/]
+
+[query public getDataWriterStatusMethodName(arg0 : DataWriterStatus) : String
+	= invoke('Java5DdsGenerator.DataWriterStatus2Code', 'getDataWriterStatusMethodName(ddsMetamodel.DataWriterStatus)', Sequence{arg0})
+/]
+
+[query public getDataWriterStatusEventName(arg0 : DataWriterStatus) : String
+	= invoke('Java5DdsGenerator.DataWriterStatus2Code', 'getDataWriterStatusEventName(ddsMetamodel.DataWriterStatus)', Sequence{arg0})
+/]
+

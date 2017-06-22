@@ -1,0 +1,12 @@
+<dds xmlns="http://www.omg.org/dds/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<qos_profile name="NameServiceQosProfile">
+	<topic_qos>
+		<durability>
+			<kind>TRANSIENT_DURABILITY_QOS</kind>
+		</durability>
+		<reliability>
+			<kind>RELIABLE_RELIABILITY_QOS</kind>
+		</reliability>
+	</topic_qos>
+</qos_profile>
+</dds>

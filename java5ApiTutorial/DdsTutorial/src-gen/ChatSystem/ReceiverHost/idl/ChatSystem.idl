@@ -1,0 +1,19 @@
+module ChatModule {
+
+//Start of user code user defined types
+//End of user code
+
+struct NameService {
+	long id;
+	string Name;
+};
+#pragma keylist NameService id
+
+struct ChatMessage {
+	long senderId;
+	long messageIndex;
+	string message;
+};
+#pragma keylist ChatMessage senderId
+
+};	

@@ -55,6 +55,7 @@ public interface DdsSubscriber extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Ddsdatareader</b></em>' containment reference list.
 	 * The list contents are of type {@link ddsMetamodel.DdsDataReader}.
+	 * It is bidirectional and its opposite is '{@link ddsMetamodel.DdsDataReader#getContainingSubscriber <em>Containing Subscriber</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ddsdatareader</em>' containment reference list isn't clear,
@@ -63,7 +64,8 @@ public interface DdsSubscriber extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ddsdatareader</em>' containment reference list.
 	 * @see ddsMetamodel.DdsMetamodelPackage#getDdsSubscriber_Ddsdatareader()
-	 * @model containment="true"
+	 * @see ddsMetamodel.DdsDataReader#getContainingSubscriber
+	 * @model opposite="containingSubscriber" containment="true"
 	 * @generated
 	 */
 	EList<DdsDataReader> getDdsdatareader();

@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module generatePublisherListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::publisherStatus2Code /]
+
+[template public generatePublisherListener(aDdsPublisherListener : DdsPublisherListener, srcPath : String, packageName : String)]
+[file (srcPath.concat(aDdsPublisherListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.pub.PublisherAdapter;
+[for (aStatus : PublisherStatus | aDdsPublisherListener.listenedStatus)]
+import org.omg.dds.core.event.[getPublisherStatusClassName(aStatus)/]Event;
+[/for]
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsPublisherListener.name.toUpperFirst()/] extends PublisherAdapter {
+	//[protected ('User defined attributes')]
+	//[/protected]
+
+	[for (aStatus : PublisherStatus | aDdsPublisherListener.listenedStatus)]
+	public void on[getPublisherStatusClassName(aStatus)/]([getPublisherStatusClassName(aStatus)/]Event<?> status) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]

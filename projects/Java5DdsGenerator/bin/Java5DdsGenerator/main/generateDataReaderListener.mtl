@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module generateDataReaderListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::dataReaderStatus2Code /]
+[import Java5DdsGenerator::requests::ddsModel2Code /]
+
+[template public generateDataReaderListener(aDdsDataReaderListener : DdsDataReaderListener, srcPath : String, packageName : String, dataStructure : DdsDataStructure)]
+[file (srcPath.concat(aDdsDataReaderListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.sub.DataReaderAdapter;
+[for (aStatus : DataReaderStatus | aDdsDataReaderListener.listenedStatus)]
+import org.omg.dds.core.event.[getDataReaderStatusClassName(aStatus)/]Event;
+[/for]
+import [for (aDataModule : DdsDataModule | getModulesHierarchy(dataStructure)) separator ('.')][aDataModule.moduleName/][/for].[dataStructure.structureName.toUpperFirst()/];
+
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsDataReaderListener.name.toUpperFirst()/] extends DataReaderAdapter<[dataStructure.structureName.toUpperFirst()/]> {
+	//[protected ('User defined attributes')]
+	//[/protected]
+
+	[for (aStatus : DataReaderStatus | aDdsDataReaderListener.listenedStatus)]
+	public void on[getDataReaderStatusClassName(aStatus)/]([getDataReaderStatusClassName(aStatus)/]Event<[dataStructure.structureName.toUpperFirst()/]> status) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateTopicListener" nsURI="Java5DdsGenerator::main::generateTopicListener" startHeaderPosition="29" endHeaderPosition="153">
+    <input>
+      <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
+    </input>
+    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0"/>
+    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateTopicListener" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
+        <body xsi:type="ocl.ecore:VariableExp" name="packageName" referredVariable="/0/generateTopicListener/packageName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;import org.omg.dds.topic.TopicAdapter;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import org.omg.dds.core.event."/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.2/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Event;&#xA;"/>
+          <loopVariable name="aStatus">
+            <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(TopicStatus)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopicListener" referredVariable="/0/generateTopicListener/aDdsTopicListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsTopicListener/listenedStatus"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import "/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDataModule" referredVariable="/0/generateTopicListener/%/%.4/aDataModule">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataModule/moduleName"/>
+          </body>
+          <loopVariable name="aDataModule">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+          </loopVariable>
+          <iterSet xsi:type="mtl:QueryInvocation" eType="/9/Sequence(DdsDataModule)">
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateTopicListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </argument>
+          </iterSet>
+          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </each>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateTopicListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User required imports">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;public class "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopicListener" referredVariable="/0/generateTopicListener/aDdsTopicListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsTopicListener/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" extends TopicAdapter&lt;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateTopicListener/dataStructure">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> {&#xA;&#x9;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined attributes">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;public void on"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.16/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.16/aStatus">
+              <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Event&lt;"/>
+          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateTopicListener/dataStructure">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDataStructure/structureName"/>
+            </source>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> status) {&#xA;&#x9;&#x9;//"/>
+          <body xsi:type="mtl:ProtectedAreaBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
+            <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Method body">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </marker>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;"/>
+          <loopVariable name="aStatus">
+            <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(TopicStatus)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopicListener" referredVariable="/0/generateTopicListener/aDdsTopicListener">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsTopicListener/listenedStatus"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;//"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="User defined methods">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;} &#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="srcPath" referredVariable="/0/generateTopicListener/srcPath">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopicListener" referredVariable="/0/generateTopicListener/aDdsTopicListener">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsTopicListener/name"/>
+              </source>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".java">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aDdsTopicListener">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+      </parameter>
+      <parameter name="srcPath">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="packageName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="dataStructure">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateTopicListener">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateTopicListener"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aDdsTopicListener">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+        </eParameters>
+        <eParameters name="srcPath">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="packageName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="dataStructure">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getTopicStatusClassName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getModulesHierarchy">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsTopicListener_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_TopicStatus_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsDataStructure_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(TopicStatus)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(DdsDataModule)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateTopicListener">
+      <details key="start" value="211"/>
+      <details key="end" value="1433"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateTopicListener/%">
+      <details key="start" value="363"/>
+      <details key="end" value="1421"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateTopicListener/%/%">
+      <details key="start" value="458"/>
+      <details key="end" value="466"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateTopicListener/%/packageName">
+      <details key="start" value="467"/>
+      <details key="end" value="478"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateTopicListener/%/%.1">
+      <details key="start" value="480"/>
+      <details key="end" value="522"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateTopicListener/%/%.2">
+      <details key="start" value="522"/>
+      <details key="end" value="665"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateTopicListener/%/%.2/%">
+      <details key="start" value="587"/>
+      <details key="end" value="617"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateTopicListener/%/%.2/%.1">
+      <details key="start" value="618"/>
+      <details key="end" value="650"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateTopicListener/%/%.2/%.1/aStatus">
+      <details key="start" value="642"/>
+      <details key="end" value="649"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateTopicListener/%/%.2/%.2">
+      <details key="start" value="652"/>
+      <details key="end" value="659"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateTopicListener/%/%.2/aStatus">
+      <details key="start" value="528"/>
+      <details key="end" value="549"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateTopicListener/%/%.2/%.3">
+      <details key="start" value="552"/>
+      <details key="end" value="584"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateTopicListener/%/%.2/%.3/aDdsTopicListener">
+      <details key="start" value="552"/>
+      <details key="end" value="569"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateTopicListener/%/%.3">
+      <details key="start" value="666"/>
+      <details key="end" value="673"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateTopicListener/%/%.4">
+      <details key="start" value="673"/>
+      <details key="end" value="791"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateTopicListener/%/%.4/%">
+      <details key="start" value="761"/>
+      <details key="end" value="783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateTopicListener/%/%.4/%/aDataModule">
+      <details key="start" value="761"/>
+      <details key="end" value="772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateTopicListener/%/%.4/aDataModule">
+      <details key="start" value="679"/>
+      <details key="end" value="706"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateTopicListener/%/%.4/%.1">
+      <details key="start" value="709"/>
+      <details key="end" value="743"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateTopicListener/%/%.4/%.1/dataStructure">
+      <details key="start" value="729"/>
+      <details key="end" value="742"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateTopicListener/%/%.4/%.2">
+      <details key="start" value="755"/>
+      <details key="end" value="758"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateTopicListener/%/%.5">
+      <details key="start" value="791"/>
+      <details key="end" value="792"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateTopicListener/%/%.6">
+      <details key="start" value="793"/>
+      <details key="end" value="835"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateTopicListener/%/%.6/%">
+      <details key="start" value="793"/>
+      <details key="end" value="820"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateTopicListener/%/%.6/%/dataStructure">
+      <details key="start" value="793"/>
+      <details key="end" value="806"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateTopicListener/%/%.7">
+      <details key="start" value="837"/>
+      <details key="end" value="841"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateTopicListener/%/%.8">
+      <details key="start" value="841"/>
+      <details key="end" value="893"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateTopicListener/%/%.8/%">
+      <details key="start" value="878"/>
+      <details key="end" value="881"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateTopicListener/%/%.8/%.1">
+      <details key="start" value="853"/>
+      <details key="end" value="876"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateTopicListener/%/%.9">
+      <details key="start" value="893"/>
+      <details key="end" value="908"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateTopicListener/%/%.10">
+      <details key="start" value="909"/>
+      <details key="end" value="946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateTopicListener/%/%.10/%">
+      <details key="start" value="909"/>
+      <details key="end" value="931"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateTopicListener/%/%.10/%/aDdsTopicListener">
+      <details key="start" value="909"/>
+      <details key="end" value="926"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateTopicListener/%/%.11">
+      <details key="start" value="948"/>
+      <details key="end" value="970"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateTopicListener/%/%.12">
+      <details key="start" value="971"/>
+      <details key="end" value="1013"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateTopicListener/%/%.12/%">
+      <details key="start" value="971"/>
+      <details key="end" value="998"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateTopicListener/%/%.12/%/dataStructure">
+      <details key="start" value="971"/>
+      <details key="end" value="984"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateTopicListener/%/%.13">
+      <details key="start" value="1015"/>
+      <details key="end" value="1022"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateTopicListener/%/%.14">
+      <details key="start" value="1022"/>
+      <details key="end" value="1077"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateTopicListener/%/%.14/%">
+      <details key="start" value="1061"/>
+      <details key="end" value="1065"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateTopicListener/%/%.14/%.1">
+      <details key="start" value="1034"/>
+      <details key="end" value="1059"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateTopicListener/%/%.15">
+      <details key="start" value="1077"/>
+      <details key="end" value="1079"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateTopicListener/%/%.16">
+      <details key="start" value="1080"/>
+      <details key="end" value="1353"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateTopicListener/%/%.16/%">
+      <details key="start" value="1145"/>
+      <details key="end" value="1160"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateTopicListener/%/%.16/%.1">
+      <details key="start" value="1161"/>
+      <details key="end" value="1193"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateTopicListener/%/%.16/%.1/aStatus">
+      <details key="start" value="1185"/>
+      <details key="end" value="1192"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateTopicListener/%/%.16/%.2">
+      <details key="start" value="1195"/>
+      <details key="end" value="1196"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateTopicListener/%/%.16/%.3">
+      <details key="start" value="1197"/>
+      <details key="end" value="1229"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateTopicListener/%/%.16/%.3/aStatus">
+      <details key="start" value="1221"/>
+      <details key="end" value="1228"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateTopicListener/%/%.16/%.4">
+      <details key="start" value="1231"/>
+      <details key="end" value="1237"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateTopicListener/%/%.16/%.5">
+      <details key="start" value="1238"/>
+      <details key="end" value="1280"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateTopicListener/%/%.16/%.5/%">
+      <details key="start" value="1238"/>
+      <details key="end" value="1265"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateTopicListener/%/%.16/%.5/%/dataStructure">
+      <details key="start" value="1238"/>
+      <details key="end" value="1251"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateTopicListener/%/%.16/%.6">
+      <details key="start" value="1282"/>
+      <details key="end" value="1298"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateTopicListener/%/%.16/%.7">
+      <details key="start" value="1298"/>
+      <details key="end" value="1342"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateTopicListener/%/%.16/%.7/%">
+      <details key="start" value="1325"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateTopicListener/%/%.16/%.7/%.1">
+      <details key="start" value="1310"/>
+      <details key="end" value="1323"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateTopicListener/%/%.16/%.8">
+      <details key="start" value="1342"/>
+      <details key="end" value="1346"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateTopicListener/%/%.16/aStatus">
+      <details key="start" value="1086"/>
+      <details key="end" value="1107"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateTopicListener/%/%.16/%.9">
+      <details key="start" value="1110"/>
+      <details key="end" value="1142"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateTopicListener/%/%.16/%.9/aDdsTopicListener">
+      <details key="start" value="1110"/>
+      <details key="end" value="1127"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateTopicListener/%/%.17">
+      <details key="start" value="1354"/>
+      <details key="end" value="1358"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateTopicListener/%/%.18">
+      <details key="start" value="1358"/>
+      <details key="end" value="1410"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateTopicListener/%/%.18/%">
+      <details key="start" value="1394"/>
+      <details key="end" value="1398"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateTopicListener/%/%.18/%.1">
+      <details key="start" value="1370"/>
+      <details key="end" value="1392"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateTopicListener/%/%.19">
+      <details key="start" value="1410"/>
+      <details key="end" value="1414"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateTopicListener/%/%.20">
+      <details key="start" value="370"/>
+      <details key="end" value="439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateTopicListener/%/%.20/%">
+      <details key="start" value="370"/>
+      <details key="end" value="423"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateTopicListener/%/%.20/%/srcPath">
+      <details key="start" value="370"/>
+      <details key="end" value="377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateTopicListener/%/%.20/%/%">
+      <details key="start" value="385"/>
+      <details key="end" value="422"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateTopicListener/%/%.20/%/%/%">
+      <details key="start" value="385"/>
+      <details key="end" value="407"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateTopicListener/%/%.20/%/%/%/aDdsTopicListener">
+      <details key="start" value="385"/>
+      <details key="end" value="402"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateTopicListener/%/%.20/%.1">
+      <details key="start" value="431"/>
+      <details key="end" value="438"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateTopicListener/%/%.21">
+      <details key="start" value="448"/>
+      <details key="end" value="455"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateTopicListener/aDdsTopicListener">
+      <details key="start" value="250"/>
+      <details key="end" value="286"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateTopicListener/srcPath">
+      <details key="start" value="288"/>
+      <details key="end" value="304"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateTopicListener/packageName">
+      <details key="start" value="306"/>
+      <details key="end" value="326"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateTopicListener/dataStructure">
+      <details key="start" value="328"/>
+      <details key="end" value="360"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

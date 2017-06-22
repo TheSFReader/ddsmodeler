@@ -406,13 +406,22 @@ public interface DdsMetamodelPackage extends EPackage {
 	int DDS_DATA_READER__DATA_READER_QOS_PROFILE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Containing Subscriber</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DDS_DATA_READER__CONTAINING_SUBSCRIBER = 4;
+
+	/**
 	 * The number of structural features of the '<em>Dds Data Reader</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DDS_DATA_READER_FEATURE_COUNT = 4;
+	int DDS_DATA_READER_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Dds Data Reader</em>' class.
@@ -2779,7 +2788,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int DDS_READ_CONDITION = 47;
 
 	/**
-	 * The feature id for the '<em><b>View state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>View state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2788,7 +2797,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int DDS_READ_CONDITION__VIEW_STATE_MASK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instance state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>Instance state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2797,7 +2806,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int DDS_READ_CONDITION__INSTANCE_STATE_MASK = 1;
 
 	/**
-	 * The feature id for the '<em><b>Sample state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>Sample state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3283,7 +3292,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int QUERY_CONDITION = 56;
 
 	/**
-	 * The feature id for the '<em><b>View state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>View state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3292,7 +3301,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int QUERY_CONDITION__VIEW_STATE_MASK = DDS_READ_CONDITION__VIEW_STATE_MASK;
 
 	/**
-	 * The feature id for the '<em><b>Instance state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>Instance state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3301,7 +3310,7 @@ public interface DdsMetamodelPackage extends EPackage {
 	int QUERY_CONDITION__INSTANCE_STATE_MASK = DDS_READ_CONDITION__INSTANCE_STATE_MASK;
 
 	/**
-	 * The feature id for the '<em><b>Sample state mask</b></em>' attribute.
+	 * The feature id for the '<em><b>Sample state mask</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3983,6 +3992,17 @@ public interface DdsMetamodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDdsDataReader_DataReaderQosProfile();
+
+	/**
+	 * Returns the meta object for the container reference '{@link ddsMetamodel.DdsDataReader#getContainingSubscriber <em>Containing Subscriber</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Containing Subscriber</em>'.
+	 * @see ddsMetamodel.DdsDataReader#getContainingSubscriber()
+	 * @see #getDdsDataReader()
+	 * @generated
+	 */
+	EReference getDdsDataReader_ContainingSubscriber();
 
 	/**
 	 * Returns the meta object for class '{@link ddsMetamodel.DdsPublisher <em>Dds Publisher</em>}'.
@@ -5802,10 +5822,10 @@ public interface DdsMetamodelPackage extends EPackage {
 	EClass getDdsReadCondition();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ddsMetamodel.DdsReadCondition#getView_state_mask <em>View state mask</em>}'.
+	 * Returns the meta object for the attribute list '{@link ddsMetamodel.DdsReadCondition#getView_state_mask <em>View state mask</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>View state mask</em>'.
+	 * @return the meta object for the attribute list '<em>View state mask</em>'.
 	 * @see ddsMetamodel.DdsReadCondition#getView_state_mask()
 	 * @see #getDdsReadCondition()
 	 * @generated
@@ -5813,10 +5833,10 @@ public interface DdsMetamodelPackage extends EPackage {
 	EAttribute getDdsReadCondition_View_state_mask();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ddsMetamodel.DdsReadCondition#getInstance_state_mask <em>Instance state mask</em>}'.
+	 * Returns the meta object for the attribute list '{@link ddsMetamodel.DdsReadCondition#getInstance_state_mask <em>Instance state mask</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Instance state mask</em>'.
+	 * @return the meta object for the attribute list '<em>Instance state mask</em>'.
 	 * @see ddsMetamodel.DdsReadCondition#getInstance_state_mask()
 	 * @see #getDdsReadCondition()
 	 * @generated
@@ -5824,10 +5844,10 @@ public interface DdsMetamodelPackage extends EPackage {
 	EAttribute getDdsReadCondition_Instance_state_mask();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ddsMetamodel.DdsReadCondition#getSample_state_mask <em>Sample state mask</em>}'.
+	 * Returns the meta object for the attribute list '{@link ddsMetamodel.DdsReadCondition#getSample_state_mask <em>Sample state mask</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sample state mask</em>'.
+	 * @return the meta object for the attribute list '<em>Sample state mask</em>'.
 	 * @see ddsMetamodel.DdsReadCondition#getSample_state_mask()
 	 * @see #getDdsReadCondition()
 	 * @generated
@@ -6701,6 +6721,14 @@ public interface DdsMetamodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DDS_DATA_READER__DATA_READER_QOS_PROFILE = eINSTANCE.getDdsDataReader_DataReaderQosProfile();
+
+		/**
+		 * The meta object literal for the '<em><b>Containing Subscriber</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DDS_DATA_READER__CONTAINING_SUBSCRIBER = eINSTANCE.getDdsDataReader_ContainingSubscriber();
 
 		/**
 		 * The meta object literal for the '{@link ddsMetamodel.impl.DdsPublisherImpl <em>Dds Publisher</em>}' class.
@@ -8139,7 +8167,7 @@ public interface DdsMetamodelPackage extends EPackage {
 		EClass DDS_READ_CONDITION = eINSTANCE.getDdsReadCondition();
 
 		/**
-		 * The meta object literal for the '<em><b>View state mask</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>View state mask</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -8147,7 +8175,7 @@ public interface DdsMetamodelPackage extends EPackage {
 		EAttribute DDS_READ_CONDITION__VIEW_STATE_MASK = eINSTANCE.getDdsReadCondition_View_state_mask();
 
 		/**
-		 * The meta object literal for the '<em><b>Instance state mask</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Instance state mask</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -8155,7 +8183,7 @@ public interface DdsMetamodelPackage extends EPackage {
 		EAttribute DDS_READ_CONDITION__INSTANCE_STATE_MASK = eINSTANCE.getDdsReadCondition_Instance_state_mask();
 
 		/**
-		 * The meta object literal for the '<em><b>Sample state mask</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Sample state mask</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

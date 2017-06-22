@@ -9,13 +9,16 @@ import ddsMetamodel.InstanceStateKind;
 import ddsMetamodel.SampleStateKind;
 import ddsMetamodel.ViewStateKind;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,64 +38,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implements DdsReadCondition {
 	/**
-	 * The default value of the '{@link #getView_state_mask() <em>View state mask</em>}' attribute.
+	 * The cached value of the '{@link #getView_state_mask() <em>View state mask</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getView_state_mask()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ViewStateKind VIEW_STATE_MASK_EDEFAULT = ViewStateKind.NEW_VIEW_STATE;
+	protected EList<ViewStateKind> view_state_mask;
 
 	/**
-	 * The cached value of the '{@link #getView_state_mask() <em>View state mask</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getView_state_mask()
-	 * @generated
-	 * @ordered
-	 */
-	protected ViewStateKind view_state_mask = VIEW_STATE_MASK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getInstance_state_mask() <em>Instance state mask</em>}' attribute.
+	 * The cached value of the '{@link #getInstance_state_mask() <em>Instance state mask</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInstance_state_mask()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final InstanceStateKind INSTANCE_STATE_MASK_EDEFAULT = InstanceStateKind.ALIVE_INSTANCE_STATE;
+	protected EList<InstanceStateKind> instance_state_mask;
 
 	/**
-	 * The cached value of the '{@link #getInstance_state_mask() <em>Instance state mask</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstance_state_mask()
-	 * @generated
-	 * @ordered
-	 */
-	protected InstanceStateKind instance_state_mask = INSTANCE_STATE_MASK_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getSample_state_mask() <em>Sample state mask</em>}' attribute.
+	 * The cached value of the '{@link #getSample_state_mask() <em>Sample state mask</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSample_state_mask()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SampleStateKind SAMPLE_STATE_MASK_EDEFAULT = SampleStateKind.READ_SAMPLE_STATE;
-
-	/**
-	 * The cached value of the '{@link #getSample_state_mask() <em>Sample state mask</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSample_state_mask()
-	 * @generated
-	 * @ordered
-	 */
-	protected SampleStateKind sample_state_mask = SAMPLE_STATE_MASK_EDEFAULT;
+	protected EList<SampleStateKind> sample_state_mask;
 
 	/**
 	 * The cached value of the '{@link #getDataReader() <em>Data Reader</em>}' reference.
@@ -128,7 +101,10 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewStateKind getView_state_mask() {
+	public EList<ViewStateKind> getView_state_mask() {
+		if (view_state_mask == null) {
+			view_state_mask = new EDataTypeUniqueEList<ViewStateKind>(ViewStateKind.class, this, DdsMetamodelPackage.DDS_READ_CONDITION__VIEW_STATE_MASK);
+		}
 		return view_state_mask;
 	}
 
@@ -137,19 +113,10 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setView_state_mask(ViewStateKind newView_state_mask) {
-		ViewStateKind oldView_state_mask = view_state_mask;
-		view_state_mask = newView_state_mask == null ? VIEW_STATE_MASK_EDEFAULT : newView_state_mask;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DdsMetamodelPackage.DDS_READ_CONDITION__VIEW_STATE_MASK, oldView_state_mask, view_state_mask));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public InstanceStateKind getInstance_state_mask() {
+	public EList<InstanceStateKind> getInstance_state_mask() {
+		if (instance_state_mask == null) {
+			instance_state_mask = new EDataTypeUniqueEList<InstanceStateKind>(InstanceStateKind.class, this, DdsMetamodelPackage.DDS_READ_CONDITION__INSTANCE_STATE_MASK);
+		}
 		return instance_state_mask;
 	}
 
@@ -158,32 +125,11 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setInstance_state_mask(InstanceStateKind newInstance_state_mask) {
-		InstanceStateKind oldInstance_state_mask = instance_state_mask;
-		instance_state_mask = newInstance_state_mask == null ? INSTANCE_STATE_MASK_EDEFAULT : newInstance_state_mask;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DdsMetamodelPackage.DDS_READ_CONDITION__INSTANCE_STATE_MASK, oldInstance_state_mask, instance_state_mask));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SampleStateKind getSample_state_mask() {
+	public EList<SampleStateKind> getSample_state_mask() {
+		if (sample_state_mask == null) {
+			sample_state_mask = new EDataTypeUniqueEList<SampleStateKind>(SampleStateKind.class, this, DdsMetamodelPackage.DDS_READ_CONDITION__SAMPLE_STATE_MASK);
+		}
 		return sample_state_mask;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSample_state_mask(SampleStateKind newSample_state_mask) {
-		SampleStateKind oldSample_state_mask = sample_state_mask;
-		sample_state_mask = newSample_state_mask == null ? SAMPLE_STATE_MASK_EDEFAULT : newSample_state_mask;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DdsMetamodelPackage.DDS_READ_CONDITION__SAMPLE_STATE_MASK, oldSample_state_mask, sample_state_mask));
 	}
 
 	/**
@@ -250,17 +196,21 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DdsMetamodelPackage.DDS_READ_CONDITION__VIEW_STATE_MASK:
-				setView_state_mask((ViewStateKind)newValue);
+				getView_state_mask().clear();
+				getView_state_mask().addAll((Collection<? extends ViewStateKind>)newValue);
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__INSTANCE_STATE_MASK:
-				setInstance_state_mask((InstanceStateKind)newValue);
+				getInstance_state_mask().clear();
+				getInstance_state_mask().addAll((Collection<? extends InstanceStateKind>)newValue);
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__SAMPLE_STATE_MASK:
-				setSample_state_mask((SampleStateKind)newValue);
+				getSample_state_mask().clear();
+				getSample_state_mask().addAll((Collection<? extends SampleStateKind>)newValue);
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__DATA_READER:
 				setDataReader((DdsDataReader)newValue);
@@ -278,13 +228,13 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DdsMetamodelPackage.DDS_READ_CONDITION__VIEW_STATE_MASK:
-				setView_state_mask(VIEW_STATE_MASK_EDEFAULT);
+				getView_state_mask().clear();
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__INSTANCE_STATE_MASK:
-				setInstance_state_mask(INSTANCE_STATE_MASK_EDEFAULT);
+				getInstance_state_mask().clear();
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__SAMPLE_STATE_MASK:
-				setSample_state_mask(SAMPLE_STATE_MASK_EDEFAULT);
+				getSample_state_mask().clear();
 				return;
 			case DdsMetamodelPackage.DDS_READ_CONDITION__DATA_READER:
 				setDataReader((DdsDataReader)null);
@@ -302,11 +252,11 @@ public class DdsReadConditionImpl extends MinimalEObjectImpl.Container implement
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case DdsMetamodelPackage.DDS_READ_CONDITION__VIEW_STATE_MASK:
-				return view_state_mask != VIEW_STATE_MASK_EDEFAULT;
+				return view_state_mask != null && !view_state_mask.isEmpty();
 			case DdsMetamodelPackage.DDS_READ_CONDITION__INSTANCE_STATE_MASK:
-				return instance_state_mask != INSTANCE_STATE_MASK_EDEFAULT;
+				return instance_state_mask != null && !instance_state_mask.isEmpty();
 			case DdsMetamodelPackage.DDS_READ_CONDITION__SAMPLE_STATE_MASK:
-				return sample_state_mask != SAMPLE_STATE_MASK_EDEFAULT;
+				return sample_state_mask != null && !sample_state_mask.isEmpty();
 			case DdsMetamodelPackage.DDS_READ_CONDITION__DATA_READER:
 				return dataReader != null;
 		}

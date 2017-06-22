@@ -1,0 +1,272 @@
+[comment encoding = UTF-8 /]
+[module generateJavaCode('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::main::generateWaitsetDeclaration /]
+[import Java5DdsGenerator::requests::domainParticipantStatus2Code /]
+[import Java5DdsGenerator::requests::publisherStatus2Code /]
+[import Java5DdsGenerator::requests::dataWriterStatus2Code /]
+[import Java5DdsGenerator::requests::subscriberStatus2Code /]
+[import Java5DdsGenerator::requests::topicStatus2Code /]
+[import Java5DdsGenerator::requests::dataReaderStatus2Code /]
+[import Java5DdsGenerator::main::generateWaitset /]
+[import Java5DdsGenerator::main::generateParticipantListener /]
+[import Java5DdsGenerator::main::generatePublisherListener /]
+[import Java5DdsGenerator::main::generateDataWriterListener /]
+[import Java5DdsGenerator::main::generateSubscriberListener /]
+[import Java5DdsGenerator::main::generateDataReaderListener /]
+[import Java5DdsGenerator::main::generateTopicListener /]
+[import Java5DdsGenerator::requests::ddsModel2Code /]
+
+[template public generateJavaCode(aDdsSystem : DdsSystem)]
+[for (aDdsHost : DdsHost | aDdsSystem.hosts)]
+[for (aDdsApplication : DdsApplication | aDdsHost.applications)]
+[file (aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/').concat(aDdsApplication.applicationName.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [aDdsApplication.applicationName.toLowerCase()/];
+
+import org.omg.dds.domain.DomainParticipant;
+import org.omg.dds.domain.DomainParticipantQos;
+import org.omg.dds.pub.PublisherQos;
+import org.omg.dds.pub.DataWriterQos;
+import org.omg.dds.sub.SubscriberQos;
+import org.omg.dds.sub.DataReaderQos;
+import org.omg.dds.topic.TopicQos;
+import org.omg.dds.core.ServiceEnvironment;
+import org.omg.dds.domain.DomainParticipantFactory;
+import org.omg.dds.core.QosProvider;
+import java.util.Collection;
+import java.util.HashSet;
+import org.omg.dds.core.status.Status;
+import org.omg.dds.topic.Topic;
+import org.omg.dds.pub.Publisher;
+import org.omg.dds.pub.DataWriter;
+import org.omg.dds.sub.Subscriber;
+import org.omg.dds.sub.DataReader;
+import org.omg.dds.domain.DomainParticipantListener;
+import org.omg.dds.pub.PublisherListener;
+import org.omg.dds.pub.DataWriterListener;
+import org.omg.dds.sub.SubscriberListener;
+import org.omg.dds.sub.DataReaderListener;
+import org.omg.dds.topic.TopicListener;
+[for (aDdsTopic : DdsTopic | aDdsSystem.topics)]
+import [for (aDataModule : DdsDataModule | getModulesHierarchy(aDdsTopic.ddsdatastructure)) separator('.')][aDataModule.moduleName/][/for].[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/];
+[/for]
+import org.omg.dds.core.status.*;
+import org.omg.dds.sub.SampleState;
+import org.omg.dds.sub.ViewState;
+import org.omg.dds.sub.InstanceState;
+import java.util.List;
+import java.util.ArrayList;
+[if (aDdsApplication.waitset <> null)]
+import org.omg.dds.core.WaitSet;
+import org.omg.dds.core.StatusCondition;
+import org.omg.dds.sub.ReadCondition;
+import org.omg.dds.sub.QueryCondition;
+import org.omg.dds.core.GuardCondition;
+[/if]
+//[protected ('User defined imports')]
+//[/protected]
+
+//[protected ('class comments')]
+//[/protected]
+public class [aDdsApplication.applicationName.toUpperFirst()/] {
+
+	[for (aDdsDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+	//Attributes for participant [aDdsDomainParticipant.domainParticipantName/]
+	private ServiceEnvironment env;
+	private DomainParticipant [aDdsDomainParticipant.domainParticipantName/];
+	[for (aDdsPublisher : DdsPublisher | aDdsDomainParticipant.ddspublisher)]
+	private Publisher [aDdsPublisher.publisherName/];
+	[for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter)]
+	private DataWriter<[aDdsDataWriter.publiableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsDataWriter.dataWriterName/];
+	[/for]
+	[/for]
+	[for (aDdsSubscriber : DdsSubscriber | aDdsDomainParticipant.ddssubscriber)]
+	private Subscriber [aDdsSubscriber.subscriberName/];
+	[for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
+	private DataReader<[aDdsDataReader.readableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsDataReader.dataReaderName/];
+	[/for]
+	[/for]
+	[/for]
+	[for (aDdsTopic : DdsTopic | aDdsSystem.topics)]
+	Topic<[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsTopic.topicName/];
+	[/for]
+	[if (aDdsApplication.waitset <> null)]
+	[generateWaitsetDeclaration(aDdsApplication.waitset)/]
+	[/if]
+	// [protected('User defined attributes')]
+	// [/protected]
+
+	public [aDdsApplication.applicationName.toUpperFirst()/]() {
+		System.setProperty(ServiceEnvironment.IMPLEMENTATION_CLASS_NAME_PROPERTY,
+			"org.opensplice.dds.core.OsplServiceEnvironment");
+		this.env = ServiceEnvironment.createInstance([aDdsApplication.applicationName.toUpperFirst()/].class.getClassLoader());
+		DomainParticipantFactory dpf = DomainParticipantFactory.getInstance(env);
+		[for (aDdsDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+		
+		//Initializing DomainParticipant [aDdsDomainParticipant.domainParticipantName/]
+		[if (aDdsDomainParticipant.ddsdomainparticipantqosprofile = null)]
+		DomainParticipantQos [aDdsDomainParticipant.domainParticipantName/]Qos = dpf.getDefaultParticipantQos();
+		[else]
+		QosProvider [aDdsDomainParticipant.domainParticipantName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/].xml", "[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/]", env);
+		DomainParticipantQos [aDdsDomainParticipant.domainParticipantName/]Qos = [aDdsDomainParticipant.domainParticipantName/]QosProvider.getDomainParticipantQos();		
+		[/if]
+		[if (aDdsDomainParticipant.domainParticipantListener <> null)]
+		[generateElement(aDdsDomainParticipant.domainParticipantListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase())/]
+		[aDdsDomainParticipant.domainParticipantListener.name.toUpperFirst()/] [aDdsDomainParticipant.domainParticipantName/]Listener = new [aDdsDomainParticipant.domainParticipantListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsDomainParticipant.domainParticipantName/]Status = new HashSet<>();
+		[for (aDdsParticipantStatus : DomainParticipantStatus | aDdsDomainParticipant.domainParticipantListener.listenedStatus)]
+		[aDdsDomainParticipant.domainParticipantName/]Status.add([getDomainParticipantStatusClassName(aDdsParticipantStatus)/]Status.class);
+		[/for]
+		[else]
+		DomainParticipantListener [aDdsDomainParticipant.domainParticipantName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsDomainParticipant.domainParticipantName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsDomainParticipant.domainParticipantName/] = dpf.createParticipant([aDdsDomainParticipant.domainId/], [aDdsDomainParticipant.domainParticipantName/]Qos, [aDdsDomainParticipant.domainParticipantName/]Listener, [aDdsDomainParticipant.domainParticipantName/]Status);
+		[for (aDdsPublisher : DdsPublisher | aDdsDomainParticipant.ddspublisher)]
+		[if (aDdsPublisher.publisherQosProfile = null)] 
+		PublisherQos [aDdsPublisher.publisherName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultPublisherQos();
+		[else]
+		QosProvider [aDdsPublisher.publisherName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsPublisher.publisherQosProfile.profileName/].xml", "[aDdsPublisher.publisherQosProfile.profileName/]", env);
+		PublisherQos [aDdsPublisher.publisherName/]Qos = [aDdsPublisher.publisherName/]QosProvider.getPublisherQos();
+		[/if]
+		[if (aDdsPublisher.publisherListener <> null)]
+		[generatePublisherListener(aDdsPublisher.publisherListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase())/]
+		[aDdsPublisher.publisherListener.name.toUpperFirst()/] [aDdsPublisher.publisherName/]Listener = new [aDdsPublisher.publisherListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsPublisher.publisherName/]Status = new HashSet<>();
+		[for (aStatus : PublisherStatus | aDdsPublisher.publisherListener.listenedStatus)]
+		[aDdsPublisher.publisherName/]Status.add([getPublisherStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		PublisherListener [aDdsPublisher.publisherName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsPublisher.publisherName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsPublisher.publisherName/] = this.[aDdsDomainParticipant.domainParticipantName/].createPublisher([aDdsPublisher.publisherName/]Qos, [aDdsPublisher.publisherName/]Listener, [aDdsPublisher.publisherName/]Status);
+		[for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter)]
+		[let aDdsTopic : DdsTopic = aDdsDataWriter.publiableTopic]
+		[if (aDdsTopic.topicQosProfile = null)]
+		TopicQos [aDdsTopic.topicName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultTopicQos();
+		[else]
+		QosProvider [aDdsTopic.topicName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsTopic.topicQosProfile.profileName/].xml", "[aDdsTopic.topicQosProfile.profileName/]", env);
+		TopicQos [aDdsTopic.topicName/]Qos = [aDdsTopic.topicName/]QosProvider.getTopicQos();
+		[/if]
+		[if (aDdsTopic.topicListener <> null)]
+		[generateTopicListener(aDdsTopic.topicListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase(), aDdsTopic.ddsdatastructure)/]
+		[aDdsTopic.topicListener.name.toUpperFirst()/] [aDdsTopic.topicName/]Listener = new [aDdsTopic.topicListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsTopic.topicName/]Status = new HashSet<>();
+		[for (aStatus : TopicStatus | aDdsTopic.topicListener.listenedStatus)]
+		[aDdsTopic.topicName/]Status.add([getTopicStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		TopicListener<[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsTopic.topicName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsTopic.topicName/]Status = new HashSet<>();
+		this.[aDdsTopic.topicName/] = this.[aDdsDomainParticipant.domainParticipantName/].createTopic("[aDdsTopic.topicName/]", [aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/].class, [aDdsTopic.topicName/]Qos, [aDdsTopic.topicName/]Listener, [aDdsTopic.topicName/]Status);
+		[/if]
+		[/let]
+		[if (aDdsDataWriter.dataWriterQosProfile = null)]
+		DataWriterQos [aDdsDataWriter.dataWriterName/]Qos = this.[aDdsPublisher.publisherName/].copyFromTopicQos(this.[aDdsPublisher.publisherName/].getDefaultDataWriterQos(), this.[aDdsDataWriter.publiableTopic.topicName/].getQos());
+		[else]
+		QosProvider [aDdsDataWriter.dataWriterName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDataWriter.dataWriterQosProfile.profileName/].xml", "[aDdsDataWriter.dataWriterQosProfile.profileName/]", env);
+		DataWriterQos [aDdsDataWriter.dataWriterName/]Qos = [aDdsDataWriter.dataWriterName/]QosProvider.getDataWriterQos();
+		[/if]
+		[if (aDdsDataWriter.dataWriterListener <> null)]
+		[generateDataWriterListener(aDdsDataWriter.dataWriterListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase(), aDdsDataWriter.publiableTopic.ddsdatastructure)/]
+		[aDdsDataWriter.dataWriterListener.name.toUpperFirst()/] [aDdsDataWriter.dataWriterName/]Listener = new [aDdsDataWriter.dataWriterListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsDataWriter.dataWriterName/]Status = new HashSet<>();
+		[for (aStatus : DataWriterStatus | aDdsDataWriter.dataWriterListener.listenedStatus)]
+		[aDdsDataWriter.dataWriterName/]Status.add([getDataWriterStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		DataWriterListener<[aDdsDataWriter.publiableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsDataWriter.dataWriterName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsDataWriter.dataWriterName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsDataWriter.dataWriterName/] = this.[aDdsPublisher.publisherName/].createDataWriter(this.[aDdsDataWriter.publiableTopic.topicName/], [aDdsDataWriter.dataWriterName/]Qos, [aDdsDataWriter.dataWriterName/]Listener, [aDdsDataWriter.dataWriterName/]Status);
+		[/for]
+		[/for]
+		[for (aDdsSubscriber : DdsSubscriber | aDdsDomainParticipant.ddssubscriber)]
+		[if (aDdsSubscriber.subscriberQosProfile = null)]
+		SubscriberQos [aDdsSubscriber.subscriberName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultSubscriberQos();
+		[else]
+		QosProvider [aDdsSubscriber.subscriberName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsSubscriber.subscriberQosProfile.profileName/].xml", "[aDdsSubscriber.subscriberQosProfile.profileName/]", env);
+		SubscriberQos [aDdsSubscriber.subscriberName/]Qos = [aDdsSubscriber.subscriberName/]QosProvider.getSubscriberQos();
+		[/if]
+		[if (aDdsSubscriber.subscriberListener <> null)]
+		[generateSubscriberListener(aDdsSubscriber.subscriberListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase())/]
+		[aDdsSubscriber.subscriberListener.name.toUpperFirst()/] [aDdsSubscriber.subscriberName/]Listener = new [aDdsSubscriber.subscriberListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsSubscriber.subscriberName/]Status = new HashSet<>();
+		[for (aStatus : SubscriberStatus | aDdsSubscriber.subscriberListener.listenedStatus)]
+		[aDdsSubscriber.subscriberName/]Status.add([getSubscriberStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		SubscriberListener [aDdsSubscriber.subscriberName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsSubscriber.subscriberName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsSubscriber.subscriberName/] = this.[aDdsDomainParticipant.domainParticipantName/].createSubscriber([aDdsSubscriber.subscriberName/]Qos, [aDdsSubscriber.subscriberName/]Listener, [aDdsSubscriber.subscriberName/]Status);
+		[for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
+		[let aDdsTopic : DdsTopic = aDdsDataReader.readableTopic]
+		[if (aDdsTopic.topicQosProfile <> null)]
+		QosProvider [aDdsTopic.topicName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsTopic.topicQosProfile.profileName/].xml", "[aDdsTopic.topicQosProfile.profileName/]", env);
+		TopicQos [aDdsTopic.topicName/]Qos = [aDdsTopic.topicName/]QosProvider.getTopicQos();
+		[else]
+		TopicQos [aDdsTopic.topicName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultTopicQos();
+		[/if]
+		[if (aDdsTopic.topicListener <> null)]
+		[generateTopicListener(aDdsTopic.topicListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase(), aDdsTopic.ddsdatastructure)/]
+		[aDdsTopic.topicListener.name.toUpperFirst()/] [aDdsTopic.topicName/]Listener = new [aDdsTopic.topicListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsTopic.topicName/]Status = new HashSet<>();
+		[for (aStatus : TopicStatus | aDdsTopic.topicListener.listenedStatus)]
+		[aDdsTopic.topicName/]Status.add([getTopicStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		TopicListener<[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsTopic.topicName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsTopic.topicName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsTopic.topicName/] = this.[aDdsDomainParticipant.domainParticipantName/].createTopic("[aDdsTopic.topicName/]", [aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/].class, [aDdsTopic.topicName/]Qos, [aDdsTopic.topicName/]Listener, [aDdsTopic.topicName/]Status);
+		[/let]
+		[if (aDdsDataReader.dataReaderQosProfile <> null)]
+		QosProvider [aDdsDataReader.dataReaderName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDataReader.dataReaderQosProfile.profileName/].xml", "[aDdsDataReader.dataReaderQosProfile.profileName/]", env);
+		DataReaderQos [aDdsDataReader.dataReaderName/]Qos = [aDdsDataReader.dataReaderName/]QosProvider.getDataReaderQos();
+		[else]
+		DataReaderQos [aDdsDataReader.dataReaderName/]Qos = this.[aDdsSubscriber.subscriberName/].copyFromTopicQos(this.[aDdsSubscriber.subscriberName/].getDefaultDataReaderQos(), this.[aDdsDataReader.readableTopic.topicName/].getQos());
+		[/if]
+		[if (aDdsDataReader.dataReaderListener <> null)]
+		[generateDataReaderListener(aDdsDataReader.dataReaderListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase(), aDdsDataReader.readableTopic.ddsdatastructure)/]
+		[aDdsDataReader.dataReaderListener.name.toUpperFirst()/] [aDdsDataReader.dataReaderName/]Listener = new [aDdsDataReader.dataReaderListener.name.toUpperFirst()/]();
+		Collection<Class<? extends Status>> [aDdsDataReader.dataReaderName/]Status = new HashSet<>();
+		[for (aStatus : DataReaderStatus | aDdsDataReader.dataReaderListener.listenedStatus)]
+		[aDdsDataReader.dataReaderName/]Status.add([getDataReaderStatusClassName(aStatus)/]Status.class);
+		[/for]
+		[else]
+		DataReaderListener<[aDdsDataReader.readableTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsDataReader.dataReaderName/]Listener = null;
+		Collection<Class<? extends Status>> [aDdsDataReader.dataReaderName/]Status = new HashSet<>();
+		[/if]
+		this.[aDdsDataReader.dataReaderName/] = this.[aDdsSubscriber.subscriberName/].createDataReader(this.[aDdsDataReader.readableTopic.topicName/], [aDdsDataReader.dataReaderName/]Qos, [aDdsDataReader.dataReaderName/]Listener, [aDdsDataReader.dataReaderName/]Status);
+		[/for]
+		[/for]
+		[/for]
+		
+		[if (aDdsApplication.waitset <> null)]
+		[generateWaitset(aDdsApplication.waitset)/]
+		[/if]
+
+		//[protected ('User attributes initialization')]
+		//[/protected]
+	}
+
+	public void applicationBehavior() {
+		//[protected ('Application behavior')]
+		//[/protected]
+	}
+
+	// [protected('User defined methods')]
+	// [/protected]
+
+	public static void main(String['['/][']'/] args) {
+		[aDdsApplication.applicationName.toUpperFirst()/] application = new [aDdsApplication.applicationName.toUpperFirst()/]();
+		//[protected ('User attribute settings')]
+		//[/protected]
+		application.applicationBehavior();
+	}
+}
+[/file]
+[/for]
+[/for]
+[/template]

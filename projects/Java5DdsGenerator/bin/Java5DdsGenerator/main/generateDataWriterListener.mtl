@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module generateDataWriterListener('http://www.example.org/ddsMetamodel')]
+[import Java5DdsGenerator::requests::dataWriterStatus2Code /]
+[import Java5DdsGenerator::requests::ddsModel2Code /]
+
+[template public generateDataWriterListener(aDdsDataWriterListener : DdsDataWriterListener, srcPath : String, packageName : String, dataStructure : DdsDataStructure)]
+[file (srcPath.concat(aDdsDataWriterListener.name.toUpperFirst()).concat('.java'), false, 'UTF-8')]
+package [packageName/];
+
+import org.omg.dds.pub.DataWriterAdapter;
+import [for (aDataModule : DdsDataModule | getModulesHierarchy(dataStructure)) separator ('.')][aDataModule.moduleName/][/for].[dataStructure.structureName.toUpperFirst()/];
+[for (aStatus : DataWriterStatus | aDdsDataWriterListener.listenedStatus)]
+import org.omg.dds.core.event.[getDataWriterStatusClassName(aStatus)/]Event;
+[/for]
+//[protected ('User required imports')]
+//[/protected]
+
+public class [aDdsDataWriterListener.name.toUpperFirst()/] extends DataWriterAdapter<[dataStructure.structureName.toUpperFirst()/]> {
+	//[protected ('User defined attributes')]
+	//[/protected]
+
+	[for (aStatus : DataWriterStatus | aDdsDataWriterListener.listenedStatus)]
+	public void on[getDataWriterStatusClassName(aStatus)/]([getDataWriterStatusClassName(aStatus)/]Event<[dataStructure.structureName.toUpperFirst()/]> status) {
+		//[protected ('Method body')]
+		//[/protected]
+	}
+	[/for]
+
+	//[protected ('User defined methods')]
+	//[/protected]
+} 
+[/file]
+[/template]
