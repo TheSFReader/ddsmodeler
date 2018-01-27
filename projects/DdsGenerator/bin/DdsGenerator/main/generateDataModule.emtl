@@ -4,7 +4,7 @@
     <input>
       <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
     </input>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0"/>
+    <imports href="../requests/ddsModel2Code.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateDataModule" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="module "/>
       <body xsi:type="ocl.ecore:PropertyCallExp">
@@ -174,7 +174,7 @@
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
               </loopVariable>
               <iterSet xsi:type="mtl:QueryInvocation" eType="/7/Sequence(DdsDataModule)">
-                <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="aStructuredField" referredVariable="/0/generateDataModule/%.7/%.4/aStructuredField">
@@ -240,7 +240,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/7/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aStructuredField" referredVariable="/0/generateDataModule/%.7/%.4/aStructuredField">
@@ -289,7 +289,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/7/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aStructuredField" referredVariable="/0/generateDataModule/%.7/%.4/aStructuredField">
@@ -541,9 +541,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+          <references href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
         <eParameters name="arg0">
           <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
         </eParameters>

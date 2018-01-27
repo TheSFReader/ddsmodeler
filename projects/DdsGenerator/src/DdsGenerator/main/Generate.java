@@ -341,9 +341,6 @@ public class Generate extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(ddsMetamodel.DdsMetamodelPackage.class)) {
-            resourceSet.getPackageRegistry().put(ddsMetamodel.DdsMetamodelPackage.eINSTANCE.getNsURI(), ddsMetamodel.DdsMetamodelPackage.eINSTANCE);
-        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

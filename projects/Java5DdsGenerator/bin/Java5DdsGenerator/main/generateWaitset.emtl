@@ -4,15 +4,15 @@
     <input>
       <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
     </input>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/publisherStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataWriterStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/subscriberStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/sampleStateKind2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/viewStateKind2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/instanceStateKind2Code.emtl#/0"/>
+    <imports href="../requests/domainParticipantStatus2Code.emtl#/0"/>
+    <imports href="../requests/publisherStatus2Code.emtl#/0"/>
+    <imports href="../requests/dataWriterStatus2Code.emtl#/0"/>
+    <imports href="../requests/subscriberStatus2Code.emtl#/0"/>
+    <imports href="../requests/dataReaderStatus2Code.emtl#/0"/>
+    <imports href="../requests/topicStatus2Code.emtl#/0"/>
+    <imports href="../requests/sampleStateKind2Code.emtl#/0"/>
+    <imports href="../requests/viewStateKind2Code.emtl#/0"/>
+    <imports href="../requests/instanceStateKind2Code.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateWaitset" visibility="Public">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="this."/>
       <body xsi:type="ocl.ecore:PropertyCallExp">
@@ -66,7 +66,7 @@
             <body xsi:type="mtl:ForBlock">
               <body xsi:type="mtl:QueryInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
+                <definition href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
                 <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%/%.7/aStatus">
                   <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DomainParticipantStatus"/>
                 </argument>
@@ -165,7 +165,7 @@
               <body xsi:type="mtl:ForBlock">
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/publisherStatus2Code.emtl#/0/getPublisherStatusClassName"/>
+                  <definition href="../requests/publisherStatus2Code.emtl#/0/getPublisherStatusClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%.2/%/%.7/aStatus">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//PublisherStatus"/>
                   </argument>
@@ -265,7 +265,7 @@
               <body xsi:type="mtl:ForBlock">
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataWriterStatus2Code.emtl#/0/getDataWriterStatusClassName"/>
+                  <definition href="../requests/dataWriterStatus2Code.emtl#/0/getDataWriterStatusClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%.3/%/%.7/aStatus">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataWriterStatus"/>
                   </argument>
@@ -365,7 +365,7 @@
               <body xsi:type="mtl:ForBlock">
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/subscriberStatus2Code.emtl#/0/getSubscriberStatusClassName"/>
+                  <definition href="../requests/subscriberStatus2Code.emtl#/0/getSubscriberStatusClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%.4/%/%.7/aStatus">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SubscriberStatus"/>
                   </argument>
@@ -465,7 +465,7 @@
               <body xsi:type="mtl:ForBlock">
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+                  <definition href="../requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%.5/%/%.7/aStatus">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DataReaderStatus"/>
                   </argument>
@@ -565,7 +565,7 @@
               <body xsi:type="mtl:ForBlock">
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+                  <definition href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateWaitset/%.3/%/%.6/%/%.7/aStatus">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
                   </argument>
@@ -693,7 +693,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
+              <definition href="../requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aSampleState" referredVariable="/0/generateWaitset/%.4/%/%.9/aSampleState">
                 <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
               </argument>
@@ -713,7 +713,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
+              <definition href="../requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="aViewState" referredVariable="/0/generateWaitset/%.4/%/%.10/aViewState">
                 <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
               </argument>
@@ -733,7 +733,7 @@
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
             <body xsi:type="mtl:QueryInvocation">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
+              <definition href="../requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
               <argument xsi:type="ocl.ecore:VariableExp" name="anInstanceState" referredVariable="/0/generateWaitset/%.4/%/%.11/anInstanceState">
                 <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
               </argument>
@@ -935,7 +935,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
+                  <definition href="../requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aSampleState" referredVariable="/0/generateWaitset/%.4/%/%.24/%/%.17/aSampleState">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//SampleStateKind"/>
                   </argument>
@@ -955,7 +955,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
+                  <definition href="../requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="aViewState" referredVariable="/0/generateWaitset/%.4/%/%.24/%/%.18/aViewState">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//ViewStateKind"/>
                   </argument>
@@ -975,7 +975,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
                 <body xsi:type="mtl:QueryInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
+                  <definition href="../requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
                   <argument xsi:type="ocl.ecore:VariableExp" name="anInstanceState" referredVariable="/0/generateWaitset/%.4/%/%.24/%/%.19/anInstanceState">
                     <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//InstanceStateKind"/>
                   </argument>
@@ -1177,7 +1177,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
+          <references href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1189,7 +1189,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/publisherStatus2Code.emtl#/0/getPublisherStatusClassName"/>
+          <references href="../requests/publisherStatus2Code.emtl#/0/getPublisherStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1201,7 +1201,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataWriterStatus2Code.emtl#/0/getDataWriterStatusClassName"/>
+          <references href="../requests/dataWriterStatus2Code.emtl#/0/getDataWriterStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1213,7 +1213,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/subscriberStatus2Code.emtl#/0/getSubscriberStatusClassName"/>
+          <references href="../requests/subscriberStatus2Code.emtl#/0/getSubscriberStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1225,7 +1225,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
+          <references href="../requests/dataReaderStatus2Code.emtl#/0/getDataReaderStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1237,7 +1237,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+          <references href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1249,7 +1249,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
+          <references href="../requests/sampleStateKind2Code.emtl#/0/getSampleStateKindClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1261,7 +1261,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
+          <references href="../requests/viewStateKind2Code.emtl#/0/getViewStateCondition"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -1273,7 +1273,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
+          <references href="../requests/instanceStateKind2Code.emtl#/0/getInstanceStateName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">

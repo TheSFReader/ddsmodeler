@@ -4,15 +4,15 @@
     <input>
       <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
     </input>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateParticipantListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generatePublisherListener.emtl#/0"/>
+    <imports href="generateParticipantListener.emtl#/0"/>
+    <imports href="generatePublisherListener.emtl#/0"/>
     <imports href="generateDataWriterListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateSubscriberListener.emtl#/0"/>
+    <imports href="generateSubscriberListener.emtl#/0"/>
     <imports href="generateDataReaderListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateTopicListener.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitset.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitsetDeclaration.emtl#/0"/>
-    <imports href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0"/>
+    <imports href="generateTopicListener.emtl#/0"/>
+    <imports href="generateWaitset.emtl#/0"/>
+    <imports href="generateWaitsetDeclaration.emtl#/0"/>
+    <imports href="../requests/ddsModel2Code.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateJavaCode" visibility="Public">
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="mtl:ForBlock">
@@ -44,7 +44,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -82,7 +82,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -120,7 +120,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -158,7 +158,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -196,7 +196,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -234,7 +234,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -272,7 +272,7 @@
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
                 </loopVariable>
                 <iterSet xsi:type="mtl:QueryInvocation" eType="/6/Sequence(DdsDataModule)">
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+                  <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsTopic" referredVariable="/0/generateJavaCode/%/%/%/%.3/aDdsTopic">
@@ -516,7 +516,7 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
               <body xsi:type="mtl:TemplateInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitsetDeclaration.emtl#/0/generateWaitsetDeclaration"/>
+                <definition href="generateWaitsetDeclaration.emtl#/0/generateWaitsetDeclaration"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsWaitSet"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
@@ -691,7 +691,7 @@
                 <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                 <body xsi:type="mtl:TemplateInvocation">
                   <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateParticipantListener.emtl#/0/generateParticipantListener"/>
+                  <definition href="generateParticipantListener.emtl#/0/generateParticipantListener"/>
                   <argument xsi:type="ocl.ecore:PropertyCallExp">
                     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipantListener"/>
                     <source xsi:type="ocl.ecore:VariableExp" name="aDdsDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.21/aDdsDomainParticipant">
@@ -878,7 +878,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                   <body xsi:type="mtl:TemplateInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generatePublisherListener.emtl#/0/generatePublisherListener"/>
+                    <definition href="generatePublisherListener.emtl#/0/generatePublisherListener"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsPublisherListener"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="aDdsPublisher" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.14/aDdsPublisher">
@@ -1179,7 +1179,7 @@
                       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                       <body xsi:type="mtl:TemplateInvocation">
                         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                        <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateTopicListener.emtl#/0/generateTopicListener"/>
+                        <definition href="generateTopicListener.emtl#/0/generateTopicListener"/>
                         <argument xsi:type="ocl.ecore:PropertyCallExp">
                           <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
                           <source xsi:type="ocl.ecore:VariableExp" name="topic" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.14/%.5/%/topic">
@@ -1640,7 +1640,7 @@
                   <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                   <body xsi:type="mtl:TemplateInvocation">
                     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                    <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateSubscriberListener.emtl#/0/generateSubscriberListener"/>
+                    <definition href="generateSubscriberListener.emtl#/0/generateSubscriberListener"/>
                     <argument xsi:type="ocl.ecore:PropertyCallExp">
                       <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSubscriberListener"/>
                       <source xsi:type="ocl.ecore:VariableExp" name="aDdsSubscriber" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.15/aDdsSubscriber">
@@ -1941,7 +1941,7 @@
                       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".set_listener("/>
                       <body xsi:type="mtl:TemplateInvocation">
                         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                        <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateTopicListener.emtl#/0/generateTopicListener"/>
+                        <definition href="generateTopicListener.emtl#/0/generateTopicListener"/>
                         <argument xsi:type="ocl.ecore:PropertyCallExp">
                           <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsTopicListener"/>
                           <source xsi:type="ocl.ecore:VariableExp" name="topic" referredVariable="/0/generateJavaCode/%/%/%/%.21/%.15/%.5/%/topic">
@@ -2279,7 +2279,7 @@
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
               <body xsi:type="mtl:TemplateInvocation">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitset.emtl#/0/generateWaitset"/>
+                <definition href="generateWaitset.emtl#/0/generateWaitset"/>
                 <argument xsi:type="ocl.ecore:PropertyCallExp">
                   <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsWaitSet"/>
                   <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
@@ -3012,7 +3012,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateParticipantListener.emtl#/0/generateParticipantListener"/>
+          <references href="generateParticipantListener.emtl#/0/generateParticipantListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aListener">
@@ -3024,7 +3024,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generatePublisherListener.emtl#/0/generatePublisherListener"/>
+          <references href="generatePublisherListener.emtl#/0/generatePublisherListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsPublisherListener">
@@ -3048,7 +3048,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateSubscriberListener.emtl#/0/generateSubscriberListener"/>
+          <references href="generateSubscriberListener.emtl#/0/generateSubscriberListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsSubscriberListener">
@@ -3072,7 +3072,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateTopicListener.emtl#/0/generateTopicListener"/>
+          <references href="generateTopicListener.emtl#/0/generateTopicListener"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsTopicListener">
@@ -3084,7 +3084,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitset.emtl#/0/generateWaitset"/>
+          <references href="generateWaitset.emtl#/0/generateWaitset"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsWaitSet">
@@ -3096,7 +3096,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/main/generateWaitsetDeclaration.emtl#/0/generateWaitsetDeclaration"/>
+          <references href="generateWaitsetDeclaration.emtl#/0/generateWaitsetDeclaration"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aDdsWaitSet">
@@ -3108,9 +3108,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+          <references href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/DdsGenerator/bin/DdsGenerator/requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
         <eParameters name="arg0">
           <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
         </eParameters>

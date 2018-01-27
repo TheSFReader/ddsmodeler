@@ -195,7 +195,7 @@ In the next steps a basic knowledge of the use of Eclipse for Java development i
 
 Create a Java project. Right-click on the src directory and choose Import > General > File System. Import the ChatModule and chatter directory that are in the modeling project > src-gen > ChatSystem > ChatterHost > src directory. For the import click on Advanced and choose Create links in folder as shown below.
 
-//Insert import print screen
+![Import source code](images/psStep61ImportFiles.png)
 
 Add the attributes:
 - integer chatterId

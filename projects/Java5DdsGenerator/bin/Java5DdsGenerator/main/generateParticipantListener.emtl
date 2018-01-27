@@ -4,7 +4,7 @@
     <input>
       <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
     </input>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0"/>
+    <imports href="../requests/domainParticipantStatus2Code.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
@@ -16,7 +16,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import org.omg.dds.core.event."/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
+            <definition href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateElement/%/%.2/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DomainParticipantStatus"/>
             </argument>
@@ -62,7 +62,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;public void on"/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
+            <definition href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateElement/%/%.10/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DomainParticipantStatus"/>
             </argument>
@@ -70,7 +70,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusEventName"/>
+            <definition href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusEventName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateElement/%/%.10/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//DomainParticipantStatus"/>
             </argument>
@@ -185,7 +185,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
+          <references href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -197,7 +197,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusEventName"/>
+          <references href="../requests/domainParticipantStatus2Code.emtl#/0/getDomainParticipantStatusEventName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">

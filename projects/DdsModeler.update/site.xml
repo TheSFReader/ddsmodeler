@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/DdsGenerator.feature_1.0.0.201706221857.jar" id="DdsGenerator.feature" version="1.0.0.201706221857">
+   <feature url="features/DdsGenerator.feature_1.0.0.201801271732.jar" id="DdsGenerator.feature" version="1.0.0.201801271732">
       <category name="DdsModeler"/>
    </feature>
-   <feature url="features/DdsModeler.feature_1.0.0.201706221857.jar" id="DdsModeler.feature" version="1.0.0.201706221857">
+   <feature url="features/DdsModeler.feature_1.0.0.201801271732.jar" id="DdsModeler.feature" version="1.0.0.201801271732">
       <category name="DdsModeler"/>
    </feature>
-   <feature url="features/Java5DdsGenerator.feature_1.0.0.201706221857.jar" id="Java5DdsGenerator.feature" version="1.0.0.201706221857">
+   <feature url="features/Java5DdsGenerator.feature_1.0.0.201801271732.jar" id="Java5DdsGenerator.feature" version="1.0.0.201801271732">
       <category name="DdsModeler"/>
    </feature>
    <category-def name="DdsModeler" label="DDS Modeler">

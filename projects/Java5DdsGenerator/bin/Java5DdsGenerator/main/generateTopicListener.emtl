@@ -4,8 +4,8 @@
     <input>
       <takesTypesFrom href="http://www.example.org/ddsMetamodel#/"/>
     </input>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0"/>
-    <imports href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0"/>
+    <imports href="../requests/topicStatus2Code.emtl#/0"/>
+    <imports href="../requests/ddsModel2Code.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateTopicListener" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
@@ -17,7 +17,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import org.omg.dds.core.event."/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <definition href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.2/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
             </argument>
@@ -46,7 +46,7 @@
             <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataModule"/>
           </loopVariable>
           <iterSet xsi:type="mtl:QueryInvocation" eType="/9/Sequence(DdsDataModule)">
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+            <definition href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="dataStructure" referredVariable="/0/generateTopicListener/dataStructure">
               <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
             </argument>
@@ -107,7 +107,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;public void on"/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <definition href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.16/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
             </argument>
@@ -115,7 +115,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
           <body xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+            <definition href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="aStatus" referredVariable="/0/generateTopicListener/%/%.16/aStatus">
               <eType xsi:type="ecore:EEnum" href="http://www.example.org/ddsMetamodel#//TopicStatus"/>
             </argument>
@@ -247,7 +247,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
+          <references href="../requests/topicStatus2Code.emtl#/0/getTopicStatusClassName"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="arg0">
@@ -259,9 +259,9 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
+          <references href="../requests/ddsModel2Code.emtl#/0/getModulesHierarchy"/>
         </eAnnotations>
-        <eType xsi:type="ocl.ecore:SequenceType" href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
+        <eType xsi:type="ocl.ecore:SequenceType" href="../requests/ddsModel2Code.emtl#/3/Sequence(DdsDataModule)"/>
         <eParameters name="arg0">
           <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
         </eParameters>
