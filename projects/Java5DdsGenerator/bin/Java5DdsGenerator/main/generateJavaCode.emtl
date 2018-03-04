@@ -691,36 +691,7 @@
                 </source>
                 <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
               </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Status);&#xA;&#x9;&#x9;"/>
-              <body xsi:type="mtl:TemplateInvocation">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/main/generateDomainParticipant.emtl#/0/generateDomainParticipant"/>
-                <argument xsi:type="ocl.ecore:VariableExp" name="aDdsDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.23/aDdsDomainParticipant">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsHost" referredVariable="/0/generateJavaCode/%/aDdsHost">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsHost"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsHost/hostName"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsApplication/applicationName"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsSystem" referredVariable="/0/generateJavaCode/aDdsSystem">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSystem"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsSystem/systemName"/>
-                </argument>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Status);&#xA;"/>
               <loopVariable name="aDdsDomainParticipant">
                 <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
               </loopVariable>
@@ -731,7 +702,105 @@
                 <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ddsMetamodel#//DdsApplication/domainParticipants"/>
               </iterSet>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;&#x9;&#x9;this.populateApplication();&#xA;&#x9;}&#xA;&#xA;    public "/>
+            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsApplication/applicationName"/>
+              </source>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(ServiceEnvironment env, "/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DomainParticipant param"/>
+              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.27/aDomainParticipant">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
+                </source>
+              </body>
+              <loopVariable name="aDomainParticipant">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(DdsDomainParticipant)">
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ddsMetamodel#//DdsApplication/domainParticipants"/>
+              </iterSet>
+              <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </each>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;&#x9;&#x9;this.env = env;&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;this."/>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.29/aDomainParticipant">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = param"/>
+              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.29/aDomainParticipant">
+                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
+                </source>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+              <loopVariable name="aDomainParticipant">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+              </loopVariable>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(DdsDomainParticipant)">
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ddsMetamodel#//DdsApplication/domainParticipants"/>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;this.populateApplication();&#xA;    }&#xA;&#xA;&#x9;private void populateApplication() {&#xA;&#x9;&#x9;"/>
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/main/generateDomainParticipant.emtl#/0/generateDomainParticipant"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
+                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsHost" referredVariable="/0/generateJavaCode/%/aDdsHost">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsHost"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsHost/hostName"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsApplication/applicationName"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aDdsSystem" referredVariable="/0/generateJavaCode/aDdsSystem">
+                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSystem"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsSystem/systemName"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
             <body xsi:type="mtl:IfBlock">
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
               <body xsi:type="mtl:TemplateInvocation">
@@ -768,102 +837,7 @@
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               </marker>
             </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;    public "/>
-            <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-                </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsApplication/applicationName"/>
-              </source>
-            </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(ServiceEnvironment env, "/>
-            <body xsi:type="mtl:ForBlock">
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DomainParticipant param"/>
-              <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/toUpperFirst">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.31/aDomainParticipant">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
-                </source>
-              </body>
-              <loopVariable name="aDomainParticipant">
-                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-              </loopVariable>
-              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(DdsDomainParticipant)">
-                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-                </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ddsMetamodel#//DdsApplication/domainParticipants"/>
-              </iterSet>
-              <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              </each>
-            </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;&#x9;&#x9;this.env = env;&#xA;"/>
-            <body xsi:type="mtl:ForBlock">
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;this."/>
-              <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.33/aDomainParticipant">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-                </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = param"/>
-              <body xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.33/aDomainParticipant">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-                </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant/domainParticipantName"/>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#x9;&#x9;"/>
-              <body xsi:type="mtl:TemplateInvocation">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <definition href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/main/generateDomainParticipant.emtl#/0/generateDomainParticipant"/>
-                <argument xsi:type="ocl.ecore:VariableExp" name="aDomainParticipant" referredVariable="/0/generateJavaCode/%/%/%/%.33/aDomainParticipant">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsHost" referredVariable="/0/generateJavaCode/%/aDdsHost">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsHost"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsHost/hostName"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsApplication/applicationName"/>
-                </argument>
-                <argument xsi:type="ocl.ecore:PropertyCallExp">
-                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                  <source xsi:type="ocl.ecore:VariableExp" name="aDdsSystem" referredVariable="/0/generateJavaCode/aDdsSystem">
-                    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsSystem"/>
-                  </source>
-                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ddsMetamodel#//DdsSystem/systemName"/>
-                </argument>
-              </body>
-              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-              <loopVariable name="aDomainParticipant">
-                <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-              </loopVariable>
-              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/6/OrderedSet(DdsDomainParticipant)">
-                <source xsi:type="ocl.ecore:VariableExp" name="aDdsApplication" referredVariable="/0/generateJavaCode/%/%/aDdsApplication">
-                  <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-                </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ddsMetamodel#//DdsApplication/domainParticipants"/>
-              </iterSet>
-            </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    }&#xA;&#xA;&#x9;public void applicationBehavior() {&#xA;&#x9;&#x9;//"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;}&#xA;&#xA;&#x9;public void applicationBehavior() {&#xA;&#x9;&#x9;//"/>
             <body xsi:type="mtl:ProtectedAreaBlock">
               <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;//"/>
               <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Application behavior">
@@ -1126,8 +1100,8 @@
           <references href="platform:/resource/Java5DdsGenerator/bin/Java5DdsGenerator/main/generateDomainParticipant.emtl#/0/generateDomainParticipant"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="aDdsDomainParticipant">
-          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+        <eParameters name="aDdsApplication">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
         </eParameters>
         <eParameters name="hostName">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -1235,9 +1209,9 @@
         <references href="http://www.example.org/ddsMetamodel#//DdsDataStructure"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsDomainParticipant_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="ddsMetamodel_DdsApplication_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
+        <references href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
@@ -1556,22 +1530,10 @@
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
@@ -1607,13 +1569,22 @@
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsDomainParticipant"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.example.org/ddsMetamodel#//DdsApplication"/>
@@ -1654,22 +1625,22 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generateJavaCode">
       <details key="start" value="1072"/>
-      <details key="end" value="8626"/>
+      <details key="end" value="8613"/>
       <details key="line" value="20"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateJavaCode/%">
       <details key="start" value="1131"/>
-      <details key="end" value="8614"/>
+      <details key="end" value="8601"/>
       <details key="line" value="21"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateJavaCode/%/%">
       <details key="start" value="1177"/>
-      <details key="end" value="8607"/>
+      <details key="end" value="8594"/>
       <details key="line" value="22"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateJavaCode/%/%/%">
       <details key="start" value="1242"/>
-      <details key="end" value="8600"/>
+      <details key="end" value="8587"/>
       <details key="line" value="23"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateJavaCode/%/%/%/%">
@@ -2349,7 +2320,7 @@
     </eAnnotations>
     <eAnnotations source="positions.139" references="/0/generateJavaCode/%/%/%/%.23">
       <details key="start" value="5020"/>
-      <details key="end" value="7356"/>
+      <details key="end" value="7227"/>
       <details key="line" value="104"/>
     </eAnnotations>
     <eAnnotations source="positions.140" references="/0/generateJavaCode/%/%/%/%.23/%">
@@ -2909,580 +2880,540 @@
     </eAnnotations>
     <eAnnotations source="positions.251" references="/0/generateJavaCode/%/%/%/%.23/%.15">
       <details key="start" value="7210"/>
-      <details key="end" value="7221"/>
+      <details key="end" value="7219"/>
       <details key="line" value="124"/>
     </eAnnotations>
-    <eAnnotations source="positions.252" references="/0/generateJavaCode/%/%/%/%.23/%.16">
-      <details key="start" value="7222"/>
-      <details key="end" value="7345"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.253" references="/0/generateJavaCode/%/%/%/%.23/%.16/aDdsDomainParticipant">
-      <details key="start" value="7248"/>
-      <details key="end" value="7269"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.254" references="/0/generateJavaCode/%/%/%/%.23/%.16/%">
-      <details key="start" value="7271"/>
-      <details key="end" value="7288"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.255" references="/0/generateJavaCode/%/%/%/%.23/%.16/%/aDdsHost">
-      <details key="start" value="7271"/>
-      <details key="end" value="7279"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.256" references="/0/generateJavaCode/%/%/%/%.23/%.16/%.1">
-      <details key="start" value="7290"/>
-      <details key="end" value="7321"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.257" references="/0/generateJavaCode/%/%/%/%.23/%.16/%.1/aDdsApplication">
-      <details key="start" value="7290"/>
-      <details key="end" value="7305"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.258" references="/0/generateJavaCode/%/%/%/%.23/%.16/%.2">
-      <details key="start" value="7323"/>
-      <details key="end" value="7344"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.259" references="/0/generateJavaCode/%/%/%/%.23/%.16/%.2/aDdsSystem">
-      <details key="start" value="7323"/>
-      <details key="end" value="7333"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.260" references="/0/generateJavaCode/%/%/%/%.23/%.17">
-      <details key="start" value="7347"/>
-      <details key="end" value="7348"/>
-      <details key="line" value="126"/>
-    </eAnnotations>
-    <eAnnotations source="positions.261" references="/0/generateJavaCode/%/%/%/%.23/aDdsDomainParticipant">
+    <eAnnotations source="positions.252" references="/0/generateJavaCode/%/%/%/%.23/aDdsDomainParticipant">
       <details key="start" value="5026"/>
       <details key="end" value="5070"/>
       <details key="line" value="104"/>
     </eAnnotations>
-    <eAnnotations source="positions.262" references="/0/generateJavaCode/%/%/%/%.23/%.18">
+    <eAnnotations source="positions.253" references="/0/generateJavaCode/%/%/%/%.23/%.16">
       <details key="start" value="5073"/>
       <details key="end" value="5107"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.263" references="/0/generateJavaCode/%/%/%/%.23/%.18/aDdsApplication">
+    <eAnnotations source="positions.254" references="/0/generateJavaCode/%/%/%/%.23/%.16/aDdsApplication">
       <details key="start" value="5073"/>
       <details key="end" value="5088"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.264" references="/0/generateJavaCode/%/%/%/%.24">
-      <details key="start" value="7357"/>
-      <details key="end" value="7360"/>
-      <details key="line" value="127"/>
+    <eAnnotations source="positions.255" references="/0/generateJavaCode/%/%/%/%.24">
+      <details key="start" value="7228"/>
+      <details key="end" value="7276"/>
+      <details key="line" value="126"/>
     </eAnnotations>
-    <eAnnotations source="positions.265" references="/0/generateJavaCode/%/%/%/%.25">
-      <details key="start" value="7362"/>
-      <details key="end" value="7454"/>
-      <details key="line" value="128"/>
-    </eAnnotations>
-    <eAnnotations source="positions.266" references="/0/generateJavaCode/%/%/%/%.25/%">
-      <details key="start" value="7401"/>
-      <details key="end" value="7403"/>
-      <details key="line" value="129"/>
-    </eAnnotations>
-    <eAnnotations source="positions.267" references="/0/generateJavaCode/%/%/%/%.25/%.1">
-      <details key="start" value="7404"/>
-      <details key="end" value="7444"/>
+    <eAnnotations source="positions.256" references="/0/generateJavaCode/%/%/%/%.25">
+      <details key="start" value="7277"/>
+      <details key="end" value="7323"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.268" references="/0/generateJavaCode/%/%/%/%.25/%.1/%">
-      <details key="start" value="7420"/>
-      <details key="end" value="7443"/>
+    <eAnnotations source="positions.257" references="/0/generateJavaCode/%/%/%/%.25/%">
+      <details key="start" value="7277"/>
+      <details key="end" value="7308"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.269" references="/0/generateJavaCode/%/%/%/%.25/%.1/%/aDdsApplication">
-      <details key="start" value="7420"/>
-      <details key="end" value="7435"/>
+    <eAnnotations source="positions.258" references="/0/generateJavaCode/%/%/%/%.25/%/aDdsApplication">
+      <details key="start" value="7277"/>
+      <details key="end" value="7292"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.270" references="/0/generateJavaCode/%/%/%/%.25/%.2">
-      <details key="start" value="7446"/>
-      <details key="end" value="7447"/>
+    <eAnnotations source="positions.259" references="/0/generateJavaCode/%/%/%/%.26">
+      <details key="start" value="7325"/>
+      <details key="end" value="7350"/>
       <details key="line" value="130"/>
     </eAnnotations>
-    <eAnnotations source="positions.271" references="/0/generateJavaCode/%/%/%/%.25/%.3">
-      <details key="start" value="7366"/>
-      <details key="end" value="7399"/>
+    <eAnnotations source="positions.260" references="/0/generateJavaCode/%/%/%/%.27">
+      <details key="start" value="7350"/>
+      <details key="end" value="7539"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/generateJavaCode/%/%/%/%.27/%">
+      <details key="start" value="7452"/>
+      <details key="end" value="7475"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/generateJavaCode/%/%/%/%.27/%.1">
+      <details key="start" value="7476"/>
+      <details key="end" value="7531"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.272" references="/0/generateJavaCode/%/%/%/%.25/%.3/%">
-      <details key="start" value="7367"/>
-      <details key="end" value="7390"/>
+    <eAnnotations source="positions.263" references="/0/generateJavaCode/%/%/%/%.27/%.1/%">
+      <details key="start" value="7476"/>
+      <details key="end" value="7516"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.273" references="/0/generateJavaCode/%/%/%/%.25/%.3/%/aDdsApplication">
-      <details key="start" value="7367"/>
-      <details key="end" value="7382"/>
+    <eAnnotations source="positions.264" references="/0/generateJavaCode/%/%/%/%.27/%.1/%/aDomainParticipant">
+      <details key="start" value="7476"/>
+      <details key="end" value="7494"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.274" references="/0/generateJavaCode/%/%/%/%.25/%.3/%.1">
-      <details key="start" value="7394"/>
-      <details key="end" value="7398"/>
+    <eAnnotations source="positions.265" references="/0/generateJavaCode/%/%/%/%.27/aDomainParticipant">
+      <details key="start" value="7356"/>
+      <details key="end" value="7397"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/generateJavaCode/%/%/%/%.27/%.2">
+      <details key="start" value="7400"/>
+      <details key="end" value="7434"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.275" references="/0/generateJavaCode/%/%/%/%.26">
-      <details key="start" value="7455"/>
-      <details key="end" value="7460"/>
-      <details key="line" value="131"/>
+    <eAnnotations source="positions.267" references="/0/generateJavaCode/%/%/%/%.27/%.2/aDdsApplication">
+      <details key="start" value="7400"/>
+      <details key="end" value="7415"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.276" references="/0/generateJavaCode/%/%/%/%.27">
-      <details key="start" value="7460"/>
-      <details key="end" value="7523"/>
+    <eAnnotations source="positions.268" references="/0/generateJavaCode/%/%/%/%.27/%.3">
+      <details key="start" value="7446"/>
+      <details key="end" value="7450"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.269" references="/0/generateJavaCode/%/%/%/%.28">
+      <details key="start" value="7539"/>
+      <details key="end" value="7561"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.270" references="/0/generateJavaCode/%/%/%/%.29">
+      <details key="start" value="7563"/>
+      <details key="end" value="7776"/>
       <details key="line" value="132"/>
     </eAnnotations>
-    <eAnnotations source="positions.277" references="/0/generateJavaCode/%/%/%/%.27/%">
-      <details key="start" value="7506"/>
-      <details key="end" value="7511"/>
+    <eAnnotations source="positions.271" references="/0/generateJavaCode/%/%/%/%.29/%">
+      <details key="start" value="7650"/>
+      <details key="end" value="7657"/>
       <details key="line" value="133"/>
     </eAnnotations>
-    <eAnnotations source="positions.278" references="/0/generateJavaCode/%/%/%/%.27/%.1">
-      <details key="start" value="7472"/>
-      <details key="end" value="7504"/>
+    <eAnnotations source="positions.272" references="/0/generateJavaCode/%/%/%/%.29/%.1">
+      <details key="start" value="7658"/>
+      <details key="end" value="7698"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.279" references="/0/generateJavaCode/%/%/%/%.28">
-      <details key="start" value="7523"/>
-      <details key="end" value="7539"/>
-      <details key="line" value="134"/>
-    </eAnnotations>
-    <eAnnotations source="positions.280" references="/0/generateJavaCode/%/%/%/%.29">
-      <details key="start" value="7540"/>
-      <details key="end" value="7586"/>
+    <eAnnotations source="positions.273" references="/0/generateJavaCode/%/%/%/%.29/%.1/aDomainParticipant">
+      <details key="start" value="7658"/>
+      <details key="end" value="7676"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.281" references="/0/generateJavaCode/%/%/%/%.29/%">
-      <details key="start" value="7540"/>
-      <details key="end" value="7571"/>
+    <eAnnotations source="positions.274" references="/0/generateJavaCode/%/%/%/%.29/%.2">
+      <details key="start" value="7700"/>
+      <details key="end" value="7708"/>
+      <details key="line" value="133"/>
+    </eAnnotations>
+    <eAnnotations source="positions.275" references="/0/generateJavaCode/%/%/%/%.29/%.3">
+      <details key="start" value="7709"/>
+      <details key="end" value="7764"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.282" references="/0/generateJavaCode/%/%/%/%.29/%/aDdsApplication">
-      <details key="start" value="7540"/>
-      <details key="end" value="7555"/>
+    <eAnnotations source="positions.276" references="/0/generateJavaCode/%/%/%/%.29/%.3/%">
+      <details key="start" value="7709"/>
+      <details key="end" value="7749"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.283" references="/0/generateJavaCode/%/%/%/%.30">
-      <details key="start" value="7588"/>
-      <details key="end" value="7613"/>
-      <details key="line" value="136"/>
+    <eAnnotations source="positions.277" references="/0/generateJavaCode/%/%/%/%.29/%.3/%/aDomainParticipant">
+      <details key="start" value="7709"/>
+      <details key="end" value="7727"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.284" references="/0/generateJavaCode/%/%/%/%.31">
+    <eAnnotations source="positions.278" references="/0/generateJavaCode/%/%/%/%.29/%.4">
+      <details key="start" value="7766"/>
+      <details key="end" value="7768"/>
+      <details key="line" value="133"/>
+    </eAnnotations>
+    <eAnnotations source="positions.279" references="/0/generateJavaCode/%/%/%/%.29/aDomainParticipant">
+      <details key="start" value="7569"/>
+      <details key="end" value="7610"/>
+      <details key="line" value="132"/>
+    </eAnnotations>
+    <eAnnotations source="positions.280" references="/0/generateJavaCode/%/%/%/%.29/%.5">
       <details key="start" value="7613"/>
-      <details key="end" value="7802"/>
-      <details key="line" value="136"/>
+      <details key="end" value="7647"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.281" references="/0/generateJavaCode/%/%/%/%.29/%.5/aDdsApplication">
+      <details key="start" value="7613"/>
+      <details key="end" value="7628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.282" references="/0/generateJavaCode/%/%/%/%.30">
+      <details key="start" value="7777"/>
+      <details key="end" value="7855"/>
+      <details key="line" value="135"/>
+    </eAnnotations>
+    <eAnnotations source="positions.283" references="/0/generateJavaCode/%/%/%/%.31">
+      <details key="start" value="7856"/>
+      <details key="end" value="7973"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.284" references="/0/generateJavaCode/%/%/%/%.31/aDdsApplication">
+      <details key="start" value="7882"/>
+      <details key="end" value="7897"/>
+      <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.285" references="/0/generateJavaCode/%/%/%/%.31/%">
-      <details key="start" value="7715"/>
-      <details key="end" value="7738"/>
-      <details key="line" value="136"/>
-    </eAnnotations>
-    <eAnnotations source="positions.286" references="/0/generateJavaCode/%/%/%/%.31/%.1">
-      <details key="start" value="7739"/>
-      <details key="end" value="7794"/>
+      <details key="start" value="7899"/>
+      <details key="end" value="7916"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.287" references="/0/generateJavaCode/%/%/%/%.31/%.1/%">
-      <details key="start" value="7739"/>
-      <details key="end" value="7779"/>
+    <eAnnotations source="positions.286" references="/0/generateJavaCode/%/%/%/%.31/%/aDdsHost">
+      <details key="start" value="7899"/>
+      <details key="end" value="7907"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.288" references="/0/generateJavaCode/%/%/%/%.31/%.1/%/aDomainParticipant">
-      <details key="start" value="7739"/>
-      <details key="end" value="7757"/>
+    <eAnnotations source="positions.287" references="/0/generateJavaCode/%/%/%/%.31/%.1">
+      <details key="start" value="7918"/>
+      <details key="end" value="7949"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.289" references="/0/generateJavaCode/%/%/%/%.31/aDomainParticipant">
-      <details key="start" value="7619"/>
-      <details key="end" value="7660"/>
-      <details key="line" value="136"/>
-    </eAnnotations>
-    <eAnnotations source="positions.290" references="/0/generateJavaCode/%/%/%/%.31/%.2">
-      <details key="start" value="7663"/>
-      <details key="end" value="7697"/>
+    <eAnnotations source="positions.288" references="/0/generateJavaCode/%/%/%/%.31/%.1/aDdsApplication">
+      <details key="start" value="7918"/>
+      <details key="end" value="7933"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.291" references="/0/generateJavaCode/%/%/%/%.31/%.2/aDdsApplication">
-      <details key="start" value="7663"/>
-      <details key="end" value="7678"/>
+    <eAnnotations source="positions.289" references="/0/generateJavaCode/%/%/%/%.31/%.2">
+      <details key="start" value="7951"/>
+      <details key="end" value="7972"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.292" references="/0/generateJavaCode/%/%/%/%.31/%.3">
-      <details key="start" value="7709"/>
-      <details key="end" value="7713"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.293" references="/0/generateJavaCode/%/%/%/%.32">
-      <details key="start" value="7802"/>
-      <details key="end" value="7824"/>
-      <details key="line" value="136"/>
-    </eAnnotations>
-    <eAnnotations source="positions.294" references="/0/generateJavaCode/%/%/%/%.33">
-      <details key="start" value="7826"/>
-      <details key="end" value="8150"/>
-      <details key="line" value="138"/>
-    </eAnnotations>
-    <eAnnotations source="positions.295" references="/0/generateJavaCode/%/%/%/%.33/%">
-      <details key="start" value="7913"/>
-      <details key="end" value="7920"/>
-      <details key="line" value="139"/>
-    </eAnnotations>
-    <eAnnotations source="positions.296" references="/0/generateJavaCode/%/%/%/%.33/%.1">
-      <details key="start" value="7921"/>
+    <eAnnotations source="positions.290" references="/0/generateJavaCode/%/%/%/%.31/%.2/aDdsSystem">
+      <details key="start" value="7951"/>
       <details key="end" value="7961"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.297" references="/0/generateJavaCode/%/%/%/%.33/%.1/aDomainParticipant">
-      <details key="start" value="7921"/>
-      <details key="end" value="7939"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.298" references="/0/generateJavaCode/%/%/%/%.33/%.2">
-      <details key="start" value="7963"/>
-      <details key="end" value="7971"/>
-      <details key="line" value="139"/>
-    </eAnnotations>
-    <eAnnotations source="positions.299" references="/0/generateJavaCode/%/%/%/%.33/%.3">
-      <details key="start" value="7972"/>
-      <details key="end" value="8012"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.300" references="/0/generateJavaCode/%/%/%/%.33/%.3/aDomainParticipant">
-      <details key="start" value="7972"/>
-      <details key="end" value="7990"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.301" references="/0/generateJavaCode/%/%/%/%.33/%.4">
-      <details key="start" value="8014"/>
-      <details key="end" value="8018"/>
-      <details key="line" value="139"/>
-    </eAnnotations>
-    <eAnnotations source="positions.302" references="/0/generateJavaCode/%/%/%/%.33/%.5">
-      <details key="start" value="8019"/>
-      <details key="end" value="8139"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.303" references="/0/generateJavaCode/%/%/%/%.33/%.5/aDomainParticipant">
-      <details key="start" value="8045"/>
-      <details key="end" value="8063"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.304" references="/0/generateJavaCode/%/%/%/%.33/%.5/%">
-      <details key="start" value="8065"/>
-      <details key="end" value="8082"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.305" references="/0/generateJavaCode/%/%/%/%.33/%.5/%/aDdsHost">
-      <details key="start" value="8065"/>
-      <details key="end" value="8073"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.306" references="/0/generateJavaCode/%/%/%/%.33/%.5/%.1">
-      <details key="start" value="8084"/>
-      <details key="end" value="8115"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.307" references="/0/generateJavaCode/%/%/%/%.33/%.5/%.1/aDdsApplication">
-      <details key="start" value="8084"/>
-      <details key="end" value="8099"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.308" references="/0/generateJavaCode/%/%/%/%.33/%.5/%.2">
-      <details key="start" value="8117"/>
-      <details key="end" value="8138"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.309" references="/0/generateJavaCode/%/%/%/%.33/%.5/%.2/aDdsSystem">
-      <details key="start" value="8117"/>
-      <details key="end" value="8127"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.310" references="/0/generateJavaCode/%/%/%/%.33/%.6">
-      <details key="start" value="8141"/>
-      <details key="end" value="8142"/>
+    <eAnnotations source="positions.291" references="/0/generateJavaCode/%/%/%/%.32">
+      <details key="start" value="7975"/>
+      <details key="end" value="7977"/>
       <details key="line" value="141"/>
     </eAnnotations>
-    <eAnnotations source="positions.311" references="/0/generateJavaCode/%/%/%/%.33/aDomainParticipant">
-      <details key="start" value="7832"/>
-      <details key="end" value="7873"/>
-      <details key="line" value="138"/>
-    </eAnnotations>
-    <eAnnotations source="positions.312" references="/0/generateJavaCode/%/%/%/%.33/%.7">
-      <details key="start" value="7876"/>
-      <details key="end" value="7910"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.313" references="/0/generateJavaCode/%/%/%/%.33/%.7/aDdsApplication">
-      <details key="start" value="7876"/>
-      <details key="end" value="7891"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.314" references="/0/generateJavaCode/%/%/%/%.34">
-      <details key="start" value="8151"/>
-      <details key="end" value="8199"/>
+    <eAnnotations source="positions.292" references="/0/generateJavaCode/%/%/%/%.33">
+      <details key="start" value="7979"/>
+      <details key="end" value="8071"/>
       <details key="line" value="142"/>
     </eAnnotations>
-    <eAnnotations source="positions.315" references="/0/generateJavaCode/%/%/%/%.35">
-      <details key="start" value="8199"/>
-      <details key="end" value="8252"/>
+    <eAnnotations source="positions.293" references="/0/generateJavaCode/%/%/%/%.33/%">
+      <details key="start" value="8018"/>
+      <details key="end" value="8020"/>
+      <details key="line" value="143"/>
+    </eAnnotations>
+    <eAnnotations source="positions.294" references="/0/generateJavaCode/%/%/%/%.33/%.1">
+      <details key="start" value="8021"/>
+      <details key="end" value="8061"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.295" references="/0/generateJavaCode/%/%/%/%.33/%.1/%">
+      <details key="start" value="8037"/>
+      <details key="end" value="8060"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.296" references="/0/generateJavaCode/%/%/%/%.33/%.1/%/aDdsApplication">
+      <details key="start" value="8037"/>
+      <details key="end" value="8052"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.297" references="/0/generateJavaCode/%/%/%/%.33/%.2">
+      <details key="start" value="8063"/>
+      <details key="end" value="8064"/>
+      <details key="line" value="144"/>
+    </eAnnotations>
+    <eAnnotations source="positions.298" references="/0/generateJavaCode/%/%/%/%.33/%.3">
+      <details key="start" value="7983"/>
+      <details key="end" value="8016"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.299" references="/0/generateJavaCode/%/%/%/%.33/%.3/%">
+      <details key="start" value="7984"/>
+      <details key="end" value="8007"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.300" references="/0/generateJavaCode/%/%/%/%.33/%.3/%/aDdsApplication">
+      <details key="start" value="7984"/>
+      <details key="end" value="7999"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.301" references="/0/generateJavaCode/%/%/%/%.33/%.3/%.1">
+      <details key="start" value="8011"/>
+      <details key="end" value="8015"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.302" references="/0/generateJavaCode/%/%/%/%.34">
+      <details key="start" value="8072"/>
+      <details key="end" value="8077"/>
       <details key="line" value="145"/>
     </eAnnotations>
-    <eAnnotations source="positions.316" references="/0/generateJavaCode/%/%/%/%.35/%">
-      <details key="start" value="8235"/>
-      <details key="end" value="8240"/>
+    <eAnnotations source="positions.303" references="/0/generateJavaCode/%/%/%/%.35">
+      <details key="start" value="8077"/>
+      <details key="end" value="8140"/>
       <details key="line" value="146"/>
     </eAnnotations>
-    <eAnnotations source="positions.317" references="/0/generateJavaCode/%/%/%/%.35/%.1">
-      <details key="start" value="8211"/>
-      <details key="end" value="8233"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.318" references="/0/generateJavaCode/%/%/%/%.36">
-      <details key="start" value="8252"/>
-      <details key="end" value="8261"/>
+    <eAnnotations source="positions.304" references="/0/generateJavaCode/%/%/%/%.35/%">
+      <details key="start" value="8123"/>
+      <details key="end" value="8128"/>
       <details key="line" value="147"/>
     </eAnnotations>
-    <eAnnotations source="positions.319" references="/0/generateJavaCode/%/%/%/%.37">
-      <details key="start" value="8261"/>
-      <details key="end" value="8313"/>
-      <details key="line" value="149"/>
-    </eAnnotations>
-    <eAnnotations source="positions.320" references="/0/generateJavaCode/%/%/%/%.37/%">
-      <details key="start" value="8296"/>
-      <details key="end" value="8301"/>
-      <details key="line" value="150"/>
-    </eAnnotations>
-    <eAnnotations source="positions.321" references="/0/generateJavaCode/%/%/%/%.37/%.1">
-      <details key="start" value="8272"/>
-      <details key="end" value="8294"/>
+    <eAnnotations source="positions.305" references="/0/generateJavaCode/%/%/%/%.35/%.1">
+      <details key="start" value="8089"/>
+      <details key="end" value="8121"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.322" references="/0/generateJavaCode/%/%/%/%.38">
-      <details key="start" value="8313"/>
-      <details key="end" value="8346"/>
+    <eAnnotations source="positions.306" references="/0/generateJavaCode/%/%/%/%.36">
+      <details key="start" value="8140"/>
+      <details key="end" value="8186"/>
+      <details key="line" value="148"/>
+    </eAnnotations>
+    <eAnnotations source="positions.307" references="/0/generateJavaCode/%/%/%/%.37">
+      <details key="start" value="8186"/>
+      <details key="end" value="8239"/>
       <details key="line" value="151"/>
     </eAnnotations>
-    <eAnnotations source="positions.323" references="/0/generateJavaCode/%/%/%/%.39">
-      <details key="start" value="8347"/>
-      <details key="end" value="8350"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.324" references="/0/generateJavaCode/%/%/%/%.40">
-      <details key="start" value="8353"/>
-      <details key="end" value="8356"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.325" references="/0/generateJavaCode/%/%/%/%.41">
-      <details key="start" value="8358"/>
-      <details key="end" value="8369"/>
+    <eAnnotations source="positions.308" references="/0/generateJavaCode/%/%/%/%.37/%">
+      <details key="start" value="8222"/>
+      <details key="end" value="8227"/>
       <details key="line" value="152"/>
     </eAnnotations>
-    <eAnnotations source="positions.326" references="/0/generateJavaCode/%/%/%/%.42">
-      <details key="start" value="8370"/>
-      <details key="end" value="8416"/>
+    <eAnnotations source="positions.309" references="/0/generateJavaCode/%/%/%/%.37/%.1">
+      <details key="start" value="8198"/>
+      <details key="end" value="8220"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.327" references="/0/generateJavaCode/%/%/%/%.42/%">
-      <details key="start" value="8370"/>
-      <details key="end" value="8401"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.328" references="/0/generateJavaCode/%/%/%/%.42/%/aDdsApplication">
-      <details key="start" value="8370"/>
-      <details key="end" value="8385"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.329" references="/0/generateJavaCode/%/%/%/%.43">
-      <details key="start" value="8418"/>
-      <details key="end" value="8437"/>
+    <eAnnotations source="positions.310" references="/0/generateJavaCode/%/%/%/%.38">
+      <details key="start" value="8239"/>
+      <details key="end" value="8248"/>
       <details key="line" value="153"/>
     </eAnnotations>
-    <eAnnotations source="positions.330" references="/0/generateJavaCode/%/%/%/%.44">
-      <details key="start" value="8438"/>
-      <details key="end" value="8484"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.331" references="/0/generateJavaCode/%/%/%/%.44/%">
-      <details key="start" value="8438"/>
-      <details key="end" value="8469"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.332" references="/0/generateJavaCode/%/%/%/%.44/%/aDdsApplication">
-      <details key="start" value="8438"/>
-      <details key="end" value="8453"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.333" references="/0/generateJavaCode/%/%/%/%.45">
-      <details key="start" value="8486"/>
-      <details key="end" value="8494"/>
-      <details key="line" value="153"/>
-    </eAnnotations>
-    <eAnnotations source="positions.334" references="/0/generateJavaCode/%/%/%/%.46">
-      <details key="start" value="8494"/>
-      <details key="end" value="8550"/>
-      <details key="line" value="154"/>
-    </eAnnotations>
-    <eAnnotations source="positions.335" references="/0/generateJavaCode/%/%/%/%.46/%">
-      <details key="start" value="8533"/>
-      <details key="end" value="8538"/>
+    <eAnnotations source="positions.311" references="/0/generateJavaCode/%/%/%/%.39">
+      <details key="start" value="8248"/>
+      <details key="end" value="8300"/>
       <details key="line" value="155"/>
     </eAnnotations>
-    <eAnnotations source="positions.336" references="/0/generateJavaCode/%/%/%/%.46/%.1">
-      <details key="start" value="8506"/>
-      <details key="end" value="8531"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.337" references="/0/generateJavaCode/%/%/%/%.47">
-      <details key="start" value="8550"/>
-      <details key="end" value="8593"/>
+    <eAnnotations source="positions.312" references="/0/generateJavaCode/%/%/%/%.39/%">
+      <details key="start" value="8283"/>
+      <details key="end" value="8288"/>
       <details key="line" value="156"/>
     </eAnnotations>
-    <eAnnotations source="positions.338" references="/0/generateJavaCode/%/%/%/%.48">
+    <eAnnotations source="positions.313" references="/0/generateJavaCode/%/%/%/%.39/%.1">
+      <details key="start" value="8259"/>
+      <details key="end" value="8281"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.314" references="/0/generateJavaCode/%/%/%/%.40">
+      <details key="start" value="8300"/>
+      <details key="end" value="8333"/>
+      <details key="line" value="157"/>
+    </eAnnotations>
+    <eAnnotations source="positions.315" references="/0/generateJavaCode/%/%/%/%.41">
+      <details key="start" value="8334"/>
+      <details key="end" value="8337"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.316" references="/0/generateJavaCode/%/%/%/%.42">
+      <details key="start" value="8340"/>
+      <details key="end" value="8343"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.317" references="/0/generateJavaCode/%/%/%/%.43">
+      <details key="start" value="8345"/>
+      <details key="end" value="8356"/>
+      <details key="line" value="158"/>
+    </eAnnotations>
+    <eAnnotations source="positions.318" references="/0/generateJavaCode/%/%/%/%.44">
+      <details key="start" value="8357"/>
+      <details key="end" value="8403"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.319" references="/0/generateJavaCode/%/%/%/%.44/%">
+      <details key="start" value="8357"/>
+      <details key="end" value="8388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.320" references="/0/generateJavaCode/%/%/%/%.44/%/aDdsApplication">
+      <details key="start" value="8357"/>
+      <details key="end" value="8372"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.321" references="/0/generateJavaCode/%/%/%/%.45">
+      <details key="start" value="8405"/>
+      <details key="end" value="8424"/>
+      <details key="line" value="159"/>
+    </eAnnotations>
+    <eAnnotations source="positions.322" references="/0/generateJavaCode/%/%/%/%.46">
+      <details key="start" value="8425"/>
+      <details key="end" value="8471"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.323" references="/0/generateJavaCode/%/%/%/%.46/%">
+      <details key="start" value="8425"/>
+      <details key="end" value="8456"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.324" references="/0/generateJavaCode/%/%/%/%.46/%/aDdsApplication">
+      <details key="start" value="8425"/>
+      <details key="end" value="8440"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.325" references="/0/generateJavaCode/%/%/%/%.47">
+      <details key="start" value="8473"/>
+      <details key="end" value="8481"/>
+      <details key="line" value="159"/>
+    </eAnnotations>
+    <eAnnotations source="positions.326" references="/0/generateJavaCode/%/%/%/%.48">
+      <details key="start" value="8481"/>
+      <details key="end" value="8537"/>
+      <details key="line" value="160"/>
+    </eAnnotations>
+    <eAnnotations source="positions.327" references="/0/generateJavaCode/%/%/%/%.48/%">
+      <details key="start" value="8520"/>
+      <details key="end" value="8525"/>
+      <details key="line" value="161"/>
+    </eAnnotations>
+    <eAnnotations source="positions.328" references="/0/generateJavaCode/%/%/%/%.48/%.1">
+      <details key="start" value="8493"/>
+      <details key="end" value="8518"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.329" references="/0/generateJavaCode/%/%/%/%.49">
+      <details key="start" value="8537"/>
+      <details key="end" value="8580"/>
+      <details key="line" value="162"/>
+    </eAnnotations>
+    <eAnnotations source="positions.330" references="/0/generateJavaCode/%/%/%/%.50">
       <details key="start" value="1249"/>
       <details key="end" value="1461"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.339" references="/0/generateJavaCode/%/%/%/%.48/%">
+    <eAnnotations source="positions.331" references="/0/generateJavaCode/%/%/%/%.50/%">
       <details key="start" value="1249"/>
       <details key="end" value="1445"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.340" references="/0/generateJavaCode/%/%/%/%.48/%/%">
+    <eAnnotations source="positions.332" references="/0/generateJavaCode/%/%/%/%.50/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1390"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.341" references="/0/generateJavaCode/%/%/%/%.48/%/%/%">
+    <eAnnotations source="positions.333" references="/0/generateJavaCode/%/%/%/%.50/%/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1378"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.342" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%">
+    <eAnnotations source="positions.334" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1324"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.343" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%">
+    <eAnnotations source="positions.335" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1308"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.344" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%">
+    <eAnnotations source="positions.336" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1282"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.345" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%/%">
+    <eAnnotations source="positions.337" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%/%">
       <details key="start" value="1249"/>
       <details key="end" value="1270"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.346" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%/%/aDdsSystem">
+    <eAnnotations source="positions.338" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%/%/aDdsSystem">
       <details key="start" value="1249"/>
       <details key="end" value="1259"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.347" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%/%.1">
+    <eAnnotations source="positions.339" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%/%.1">
       <details key="start" value="1278"/>
       <details key="end" value="1281"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.348" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%.1">
+    <eAnnotations source="positions.340" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%.1">
       <details key="start" value="1290"/>
       <details key="end" value="1307"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.349" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%/%.1/aDdsHost">
+    <eAnnotations source="positions.341" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%/%.1/aDdsHost">
       <details key="start" value="1290"/>
       <details key="end" value="1298"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.350" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%/%.1">
+    <eAnnotations source="positions.342" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%/%.1">
       <details key="start" value="1316"/>
       <details key="end" value="1323"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.351" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%.1">
+    <eAnnotations source="positions.343" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%.1">
       <details key="start" value="1332"/>
       <details key="end" value="1377"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.352" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%.1/%">
+    <eAnnotations source="positions.344" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%.1/%">
       <details key="start" value="1332"/>
       <details key="end" value="1363"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.353" references="/0/generateJavaCode/%/%/%/%.48/%/%/%/%.1/%/aDdsApplication">
+    <eAnnotations source="positions.345" references="/0/generateJavaCode/%/%/%/%.50/%/%/%/%.1/%/aDdsApplication">
       <details key="start" value="1332"/>
       <details key="end" value="1347"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.354" references="/0/generateJavaCode/%/%/%/%.48/%/%/%.1">
+    <eAnnotations source="positions.346" references="/0/generateJavaCode/%/%/%/%.50/%/%/%.1">
       <details key="start" value="1386"/>
       <details key="end" value="1389"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.355" references="/0/generateJavaCode/%/%/%/%.48/%/%.1">
+    <eAnnotations source="positions.347" references="/0/generateJavaCode/%/%/%/%.50/%/%.1">
       <details key="start" value="1398"/>
       <details key="end" value="1444"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.356" references="/0/generateJavaCode/%/%/%/%.48/%/%.1/%">
+    <eAnnotations source="positions.348" references="/0/generateJavaCode/%/%/%/%.50/%/%.1/%">
       <details key="start" value="1398"/>
       <details key="end" value="1429"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.357" references="/0/generateJavaCode/%/%/%/%.48/%/%.1/%/aDdsApplication">
+    <eAnnotations source="positions.349" references="/0/generateJavaCode/%/%/%/%.50/%/%.1/%/aDdsApplication">
       <details key="start" value="1398"/>
       <details key="end" value="1413"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.358" references="/0/generateJavaCode/%/%/%/%.48/%.1">
+    <eAnnotations source="positions.350" references="/0/generateJavaCode/%/%/%/%.50/%.1">
       <details key="start" value="1453"/>
       <details key="end" value="1460"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.359" references="/0/generateJavaCode/%/%/%/%.49">
+    <eAnnotations source="positions.351" references="/0/generateJavaCode/%/%/%/%.51">
       <details key="start" value="1470"/>
       <details key="end" value="1477"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.360" references="/0/generateJavaCode/%/%/aDdsApplication">
+    <eAnnotations source="positions.352" references="/0/generateJavaCode/%/%/aDdsApplication">
       <details key="start" value="1183"/>
       <details key="end" value="1215"/>
       <details key="line" value="22"/>
     </eAnnotations>
-    <eAnnotations source="positions.361" references="/0/generateJavaCode/%/%/%.1">
+    <eAnnotations source="positions.353" references="/0/generateJavaCode/%/%/%.1">
       <details key="start" value="1218"/>
       <details key="end" value="1239"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.362" references="/0/generateJavaCode/%/%/%.1/aDdsHost">
+    <eAnnotations source="positions.354" references="/0/generateJavaCode/%/%/%.1/aDdsHost">
       <details key="start" value="1218"/>
       <details key="end" value="1226"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.363" references="/0/generateJavaCode/%/aDdsHost">
+    <eAnnotations source="positions.355" references="/0/generateJavaCode/%/aDdsHost">
       <details key="start" value="1137"/>
       <details key="end" value="1155"/>
       <details key="line" value="21"/>
     </eAnnotations>
-    <eAnnotations source="positions.364" references="/0/generateJavaCode/%/%.1">
+    <eAnnotations source="positions.356" references="/0/generateJavaCode/%/%.1">
       <details key="start" value="1158"/>
       <details key="end" value="1174"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.365" references="/0/generateJavaCode/%/%.1/aDdsSystem">
+    <eAnnotations source="positions.357" references="/0/generateJavaCode/%/%.1/aDdsSystem">
       <details key="start" value="1158"/>
       <details key="end" value="1168"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.366" references="/0/generateJavaCode/aDdsSystem">
+    <eAnnotations source="positions.358" references="/0/generateJavaCode/aDdsSystem">
       <details key="start" value="1106"/>
       <details key="end" value="1128"/>
       <details key="line" value="20"/>

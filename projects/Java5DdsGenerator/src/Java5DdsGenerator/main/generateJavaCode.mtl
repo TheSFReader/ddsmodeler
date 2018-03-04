@@ -122,9 +122,23 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 		Collection<Class<? extends Status>> [aDdsDomainParticipant.domainParticipantName/]Status = new HashSet<>();
 		[/if]
 		this.[aDdsDomainParticipant.domainParticipantName/] = dpf.createParticipant([aDdsDomainParticipant.domainId/], [aDdsDomainParticipant.domainParticipantName/]Qos, [aDdsDomainParticipant.domainParticipantName/]Listener, [aDdsDomainParticipant.domainParticipantName/]Status);
-		[generateDomainParticipant(aDdsDomainParticipant, aDdsHost.hostName, aDdsApplication.applicationName, aDdsSystem.systemName)/]
 		[/for]
 		
+		this.populateApplication();
+	}
+
+    public [aDdsApplication.applicationName.toUpperFirst()/](ServiceEnvironment env, [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')]DomainParticipant param[aDomainParticipant.domainParticipantName.toUpperFirst()/][/for]) {
+		this.env = env;
+		[for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+		this.[aDomainParticipant.domainParticipantName/] = param[aDomainParticipant.domainParticipantName.toUpperFirst()/];
+		[/for]
+
+		this.populateApplication();
+    }
+
+	private void populateApplication() {
+		[generateDomainParticipant(aDdsApplication, aDdsHost.hostName, aDdsApplication.applicationName, aDdsSystem.systemName)/]
+
 		[if (aDdsApplication.waitset <> null)]
 		[generateWaitset(aDdsApplication.waitset)/]
 		[/if]
@@ -132,14 +146,6 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 		//[protected ('User attributes initialization')]
 		//[/protected]
 	}
-
-    public [aDdsApplication.applicationName.toUpperFirst()/](ServiceEnvironment env, [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')]DomainParticipant param[aDomainParticipant.domainParticipantName.toUpperFirst()/][/for]) {
-		this.env = env;
-		[for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
-		this.[aDomainParticipant.domainParticipantName/] = param[aDomainParticipant.domainParticipantName/];
-		[generateDomainParticipant(aDomainParticipant, aDdsHost.hostName, aDdsApplication.applicationName, aDdsSystem.systemName)/]
-		[/for]
-    }
 
 	public void applicationBehavior() {
 		//[protected ('Application behavior')]

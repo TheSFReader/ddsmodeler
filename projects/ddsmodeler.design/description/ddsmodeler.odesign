@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ddsmodeler" version="11.1.1.201610211630">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ddsmodeler" version="12.0.0.2017041100">
   <ownedViewpoints name="dataStructures" modelFileExtension="ddsmetamodel">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="dataRepresentation" domainClass="ddsMetamodel.DdsSystem" enablePopupBars="true">
       <metamodel href="http://www.example.org/ddsMetamodel#/"/>
@@ -752,11 +752,7 @@
         </create>
         <create name="DurabilityServiceQos" precondition="aql:self.durabilityServiceQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='durabilityServiceQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDurabilityServiceQos" referenceName="durabilityServiceQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DdsDuration" referenceName="service_cleanup_delay" variableName="instance2"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDurabilityServiceQos" referenceName="durabilityServiceQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -788,11 +784,7 @@
         </create>
         <create name="LivelinessQos" precondition="aql:self.livelinessQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='livelinessQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="lease_duration" variableName="instance2"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -808,11 +800,7 @@
         </create>
         <create name="ReliabilityQos" precondition="aql:self.reliabilityQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='topicQosProfile%20item']/@subItemMappings[name='reliabilityQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsReliabilityQos" referenceName="reliabilityQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="max_blocking_time" variableName="instance2"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsReliabilityQos" referenceName="reliabilityQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -1349,11 +1337,7 @@
         </create>
         <create name="LivelinessQos" precondition="aql:self.livelinessQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='dataWriterQosProfile%20item']/@subItemMappings[name='livelinessQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="lease_duration"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -1361,11 +1345,7 @@
         </create>
         <create name="ReliabilityQos" precondition="aql:self.reliabilityQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='dataWriterQosProfile%20item']/@subItemMappings[name='reliabilityQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsReliabilityQos" referenceName="reliabilityQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="max_blocking_time"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsReliabilityQos" referenceName="reliabilityQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -1417,12 +1397,7 @@
         </create>
         <create name="DataWriterLifecycleQos" precondition="aql:self.dataWriterLifecycleQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='dataWriterQosProfile%20item']/@subItemMappings[name='dataWriterLifecycleQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDataWriterLifecycleQos" referenceName="dataWriterLifecycleQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="autopurge_suspended_samples_delay" variableName="instance2"/>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="autounregister_instance_delay" variableName="instance3"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDataWriterLifecycleQos" referenceName="dataWriterLifecycleQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -1833,11 +1808,7 @@
         </create>
         <create name="LivelinessQos" precondition="aql:self.livelinessQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='dataReaderQosProfile%20item']/@subItemMappings[name='livelinessQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="lease_duration" variableName="instance2"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsLivelinessQos" referenceName="livelinessQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
@@ -1897,12 +1868,7 @@
         </create>
         <create name="DataReaderLifecycleQos" precondition="aql:self.dataReaderLifecycleQos=null" mapping="//@ownedViewpoints[name='qosDefinitions']/@ownedRepresentations[name='qosProfileTreeRepresentation']/@subItemMappings[name='dataReaderQosProfile%20item']/@subItemMappings[name='datareaderLifecycleQos%20item']">
           <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
-            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDataReaderLifecycleQos" referenceName="dataReaderLifecycleQos">
-              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="autopurge_nowriters_samples_delay" variableName="instance2"/>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDuration" referenceName="autopurge_disposed_samples_delay" variableName="instance3"/>
-              </subModelOperations>
-            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ddsMetamodel.DdsDataReaderLifecycleQos" referenceName="dataReaderLifecycleQos"/>
           </firstModelOperation>
           <variables name="root" documentation="The semantic element of the tree."/>
           <variables name="element" documentation="The currently edited element."/>
