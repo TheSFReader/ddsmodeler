@@ -88,7 +88,7 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 	[/for]
 	[/for]
 	[for (aDdsTopic : DdsTopic | aDdsSystem.topics)]
-	Topic<[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsTopic.topicName/];
+	private Topic<[aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/]> [aDdsTopic.topicName/];
 	[/for]
 	[if (aDdsApplication.waitset <> null)]
 	[generateWaitsetDeclaration(aDdsApplication.waitset)/]
