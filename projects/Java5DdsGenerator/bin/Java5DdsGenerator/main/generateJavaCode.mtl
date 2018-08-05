@@ -66,8 +66,8 @@ import org.omg.dds.core.GuardCondition;
 //[protected ('User defined imports')]
 //[/protected]
 
-//[protected ('class comments')]
-//[/protected]
+/**[protected ('class comments')]
+[/protected]*/
 public class [aDdsApplication.applicationName.toUpperFirst()/] {
 
 	private ServiceEnvironment env;
@@ -96,19 +96,23 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 	// [protected('User defined attributes')]
 	// [/protected]
 
+	/**
+	[protected ('Constructor comments')]
+	[/protected]
+	*/
 	public [aDdsApplication.applicationName.toUpperFirst()/]() {
 		System.setProperty(ServiceEnvironment.IMPLEMENTATION_CLASS_NAME_PROPERTY,
 			"org.opensplice.dds.core.OsplServiceEnvironment");
 		this.env = ServiceEnvironment.createInstance([aDdsApplication.applicationName.toUpperFirst()/].class.getClassLoader());
 		DomainParticipantFactory dpf = DomainParticipantFactory.getInstance(env);
+		QosProvider qosProvider = QosProvider.newQosProvider("file://./qos/[aDdsSystem.systemName/]Qos.xml", "[aDdsSystem.systemName/]Qos", env);
 		[for (aDdsDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
 		
 		//Initializing DomainParticipant [aDdsDomainParticipant.domainParticipantName/]
 		[if (aDdsDomainParticipant.ddsdomainparticipantqosprofile = null)]
 		DomainParticipantQos [aDdsDomainParticipant.domainParticipantName/]Qos = dpf.getDefaultParticipantQos();
 		[else]
-		QosProvider [aDdsDomainParticipant.domainParticipantName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/].xml", "[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/]", env);
-		DomainParticipantQos [aDdsDomainParticipant.domainParticipantName/]Qos = [aDdsDomainParticipant.domainParticipantName/]QosProvider.getDomainParticipantQos();		
+		DomainParticipantQos [aDdsDomainParticipant.domainParticipantName/]Qos = qosProvider.getDomainParticipantQos("[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/]");		
 		[/if]
 		[if (aDdsDomainParticipant.domainParticipantListener <> null)]
 		[generateElement(aDdsDomainParticipant.domainParticipantListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName.toLowerCase()).concat('/'), aDdsApplication.applicationName.toLowerCase())/]
@@ -124,7 +128,7 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 		this.[aDdsDomainParticipant.domainParticipantName/] = dpf.createParticipant([aDdsDomainParticipant.domainId/], [aDdsDomainParticipant.domainParticipantName/]Qos, [aDdsDomainParticipant.domainParticipantName/]Listener, [aDdsDomainParticipant.domainParticipantName/]Status);
 		[/for]
 		
-		this.populateApplication();
+		this.populateApplication(qosProvider);
 	}
 
     public [aDdsApplication.applicationName.toUpperFirst()/](ServiceEnvironment env, [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')]DomainParticipant param[aDomainParticipant.domainParticipantName.toUpperFirst()/][/for]) {
@@ -132,11 +136,11 @@ public class [aDdsApplication.applicationName.toUpperFirst()/] {
 		[for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
 		this.[aDomainParticipant.domainParticipantName/] = param[aDomainParticipant.domainParticipantName.toUpperFirst()/];
 		[/for]
-
-		this.populateApplication();
+		QosProvider qosProvider = QosProvider.newQosProvider("file://./qos/[aDdsSystem.systemName/]Qos.xml", "[aDdsSystem.systemName/]Qos", env);
+		this.populateApplication(qosProvider);
     }
 
-	private void populateApplication() {
+	private void populateApplication(QosProvider qosProvider) {
 		[generateDomainParticipant(aDdsApplication, aDdsHost.hostName, aDdsApplication.applicationName, aDdsSystem.systemName)/]
 
 		[if (aDdsApplication.waitset <> null)]

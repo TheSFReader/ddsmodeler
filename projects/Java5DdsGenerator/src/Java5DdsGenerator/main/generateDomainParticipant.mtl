@@ -19,8 +19,7 @@
 [if (aDdsPublisher.publisherQosProfile = null)] 
 PublisherQos [aDdsPublisher.publisherName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultPublisherQos();
 [else]
-QosProvider [aDdsPublisher.publisherName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsPublisher.publisherQosProfile.profileName/].xml", "[aDdsPublisher.publisherQosProfile.profileName/]", env);
-PublisherQos [aDdsPublisher.publisherName/]Qos = [aDdsPublisher.publisherName/]QosProvider.getPublisherQos();
+PublisherQos [aDdsPublisher.publisherName/]Qos = qosProvider.getPublisherQos("[aDdsPublisher.publisherQosProfile.profileName/]");
 [/if]
 [if (aDdsPublisher.publisherListener <> null)]
 [generatePublisherListener(aDdsPublisher.publisherListener, systemName.concat('/').concat(hostName).concat('/src/').concat(applicationName.toLowerCase()).concat('/'), applicationName.toLowerCase())/]
@@ -39,8 +38,7 @@ this.[aDdsPublisher.publisherName/] = this.[aDdsDomainParticipant.domainParticip
 [if (aDdsTopic.topicQosProfile = null)]
 TopicQos [aDdsTopic.topicName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultTopicQos();
 [else]
-QosProvider [aDdsTopic.topicName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsTopic.topicQosProfile.profileName/].xml", "[aDdsTopic.topicQosProfile.profileName/]", env);
-TopicQos [aDdsTopic.topicName/]Qos = [aDdsTopic.topicName/]QosProvider.getTopicQos();
+TopicQos [aDdsTopic.topicName/]Qos = qosProvider.getTopicQos("[aDdsTopic.topicQosProfile.profileName/]");
 [/if]
 [if (aDdsTopic.topicListener <> null)]
 [generateTopicListener(aDdsTopic.topicListener, systemName.concat('/').concat(hostName).concat('/src/').concat(applicationName.toLowerCase()).concat('/'), applicationName.toLowerCase(), aDdsTopic.ddsdatastructure)/]
@@ -58,8 +56,7 @@ this.[aDdsTopic.topicName/] = this.[aDdsDomainParticipant.domainParticipantName/
 [if (aDdsDataWriter.dataWriterQosProfile = null)]
 DataWriterQos [aDdsDataWriter.dataWriterName/]Qos = this.[aDdsPublisher.publisherName/].copyFromTopicQos(this.[aDdsPublisher.publisherName/].getDefaultDataWriterQos(), this.[aDdsDataWriter.publiableTopic.topicName/].getQos());
 [else]
-QosProvider [aDdsDataWriter.dataWriterName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDataWriter.dataWriterQosProfile.profileName/].xml", "[aDdsDataWriter.dataWriterQosProfile.profileName/]", env);
-DataWriterQos [aDdsDataWriter.dataWriterName/]Qos = [aDdsDataWriter.dataWriterName/]QosProvider.getDataWriterQos();
+DataWriterQos [aDdsDataWriter.dataWriterName/]Qos = qosProvider.getDataWriterQos("[aDdsDataWriter.dataWriterQosProfile.profileName/]");
 [/if]
 [if (aDdsDataWriter.dataWriterListener <> null)]
 [generateDataWriterListener(aDdsDataWriter.dataWriterListener, systemName.concat('/').concat(hostName).concat('/src/').concat(applicationName.toLowerCase()).concat('/'), applicationName.toLowerCase(), aDdsDataWriter.publiableTopic.ddsdatastructure)/]
@@ -79,8 +76,7 @@ this.[aDdsDataWriter.dataWriterName/] = this.[aDdsPublisher.publisherName/].crea
 [if (aDdsSubscriber.subscriberQosProfile = null)]
 SubscriberQos [aDdsSubscriber.subscriberName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultSubscriberQos();
 [else]
-QosProvider [aDdsSubscriber.subscriberName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsSubscriber.subscriberQosProfile.profileName/].xml", "[aDdsSubscriber.subscriberQosProfile.profileName/]", env);
-SubscriberQos [aDdsSubscriber.subscriberName/]Qos = [aDdsSubscriber.subscriberName/]QosProvider.getSubscriberQos();
+SubscriberQos [aDdsSubscriber.subscriberName/]Qos = qosProvider.getSubscriberQos("[aDdsSubscriber.subscriberQosProfile.profileName/]");
 [/if]
 [if (aDdsSubscriber.subscriberListener <> null)]
 [generateSubscriberListener(aDdsSubscriber.subscriberListener, systemName.concat('/').concat(hostName).concat('/src/').concat(applicationName.toLowerCase()).concat('/'), applicationName.toLowerCase())/]
@@ -97,8 +93,7 @@ this.[aDdsSubscriber.subscriberName/] = this.[aDdsDomainParticipant.domainPartic
 [for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
 [let aDdsTopic : DdsTopic = aDdsDataReader.readableTopic]
 [if (aDdsTopic.topicQosProfile <> null)]
-QosProvider [aDdsTopic.topicName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsTopic.topicQosProfile.profileName/].xml", "[aDdsTopic.topicQosProfile.profileName/]", env);
-TopicQos [aDdsTopic.topicName/]Qos = [aDdsTopic.topicName/]QosProvider.getTopicQos();
+TopicQos [aDdsTopic.topicName/]Qos = qosProvider.getTopicQos("[aDdsTopic.topicQosProfile.profileName/]");
 [else]
 TopicQos [aDdsTopic.topicName/]Qos = this.[aDdsDomainParticipant.domainParticipantName/].getDefaultTopicQos();
 [/if]
@@ -116,8 +111,7 @@ Collection<Class<? extends Status>> [aDdsTopic.topicName/]Status = new HashSet<>
 this.[aDdsTopic.topicName/] = this.[aDdsDomainParticipant.domainParticipantName/].createTopic("[aDdsTopic.topicName/]", [aDdsTopic.ddsdatastructure.structureName.toUpperFirst()/].class, [aDdsTopic.topicName/]Qos, [aDdsTopic.topicName/]Listener, [aDdsTopic.topicName/]Status);
 [/let]
 [if (aDdsDataReader.dataReaderQosProfile <> null)]
-QosProvider [aDdsDataReader.dataReaderName/]QosProvider = QosProvider.newQosProvider("file://./qos/[aDdsDataReader.dataReaderQosProfile.profileName/].xml", "[aDdsDataReader.dataReaderQosProfile.profileName/]", env);
-DataReaderQos [aDdsDataReader.dataReaderName/]Qos = [aDdsDataReader.dataReaderName/]QosProvider.getDataReaderQos();
+DataReaderQos [aDdsDataReader.dataReaderName/]Qos = qosProvider.getDataReaderQos("[aDdsDataReader.dataReaderQosProfile.profileName/]");
 [else]
 DataReaderQos [aDdsDataReader.dataReaderName/]Qos = this.[aDdsSubscriber.subscriberName/].copyFromTopicQos(this.[aDdsSubscriber.subscriberName/].getDefaultDataReaderQos(), this.[aDdsDataReader.readableTopic.topicName/].getQos());
 [/if]

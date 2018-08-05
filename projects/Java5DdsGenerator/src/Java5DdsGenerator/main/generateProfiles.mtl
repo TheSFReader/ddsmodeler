@@ -3,13 +3,13 @@
 
 
 [template public generateProfiles(aDdsSystem : DdsSystem, path : String)]
-[for (aDdsQosProfile : DdsQosProfile | aDdsSystem.qosProfiles)]
-[file (path.concat('qos/').concat(aDdsQosProfile.profileName).concat('.xml'), false, 'UTF-8')]
+[file (path.concat('qos/').concat(aDdsSystem.systemName).concat('Qos.xml'), false, 'UTF-8')]
 <dds xmlns="http://www.omg.org/dds/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-<qos_profile name="[aDdsQosProfile.profileName/]">
+<qos_profile name="[aDdsSystem.systemName/]Qos">
+[for (aDdsQosProfile : DdsQosProfile | aDdsSystem.qosProfiles)]
 [if (aDdsQosProfile.oclIsTypeOf(DdsTopicQosProfile))]
 [let aDdsTopicQosProfile : DdsTopicQosProfile = aDdsQosProfile]
-	<topic_qos>
+	<topic_qos name="[aDdsTopicQosProfile.profileName/]">
 		[if (aDdsTopicQosProfile.topicDataQos <> null)]
 		<topic_data>
 			<value>[aDdsTopicQosProfile.topicDataQos.value/]</value>
@@ -111,7 +111,7 @@
 [/if]
 [if (aDdsQosProfile.oclIsKindOf(DdsDomainParticipantQosProfile))]
 [let aDdsDPQosProfile : DdsDomainParticipantQosProfile = aDdsQosProfile]
-	<domainparticipant_qos>
+	<domainparticipant_qos name="[aDdsDPQosProfile.profileName/]">
 		[if (aDdsDPQosProfile.userDataQos <> null)]
 		<user_data>
 			<value>[aDdsDPQosProfile.userDataQos.value/]</value>
@@ -127,7 +127,7 @@
 [/if]
 [if (aDdsQosProfile.oclIsTypeOf(DdsPublisherQosProfile))]
 [let aDdsPubQosProfile : DdsPublisherQosProfile = aDdsQosProfile]
-	<publisher_qos>
+	<publisher_qos name="[aDdsPubQosProfile.profileName/]">
 	[if (aDdsPubQosProfile.presentationQos <> null)]
 	<presentation_qos>
 		<access_scope>[aDdsPubQosProfile.presentationQos.access_scope.toString()/]</access_scope>
@@ -159,7 +159,7 @@
 [/if]
 [if (aDdsQosProfile.oclIsTypeOf(DdsDataWriterQosProfile))]
 [let aDdsDWQosProfile : DdsDataWriterQosProfile = aDdsQosProfile]
-	<datawriter_qos>
+	<datawriter_qos name="[aDdsDWQosProfile.profileName/]">
 	[if (aDdsDWQosProfile.durabilityQos <> null)]
 	<durability>
 		<kind>[aDdsDWQosProfile.durabilityQos.kind.toString()/]</kind>
@@ -270,7 +270,7 @@
 [/if]
 [if (aDdsQosProfile.oclIsTypeOf(DdsSubscriberQosProfile))]
 [let aDdsSubQosProfile : DdsSubscriberQosProfile = aDdsQosProfile]
-	<subscriber_qos>
+	<subscriber_qos name="[aDdsSubQosProfile.profileName/]">
 	[if (aDdsSubQosProfile.presentationQos <> null)]
 	<presentation_qos>
 		<access_scope>[aDdsSubQosProfile.presentationQos.access_scope.toString()/]</access_scope>
@@ -302,7 +302,7 @@
 [/if]
 [if (aDdsQosProfile.oclIsTypeOf(DdsDataReaderQosProfile))]
 [let aDdsDRQosProfile : DdsDataReaderQosProfile = aDdsQosProfile]
-<datareader_qos>
+<datareader_qos name="[aDdsDRQosProfile.profileName/]">
 	[if (aDdsDRQosProfile.durabilityQos <> null)]
 	<durability>
 		<kind>[aDdsDRQosProfile.durabilityQos.kind.toString()/]</kind>
@@ -403,8 +403,8 @@
 </datareader_qos>
 [/let]
 [/if]
+[/for]
 </qos_profile>
 </dds>
 [/file]
-[/for]
 [/template]

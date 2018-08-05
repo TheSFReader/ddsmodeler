@@ -50,7 +50,8 @@ In the Palette (the right pane), click on Data Modules and click in the center p
 Add a Data Structure named ChatMessage to the ChatModule. Add the fields :
 - senderId of type long
 - messageIndex of type long
-- message of type long
+- message of type string
+
 Select senderId and messageIndex as key for the Topic associated to the ChatMessage type.
 
 You should end with a model looking like the one shown below.
@@ -67,9 +68,9 @@ Click on the arrow next to the add tree element icon shown below and choose Topi
 
 ![Insertion icon](images/psStep3AddElementIcon.png)
 
-Change the name of the created TopicQosProfile to NameServiceQosProfile. Right-click on the created item and choose ReliabilityQos. Right-click on Max blocking time and choose delete. In the Properties pane keep the kind value to RELIABLE. Perform the same operations to associate a DurabilityQos with value TRANSIENT to the NameServiceQosProfile.
+Change the name of the created TopicQosProfile to NameServiceQosProfile. Right-click on the created item and choose ReliabilityQos. In the Properties pane keep the kind value to RELIABLE. Perform the same operations to associate a DurabilityQos with value TRANSIENT to the NameServiceQosProfile.
 Add another TopicQosProfile named ChatMessageQosProfile with the QoS:
-- ReliabilityQos: RELIABLE (do not forget to delete the max blocking time)
+- ReliabilityQos: RELIABLE
 - DurabilityQos: VOLATILE
 
 You should end with a model looking like the one shown below.
@@ -83,26 +84,26 @@ Now that the data model and the QoS are defined, it is time to define the applic
 The DDS System for this tutorial is made of two hosts ChatterHost and ReceiverHost.
 The ChatterHost hosts the Chatter which structure is:
 - DomainParticipant ChatterDomainParticipant
-|- Publisher ChatterPublisher
-|-- DataWriter NameServiceDataWriter
-|-- DataWriter ChatMessageDataWriter
+  - Publisher ChatterPublisher
+    - DataWriter NameServiceDataWriter
+    - DataWriter ChatMessageDataWriter
 
 The ReceiverHost hosts the MessageBoard and UserLoad applications. The MessageBoard structure is:
 - DomainParticipant MessageBoardParticipant
-|- Subscriber MessageBoardSubscriber
-|-- DataReader NameServiceDataReader
-|-- DataReader ChatMessageDataReader
+  - Subscriber MessageBoardSubscriber
+    - DataReader NameServiceDataReader
+    - DataReader ChatMessageDataReader
 - WaitSet MessageBoardWaitSet
-|- ReadCondition on NameServiceDataReader
-|- ReadCondition on ChatMessageDataReader
+  - ReadCondition on NameServiceDataReader
+  - ReadCondition on ChatMessageDataReader
 
 The UserLoad application structure is:
 - DomainParticipant UserLoadParticipant
-|- Subscriber UserLoadSubscriber
-|-- DataReader NameServiceDataReader
-|--- Listener with StatusCondition data_available
+  - Subscriber UserLoadSubscriber
+    - DataReader NameServiceDataReader
+      - Listener with StatusCondition data_available
 - Waitset userLoadWaitset
-|- GuardCondition userLoadGuard
+  - GuardCondition userLoadGuard
 
 The next sub-steps describes how the model is created.
 
@@ -178,7 +179,7 @@ Set the enabled status to DATA_AVAILABLE_STATUS. The model should look like the 
 
 ## Step 5: Code generation
 
-Right click on the model in the model explorer. Choose Acceleo Model to Text > Generate DDS Model to Java. The code is generated in the src-gen directory of your project.
+Right click on the model in the model explorer. Choose Acceleo Model to Text > Generate Java 5 API Dds Generator. The code is generated in the src-gen directory of your project.
 
 ## Step 6: Code the applications
 
