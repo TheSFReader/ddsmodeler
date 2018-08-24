@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module viewStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getViewState(arg0 : ViewStateKind) : String
+	= invoke('CppDdsGenerator.ViewStateKind2Code', 'getViewState(ddsMetamodel.ViewStateKind)', Sequence{arg0})
+/]
+

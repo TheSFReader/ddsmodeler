@@ -1,0 +1,51 @@
+[comment encoding = UTF-8 /]
+[module generatePublisherInit('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::publisherStatus2Code /]
+[import CppDdsGenerator::requests::topicStatus2Code /]
+[import CppDdsGenerator::requests::dataWriterStatus2Code /]
+
+[template public generatePublisherInit(aDdsPublisher : DdsPublisher, domainParticipantName : String)]
+[aDdsPublisher.publisherName/](this->[domainParticipantName/], [if (aDdsPublisher.publisherQosProfile) = null]
+this->[domainParticipantName/].default_publisher_qos()
+[else]
+this->qosProvider.publisher_qos("[aDdsPublisher.publisherQosProfile.profileName/]")
+[/if]
+[if (aDdsPublisher.publisherListener = null)]
+),
+[else]
+, new [aDdsPublisher.publisherListener.name.toUpperFirst()/], dds::core::status::StatusMask() << 
+[for (aStatus : PublisherStatus | aDdsPublisher.publisherListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for]),
+[/if]
+[for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter) separator(', ')]
+[aDdsDataWriter.publiableTopic.topicName/](this->[domainParticipantName/], "[aDdsDataWriter.publiableTopic.topicName/]",[if (aDdsDataWriter.publiableTopic.topicQosProfile = null)]
+this->[domainParticipantName/].default_topic_qos()
+[else]
+this->qosProvider.topic_qos("[aDdsDataWriter.publiableTopic.topicQosProfile.profileName/]")
+[/if]
+[if (aDdsDataWriter.publiableTopic.topicListener = null)]
+),
+[else]
+, new [aDdsDataWriter.publiableTopic.topicListener.name.toUpperFirst()/], dds::core::status::StatusMask() <<
+[for (aStatus : TopicStatus | aDdsDataWriter.publiableTopic.topicListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for]),
+[/if]
+[aDdsDataWriter.dataWriterName/](this->[aDdsPublisher.publisherName/], this->[aDdsDataWriter.publiableTopic.topicName/], 
+[if (aDdsDataWriter.dataWriterQosProfile = null)]
+this->[aDdsDataWriter.publiableTopic.topicName/].qos()
+[else]
+this->qosProvider.datawriter_qos("[aDdsDataWriter.dataWriterQosProfile.profileName/]")
+[/if]
+[if (aDdsDataWriter.dataWriterListener = null)]
+)
+[else]
+, new [aDdsDataWriter.dataWriterListener.name.toUpperFirst()/], dds::core::status::StatusMask() << 
+[for (aStatus : DataWriterStatus | aDdsDataWriter.dataWriterListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for])
+[/if]
+[/for]
+[/template]

@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module generateDomainParticipantInit('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::domainParticipantStatus2Code /]
+
+[template public generateDomainParticipantInit(aDdsDomainParticipant : DdsDomainParticipant)]
+DomainParticipant([aDdsDomainParticipant.domainId/], [if (aDdsDomainParticipant.ddsdomainparticipantqosprofile = null)]
+DomainParticipant::default_participant_qos()[else]qosProvider.participant_qos("[aDdsDomainParticipant.ddsdomainparticipantqosprofile.profileName/]")
+[/if]
+[if (aDdsDomainParticipant.domainParticipantListener = null)]
+)
+[else]
+, new [aDdsDomainParticipant.domainParticipantListener.name.toUpperFirst()/], dds::core::status::StatusMask() << 
+[for (aStatus : DomainParticipantStatus | aDdsDomainParticipant.domainParticipantListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for]
+)
+[/if]
+[/template]

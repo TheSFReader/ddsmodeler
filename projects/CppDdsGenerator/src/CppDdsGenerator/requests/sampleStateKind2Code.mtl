@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module sampleStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getSampleState(arg0 : SampleStateKind) : String
+	= invoke('CppDdsGenerator.SampleStateKind2Code', 'getSampleState(ddsMetamodel.SampleStateKind)', Sequence{arg0})
+/]
+

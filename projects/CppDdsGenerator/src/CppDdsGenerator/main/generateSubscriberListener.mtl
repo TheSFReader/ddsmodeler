@@ -1,0 +1,38 @@
+[comment encoding = UTF-8 /]
+[module generateSubscriberListener('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::subscriberStatus2Code /]
+
+[template public generateSubscriberListener(aDdsSubscriberListener : DdsSubscriberListener, srcPath : String, packageName : String, systemName : String)]
+
+[file (srcPath.concat(aDdsSubscriberListener.name.toUpperFirst()).concat('.cpp'), false, 'UTF-8')]
+#ifndef __[aDdsSubscriberListener.name.toUpper()/]__
+#define __[aDdsSubscriberListener.name.toUpper()/]__
+
+#include "dds/sub/SubscriberListener.hpp"
+#include "[systemName/].h"
+#include <iostream>
+
+using namespace std;
+using namespace dds::sub;
+using namespace dds::core::status;
+
+//[protected ('User defined code')]
+//[/protected]
+
+namespace [packageName/]
+{
+  class [aDdsSubscriberListener.name.toUpperFirst()/] : public virtual NoOpSubscriberListener
+  {
+    [for (aStatus : SubscriberStatus | aDdsSubscriberListener.listenedStatus)]
+    	[getMethodDefinition(aStatus)/]
+    {
+      //[protected ('Method body')]
+      //[/protected]
+    }
+    [/for]
+  };
+}
+#endif
+[/file]
+[/template]

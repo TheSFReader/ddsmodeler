@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::main::generateProfiles /]
+[import CppDdsGenerator::main::generateIdl /]
+[import CppDdsGenerator::main::generateHppFile /]
+[import CppDdsGenerator::main::generateCppFile /]
+
+[template public generateElement(aDdsSystem : DdsSystem)]
+[comment @main/]
+[for (aDdsHost : DdsHost | aDdsSystem.hosts)]
+[generateProfiles(aDdsSystem, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/'))/]
+[generateIdl(aDdsSystem, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/'))/]
+[/for]
+[generateHppFile(aDdsSystem)/]
+[generateCppFile(aDdsSystem)/]
+
+[/template]

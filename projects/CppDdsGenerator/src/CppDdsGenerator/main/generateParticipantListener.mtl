@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module generateParticipantListener('http://www.example.org/ddsMetamodel')]
+[import CppDdsGenerator::requests::domainParticipantStatus2Code /]
+
+[template public generateParticipantListener(aDdsDomainParticipantListener : DdsDomainParticipantListener, srcPath : String, packageName : String, systemName : String)]
+
+[file (srcPath.concat(aDdsDomainParticipantListener.name.toUpperFirst()).concat('.cpp'), false, 'UTF-8')]
+#ifndef __[aDdsDomainParticipantListener.name.toUpper()/]__
+#define __[aDdsDomainParticipantListener.name.toUpper()/]__
+
+#include "[systemName/].h"
+#include "dds/domain/DomainParticipantListener.hpp"
+#include <iostream>
+
+using namespace std;
+using namespace dds::domain;
+using namespace dds::pub;
+using namespace dds::sub;
+using namespace dds::core::status;
+using namespace dds::topic;
+
+//[protected ('User defined code')]
+//[/protected]
+
+namespace [packageName/]
+{
+  class [aDdsDomainParticipantListener.name.toUpperFirst()/]: public virtual NoOpDomainParticipantListener
+  {
+    [for (aStatus : DomainParticipantStatus | aDdsDomainParticipantListener.listenedStatus)]
+    [getMethodDefinition(aStatus)/]
+    {
+      //[protected ('Method body')]
+      //[/protected]
+    }
+    [/for]
+  };
+}
+#endif
+[/file]
+[/template]

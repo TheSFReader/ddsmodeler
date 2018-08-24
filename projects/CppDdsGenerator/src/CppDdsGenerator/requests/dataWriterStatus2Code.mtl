@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module dataWriterStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getMethodDefinition(arg0 : DataWriterStatus, arg1 : String) : String
+	= invoke('CppDdsGenerator.DataWriterStatus2Code', 'getMethodDefinition(ddsMetamodel.DataWriterStatus, java.lang.String)', Sequence{arg0, arg1})
+/]
+
+[query public getStatusMask(arg0 : DataWriterStatus) : String
+	= invoke('CppDdsGenerator.DataWriterStatus2Code', 'getStatusMask(ddsMetamodel.DataWriterStatus)', Sequence{arg0})
+/]
+

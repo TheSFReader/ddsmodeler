@@ -1,0 +1,51 @@
+[comment encoding = UTF-8 /]
+[module generateSubscriberInit('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::subscriberStatus2Code /]
+[import CppDdsGenerator::requests::topicStatus2Code /]
+[import CppDdsGenerator::requests::dataReaderStatus2Code /]
+
+[template public generateSubscriberInit(aDdsSubscriber : DdsSubscriber, domainParticipantName : String)]
+[aDdsSubscriber.subscriberName/](this->[domainParticipantName/], [if (aDdsSubscriber.subscriberQosProfile) = null]
+this->[domainParticipantName/].default_subscriber_qos()
+[else]
+this->qosProvider.subscriber_qos("[aDdsSubscriber.subscriberQosProfile.profileName/]")
+[/if]
+[if (aDdsSubscriber.subscriberListener = null)]
+),
+[else]
+, new [aDdsSubscriber.subscriberListener.name.toUpperFirst()/], dds::core::status::StatusMask() << 
+[for (aStatus : SubscriberStatus | aDdsSubscriber.subscriberListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for]),
+[/if]
+[for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader) separator(', ')]
+[aDdsDataReader.readableTopic.topicName/](this->[domainParticipantName/], "[aDdsDataReader.readableTopic.topicName/]",[if (aDdsDataReader.readableTopic.topicQosProfile = null)]
+this->[domainParticipantName/].default_topic_qos()
+[else]
+this->qosProvider.topic_qos("[aDdsDataReader.readableTopic.topicQosProfile.profileName/]")
+[/if]
+[if (aDdsDataReader.readableTopic.topicListener = null)]
+),
+[else]
+, new [aDdsDataReader.readableTopic.topicListener.name.toUpperFirst()/], dds::core::status::StatusMask() <<
+[for (aStatus : TopicStatus | aDdsDataReader.readableTopic.topicListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for]),
+[/if]
+[aDdsDataReader.dataReaderName/](this->[aDdsSubscriber.subscriberName/], this->[aDdsDataReader.readableTopic.topicName/], 
+[if (aDdsDataReader.dataReaderQosProfile = null)]
+this->[aDdsDataReader.readableTopic.topicName/].qos()
+[else]
+this->qosProvider.datareader_qos("[aDdsDataReader.dataReaderQosProfile.profileName/]")
+[/if]
+[if (aDdsDataReader.dataReaderListener = null)]
+)
+[else]
+, new [aDdsDataReader.dataReaderListener.name.toUpperFirst()/], dds::core::status::StatusMask() << 
+[for (aStatus : DataReaderStatus | aDdsDataReader.dataReaderListener.listenedStatus) separator(' << ')]
+dds::core::status::StatusMask::[getStatusMask(aStatus)/]
+[/for])
+[/if]
+[/for]
+[/template]

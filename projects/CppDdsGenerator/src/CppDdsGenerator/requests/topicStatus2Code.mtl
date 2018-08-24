@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module topicStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getMethodDefinition(arg0 : TopicStatus, arg1 : String) : String
+	= invoke('CppDdsGenerator.TopicStatus2Code', 'getMethodDefinition(ddsMetamodel.TopicStatus, java.lang.String)', Sequence{arg0, arg1})
+/]
+
+[query public getStatusMask(arg0 : TopicStatus) : String
+	= invoke('CppDdsGenerator.TopicStatus2Code', 'getStatusMask(ddsMetamodel.TopicStatus)', Sequence{arg0})
+/]
+

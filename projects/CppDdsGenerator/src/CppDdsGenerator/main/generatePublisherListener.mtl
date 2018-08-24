@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module generatePublisherListener('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::publisherStatus2Code /]
+
+[template public generatePublisherListener(aDdsPublisherListener : DdsPublisherListener, srcPath : String, packageName : String, systemName : String)]
+[file (srcPath.concat(aDdsPublisherListener.name.toUpperFirst()).concat('.cpp'), false, 'UTF-8')]
+#include "dds/pub/PublisherListener.hpp"
+#include "[systemName/].h"
+
+using namespace dds::pub;
+using namespace dds::core::status;
+
+//[protected ('User defined code')]
+//[/protected]
+
+namespace [packageName/]
+{
+  class [aDdsPublisherListener.name.toUpperFirst()/] : public virtual NoOpPublisherListener
+  {
+    [for (aStatus : PublisherStatus | aDdsPublisherListener.listenedStatus)]
+    	[getMethodDefinition(aStatus)/]
+    {
+      //[protected ('Method body')]
+      //[/protected]
+    }
+    [/for]
+  };
+}
+[/file]
+[/template]

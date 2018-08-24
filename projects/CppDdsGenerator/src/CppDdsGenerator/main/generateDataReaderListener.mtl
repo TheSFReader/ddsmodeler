@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module generateDataReaderListener('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::ddsModel2Code /]
+[import CppDdsGenerator::requests::dataReaderStatus2Code /]
+
+[template public generateDataReaderListener(aDdsDataReaderListener : DdsDataReaderListener, srcPath : String, packageName : String, dataStructure : DdsDataStructure, systemName : String)]
+
+[file (srcPath.concat(aDdsDataReaderListener.name.toUpperFirst()).concat('.cpp'), false, 'UTF-8')]
+#ifndef __[aDdsDataReaderListener.name.toUpper()/]__
+#define __[aDdsDataReaderListener.name.toUpper()/]__
+
+#include "[systemName/].h"
+#include "[systemName/]_DCPS.hpp"
+#include <iostream>
+
+using namespace std;
+using namespace dds::sub;
+using namespace [for (aDdsDataModule : DdsDataModule | getModulesHierarchy(dataStructure)) separator('::')][aDdsDataModule.moduleName/][/for];
+using namespace dds::core::status;
+
+//[protected ('User defined using namespace and code')]
+//[/protected]
+
+namespace [packageName/]
+{
+  class [aDdsDataReaderListener.name.toUpperFirst()/] : public virtual NoOpDataReaderListener<[dataStructure.structureName/]>
+  {
+    [for (aStatus : DataReaderStatus | aDdsDataReaderListener.listenedStatus)]
+    	[getMethodDefinition(aStatus, dataStructure.structureName)/]
+    {
+      //[protected ('Method body')]
+      //[/protected]
+    }
+    [/for]
+  };
+}
+
+#endif
+[/file]
+[/template]

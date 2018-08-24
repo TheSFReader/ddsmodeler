@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module subscriberStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getMethodDefinition(arg0 : SubscriberStatus) : String
+	= invoke('CppDdsGenerator.SubscriberStatus2Code', 'getMethodDefinition(ddsMetamodel.SubscriberStatus)', Sequence{arg0})
+/]
+
+[query public getStatusMask(arg0 : SubscriberStatus) : String
+	= invoke('CppDdsGenerator.SubscriberStatus2Code', 'getStatusMask(ddsMetamodel.SubscriberStatus)', Sequence{arg0})
+/]
+

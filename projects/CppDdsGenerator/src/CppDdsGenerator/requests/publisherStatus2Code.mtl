@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module publisherStatus2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getMethodDefinition(arg0 : PublisherStatus) : String
+	= invoke('CppDdsGenerator.PublisherStatus2Code', 'getMethodDefinition(ddsMetamodel.PublisherStatus)', Sequence{arg0})
+/]
+
+[query public getStatusMask(arg0 : PublisherStatus) : String
+	= invoke('CppDdsGenerator.PublisherStatus2Code', 'getStatusMask(ddsMetamodel.PublisherStatus)', Sequence{arg0})
+/]
+

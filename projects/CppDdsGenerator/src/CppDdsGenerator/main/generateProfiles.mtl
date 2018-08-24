@@ -1,0 +1,410 @@
+[comment encoding = UTF-8 /]
+[module generateProfiles('http://www.example.org/ddsMetamodel')]
+
+
+[template public generateProfiles(aDdsSystem : DdsSystem, path : String)]
+[file (path.concat('qos/').concat(aDdsSystem.systemName).concat('Qos.xml'), false, 'UTF-8')]
+<dds xmlns="http://www.omg.org/dds/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<qos_profile name="[aDdsSystem.systemName/]Qos">
+[for (aDdsQosProfile : DdsQosProfile | aDdsSystem.qosProfiles)]
+[if (aDdsQosProfile.oclIsTypeOf(DdsTopicQosProfile))]
+[let aDdsTopicQosProfile : DdsTopicQosProfile = aDdsQosProfile]
+	<topic_qos name="[aDdsTopicQosProfile.profileName/]">
+		[if (aDdsTopicQosProfile.topicDataQos <> null)]
+		<topic_data>
+			<value>[aDdsTopicQosProfile.topicDataQos.value/]</value>
+		</topic_data>
+		[/if]
+		[if (aDdsTopicQosProfile.durabilityQos <> null)]
+		<durability>
+			<kind>[aDdsTopicQosProfile.durabilityQos.kind.toString()/]</kind>
+		</durability>
+		[/if]
+		[if (aDdsTopicQosProfile.durabilityServiceQos <> null) ]
+		<durability_service>
+			[if (aDdsTopicQosProfile.durabilityServiceQos.service_cleanup_delay <> null) ]
+			<service_cleanup_delay>
+				<sec>[aDdsTopicQosProfile.durabilityServiceQos.service_cleanup_delay.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.durabilityServiceQos.service_cleanup_delay.nanoSec/]</nanosec>
+			</service_cleanup_delay>
+			[/if]
+			<history_kind>[aDdsTopicQosProfile.durabilityServiceQos.history_kind.toString()/]</history_kind>
+			<history_depth>[aDdsTopicQosProfile.durabilityServiceQos.history_depth/]</history_depth>
+			<max_samples>[aDdsTopicQosProfile.durabilityServiceQos.max_samples/]</max_samples>
+			<max_instances>[aDdsTopicQosProfile.durabilityServiceQos.max_instances/]</max_instances>
+			<max_samples_per_instance>[aDdsTopicQosProfile.durabilityServiceQos.max_samples_per_instances/]</max_samples_per_instance>
+		</durability_service>
+		[/if]
+		[if (aDdsTopicQosProfile.deadlineQos <> null)]
+		<deadline>
+			[if (aDdsTopicQosProfile.deadlineQos.period <> null) ]
+			<period>
+				<sec>[aDdsTopicQosProfile.deadlineQos.period.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.deadlineQos.period.nanoSec/]</nanosec>
+			</period>
+			[/if]
+		</deadline>
+		[/if]
+		[if (aDdsTopicQosProfile.latencyBudgetQos <> null)]
+		<latency_budget>
+			<duration>
+				<sec>[aDdsTopicQosProfile.latencyBudgetQos.duration.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.latencyBudgetQos.duration.nanoSec/]</nanosec>
+			</duration>
+		</latency_budget>
+		[/if]
+		[if (aDdsTopicQosProfile.livelinessQos <> null)]
+		<liveliness>
+			<kind>[aDdsTopicQosProfile.livelinessQos.kind.toString()/]</kind>
+			[if (aDdsTopicQosProfile.livelinessQos.lease_duration <> null) ]
+			<lease_duration>
+				<sec>[aDdsTopicQosProfile.livelinessQos.lease_duration.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.livelinessQos.lease_duration.nanoSec/]</nanosec>
+			</lease_duration>
+			[/if]
+		</liveliness>
+		[/if]
+		[if (aDdsTopicQosProfile.reliabilityQos <> null)]
+		<reliability>
+			<kind>[aDdsTopicQosProfile.reliabilityQos.kind.toString()/]</kind>
+			[if (aDdsTopicQosProfile.reliabilityQos.max_blocking_time <> null)]
+			<max_blocking_time>
+				<sec>[aDdsTopicQosProfile.reliabilityQos.max_blocking_time.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.reliabilityQos.max_blocking_time.nanoSec/]</nanosec>
+			</max_blocking_time>
+			[/if]
+		</reliability>
+		[/if]
+		[if (aDdsTopicQosProfile.destinationOrderQos <> null)]
+		<destination_order>
+			<kind>[aDdsTopicQosProfile.destinationOrderQos.kind.toString()/]</kind>
+		</destination_order>
+		[/if]
+		[if (aDdsTopicQosProfile.historyQos <> null)]
+		<history>
+			<kind>[aDdsTopicQosProfile.historyQos.kind.toString()/]</kind>
+			<depth>[aDdsTopicQosProfile.historyQos.depth/]</depth>
+		</history>
+		[/if]
+		[if (aDdsTopicQosProfile.resourceLimitsQos <> null)]
+		<resource_limits>
+			<max_samples>[aDdsTopicQosProfile.resourceLimitsQos.max_samples/]</max_samples>
+			<max_instances>[aDdsTopicQosProfile.resourceLimitsQos.max_instances/]</max_instances>
+			<max_samples_per_instance>[aDdsTopicQosProfile.resourceLimitsQos.max_samples_per_instances/]</max_samples_per_instance>
+		</resource_limits>
+		[/if]
+		[if (aDdsTopicQosProfile.lifespanQos <> null)]
+		<lifespan>
+			<duration>
+				<sec>[aDdsTopicQosProfile.lifespanQos.duration.sec/]</sec>
+				<nanosec>[aDdsTopicQosProfile.lifespanQos.duration.nanoSec/]</nanosec>
+			</duration>
+		</lifespan>
+		[/if]
+		[if (aDdsTopicQosProfile.ownershipQos <> null)]
+		<ownership>
+			<kind>[aDdsTopicQosProfile.ownershipQos.kind.toString()/]</kind>
+		</ownership>
+		[/if]
+	</topic_qos>
+[/let]	
+[/if]
+[if (aDdsQosProfile.oclIsKindOf(DdsDomainParticipantQosProfile))]
+[let aDdsDPQosProfile : DdsDomainParticipantQosProfile = aDdsQosProfile]
+	<domainparticipant_qos name="[aDdsDPQosProfile.profileName/]">
+		[if (aDdsDPQosProfile.userDataQos <> null)]
+		<user_data>
+			<value>[aDdsDPQosProfile.userDataQos.value/]</value>
+		</user_data>
+		[/if]
+		[if (aDdsDPQosProfile.entityFactoryQos <> null)]
+		<entity_factory>
+			<autoenable_created_entities>[aDdsDPQosProfile.entityFactoryQos.autoenable_created_entities/]</autoenable_created_entities>
+		</entity_factory>
+		[/if]
+	</domainparticipant_qos>
+[/let]
+[/if]
+[if (aDdsQosProfile.oclIsTypeOf(DdsPublisherQosProfile))]
+[let aDdsPubQosProfile : DdsPublisherQosProfile = aDdsQosProfile]
+	<publisher_qos name="[aDdsPubQosProfile.profileName/]">
+	[if (aDdsPubQosProfile.presentationQos <> null)]
+	<presentation_qos>
+		<access_scope>[aDdsPubQosProfile.presentationQos.access_scope.toString()/]</access_scope>
+		<coherent_access>[aDdsPubQosProfile.presentationQos.coherent_access/]</coherent_access>
+		<ordered_access>[aDdsPubQosProfile.presentationQos.ordered_access/]</ordered_access>
+	</presentation_qos>
+	[/if]
+	[if (aDdsPubQosProfile.partitionQos <> null)]
+	<partition>
+		<name>
+			[for (partitionName : String | aDdsPubQosProfile.partitionQos.name)]
+			<element>[partitionName/]</element>
+			[/for]
+		</name>
+	</partition>
+	[/if]
+	[if (aDdsPubQosProfile.groupDataQos <> null)]
+	<group_data>
+		<value>[aDdsPubQosProfile.groupDataQos.value/]</value>
+	</group_data>
+	[/if]
+	[if (aDdsPubQosProfile.entityFactoryQos <> null)]
+	<entity_factory>
+		<autoenable_created_entities>[aDdsPubQosProfile.entityFactoryQos.autoenable_created_entities/]</autoenable_created_entities>
+	</entity_factory>
+	[/if]
+	</publisher_qos>
+[/let]
+[/if]
+[if (aDdsQosProfile.oclIsTypeOf(DdsDataWriterQosProfile))]
+[let aDdsDWQosProfile : DdsDataWriterQosProfile = aDdsQosProfile]
+	<datawriter_qos name="[aDdsDWQosProfile.profileName/]">
+	[if (aDdsDWQosProfile.durabilityQos <> null)]
+	<durability>
+		<kind>[aDdsDWQosProfile.durabilityQos.kind.toString()/]</kind>
+	</durability>
+	[/if]
+	[if (aDdsDWQosProfile.deadlineQos <> null)]
+	<deadline>
+		<period>
+			<sec>[aDdsDWQosProfile.deadlineQos.period.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.deadlineQos.period.nanoSec/]</nanosec>
+		</period>
+	</deadline>
+	[/if]
+	[if (aDdsDWQosProfile.latencyBudgetQos <> null)]
+	<latency_budget>
+		<duration>
+			<sec>[aDdsDWQosProfile.latencyBudgetQos.duration.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.latencyBudgetQos.duration.nanoSec/]</nanosec>
+		</duration>
+	</latency_budget>
+	[/if]
+	[if (aDdsDWQosProfile.livelinessQos <> null)]
+	<liveliness>
+		<kind>[aDdsDWQosProfile.livelinessQos.kind.toString()/]</kind>
+		[if (aDdsDWQosProfile.livelinessQos.lease_duration <> null) ]
+		<lease_duration>
+			<sec>[aDdsDWQosProfile.livelinessQos.lease_duration.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.livelinessQos.lease_duration.nanoSec/]</nanosec>
+		</lease_duration>
+		[/if]
+	</liveliness>
+	[/if]
+	[if (aDdsDWQosProfile.reliabilityQos <> null)]
+	<reliability>
+		<kind>[aDdsDWQosProfile.reliabilityQos.kind.toString()/]</kind>
+		[if (aDdsDWQosProfile.reliabilityQos.max_blocking_time <> null) ]
+		<max_blocking_time>
+			<sec>[aDdsDWQosProfile.reliabilityQos.max_blocking_time.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.reliabilityQos.max_blocking_time.nanoSec/]</nanosec>
+		</max_blocking_time>
+		[/if]
+	</reliability>
+	[/if]
+	[if (aDdsDWQosProfile.destinationOrderQos <> null)]
+	<destination_order>
+		<kind>[aDdsDWQosProfile.destinationOrderQos.kind.toString()/]</kind>
+	</destination_order>
+	[/if]
+	[if (aDdsDWQosProfile.historyQos <> null)]
+	<history>
+		<kind>[aDdsDWQosProfile.historyQos.kind.toString()/]</kind>
+	</history>
+	[/if]
+	[if (aDdsDWQosProfile.resourceLimitsQos <> null)]
+	<resource_limits>
+		<max_samples>[aDdsDWQosProfile.resourceLimitsQos.max_samples/]</max_samples>
+		<max_instances>[aDdsDWQosProfile.resourceLimitsQos.max_instances/]</max_instances>
+		<max_samples_per_instance>[aDdsDWQosProfile.resourceLimitsQos.max_samples_per_instances/]</max_samples_per_instance>
+	</resource_limits>
+	[/if]
+	[if (aDdsDWQosProfile.transportPriorityQos <> null)]
+	<transport_priority>
+		<value>[aDdsDWQosProfile.transportPriorityQos.value/]</value>
+	</transport_priority>
+	[/if]
+	[if (aDdsDWQosProfile.lifespanQos <> null)]
+	<lifespan>
+		<duration>
+			<sec>[aDdsDWQosProfile.lifespanQos.duration.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.lifespanQos.duration.nanoSec/]</nanosec>
+		</duration>
+	</lifespan>
+	[/if]
+	[if (aDdsDWQosProfile.userDataQos <> null)]
+	<user_data>
+		<value>[aDdsDWQosProfile.userDataQos.value/]</value>
+	</user_data>
+	[/if]
+	[if (aDdsDWQosProfile.ownershipQos <> null)]
+	<ownership>
+		<kind>[aDdsDWQosProfile.ownershipQos.kind.toString()/]</kind>
+	</ownership>
+	[/if]
+	[if (aDdsDWQosProfile.ownershipStrength <> null)]
+	<ownership_strength>
+		<value>[aDdsDWQosProfile.ownershipStrength.value/]</value>
+	</ownership_strength>
+	[/if]
+	[if (aDdsDWQosProfile.dataWriterLifecycleQos <> null)]
+	<writer_data_lifecycle>
+		<autodispose_unregistered_instances>[aDdsDWQosProfile.dataWriterLifecycleQos.autodispose_unregistered_instances/]</autodispose_unregistered_instances>
+		[if (aDdsDWQosProfile.dataWriterLifecycleQos.autopurge_suspended_samples_delay <> null)]
+		<autopurge_suspended_samples_delay>
+			<sec>[aDdsDWQosProfile.dataWriterLifecycleQos.autopurge_suspended_samples_delay.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.dataWriterLifecycleQos.autopurge_suspended_samples_delay.nanoSec/]</nanosec>
+		</autopurge_suspended_samples_delay>
+		[/if]		
+		[if (aDdsDWQosProfile.dataWriterLifecycleQos.autounregister_instance_delay <> null)]
+		<autounregister_instance_delay>
+			<sec>[aDdsDWQosProfile.dataWriterLifecycleQos.autounregister_instance_delay.sec/]</sec>
+			<nanosec>[aDdsDWQosProfile.dataWriterLifecycleQos.autounregister_instance_delay.nanoSec/]</nanosec>
+		</autounregister_instance_delay>
+		[/if]
+	</writer_data_lifecycle>
+	[/if]
+	</datawriter_qos>
+[/let]
+[/if]
+[if (aDdsQosProfile.oclIsTypeOf(DdsSubscriberQosProfile))]
+[let aDdsSubQosProfile : DdsSubscriberQosProfile = aDdsQosProfile]
+	<subscriber_qos name="[aDdsSubQosProfile.profileName/]">
+	[if (aDdsSubQosProfile.presentationQos <> null)]
+	<presentation_qos>
+		<access_scope>[aDdsSubQosProfile.presentationQos.access_scope.toString()/]</access_scope>
+		<coherent_access>[aDdsSubQosProfile.presentationQos.coherent_access/]</coherent_access>
+		<ordered_access>[aDdsSubQosProfile.presentationQos.ordered_access/]</ordered_access>
+	</presentation_qos>
+	[/if]
+	[if (aDdsSubQosProfile.partitionQos <> null)]
+	<partition>
+		<name>
+			[for (partitionName : String | aDdsSubQosProfile.partitionQos.name)]
+			<element>[partitionName/]</element>
+			[/for]
+		</name>
+	</partition>
+	[/if]
+	[if (aDdsSubQosProfile.groupDataQos <> null)]
+	<group_data>
+		<value>[aDdsSubQosProfile.groupDataQos.value/]</value>
+	</group_data>
+	[/if]
+	[if (aDdsSubQosProfile.entityFactoryQos <> null)]
+	<entity_factory>
+		<autoenable_created_entities>[aDdsSubQosProfile.entityFactoryQos.autoenable_created_entities/]</autoenable_created_entities>
+	</entity_factory>
+	[/if]
+	</subscriber_qos>
+[/let]
+[/if]
+[if (aDdsQosProfile.oclIsTypeOf(DdsDataReaderQosProfile))]
+[let aDdsDRQosProfile : DdsDataReaderQosProfile = aDdsQosProfile]
+<datareader_qos name="[aDdsDRQosProfile.profileName/]">
+	[if (aDdsDRQosProfile.durabilityQos <> null)]
+	<durability>
+		<kind>[aDdsDRQosProfile.durabilityQos.kind.toString()/]</kind>
+	</durability>
+	[/if]
+	[if (aDdsDRQosProfile.deadlineQos <> null)]
+	<deadline>
+		<period>
+			<sec>[aDdsDRQosProfile.deadlineQos.period.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.deadlineQos.period.nanoSec/]</nanosec>
+		</period>
+	</deadline>
+	[/if]
+	[if (aDdsDRQosProfile.latencyBudgetQos <> null)]
+	<latency_budget>
+		<duration>
+			<sec>[aDdsDRQosProfile.latencyBudgetQos.duration.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.latencyBudgetQos.duration.nanoSec/]</nanosec>
+		</duration>
+	</latency_budget>
+	[/if]
+	[if (aDdsDRQosProfile.livelinessQos <> null)]
+	<liveliness>
+		<kind>[aDdsDRQosProfile.livelinessQos.kind.toString()/]</kind>
+		[if (aDdsDRQosProfile.livelinessQos.lease_duration <> null) ]
+		<lease_duration>
+			<sec>[aDdsDRQosProfile.livelinessQos.lease_duration.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.livelinessQos.lease_duration.nanoSec/]</nanosec>
+		</lease_duration>
+		[/if]
+	</liveliness>
+	[/if]
+	[if (aDdsDRQosProfile.reliabilityQos <> null)]
+	<reliability>
+		<kind>[aDdsDRQosProfile.reliabilityQos.kind.toString()/]</kind>
+		[if (aDdsDRQosProfile.reliabilityQos.max_blocking_time <> null) ]
+		<max_blocking_time>
+			<sec>[aDdsDRQosProfile.reliabilityQos.max_blocking_time.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.reliabilityQos.max_blocking_time.nanoSec/]</nanosec>
+		</max_blocking_time>
+		[/if]
+	</reliability>
+	[/if]
+	[if (aDdsDRQosProfile.destinationOrderQos <> null)]
+	<destination_order>
+		<kind>[aDdsDRQosProfile.destinationOrderQos.kind.toString()/]</kind>
+	</destination_order>
+	[/if]
+	[if (aDdsDRQosProfile.historyQos <> null)]
+	<history>
+		<kind>[aDdsDRQosProfile.historyQos.kind.toString()/]</kind>
+		<depth>[aDdsDRQosProfile.historyQos.depth/]</depth>
+	</history>
+	[/if]
+	[if (aDdsDRQosProfile.resourceLimitsQos <> null)]
+	<resource_limits>
+		<max_samples>[aDdsDRQosProfile.resourceLimitsQos.max_samples/]</max_samples>
+		<max_instances>[aDdsDRQosProfile.resourceLimitsQos.max_instances/]</max_instances>
+		<max_samples_per_instance>[aDdsDRQosProfile.resourceLimitsQos.max_samples_per_instances/]</max_samples_per_instance>
+	</resource_limits>
+	[/if]
+	[if (aDdsDRQosProfile.userDataQos <> null)]
+	<user_data>
+		<value>[aDdsDRQosProfile.userDataQos.value/]</value>
+	</user_data>
+	[/if]
+	[if (aDdsDRQosProfile.ownershipQos <> null)]
+	<ownership>
+		<kind>[aDdsDRQosProfile.ownershipQos.kind.toString()/]</kind>
+	</ownership>
+	[/if]
+	[if (aDdsDRQosProfile.timeBasedFilterQos <> null)]
+	<time_based_filter>
+		<minimum_separation>
+			<sec>[aDdsDRQosProfile.timeBasedFilterQos.minimum_separation.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.timeBasedFilterQos.minimum_separation.nanoSec/]</nanosec>
+		</minimum_separation>
+	</time_based_filter>
+	[/if]
+	[if (aDdsDRQosProfile.dataReaderLifecycleQos <> null)]
+	<reader_data_lifecycle>
+		<autopurge_dispose_all>[aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_dispose_all/]</autopurge_dispose_all>
+		<enable_invalid_samples>[aDdsDRQosProfile.dataReaderLifecycleQos.enable_invalid_samples/]</enable_invalid_samples>
+		[if (aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_disposed_samples_delay <> null)]
+		<autopurge_disposed_samples_delay>
+			<sec>[aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_disposed_samples_delay.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_disposed_samples_delay.nanoSec/]</nanosec>
+		</autopurge_disposed_samples_delay>
+		[/if]		
+		[if (aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_nowriters_samples_delay <> null)]
+		<autopurge_nowriters_samples_delay>
+			<sec>[aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_nowriters_samples_delay.sec/]</sec>
+			<nanosec>[aDdsDRQosProfile.dataReaderLifecycleQos.autopurge_nowriters_samples_delay.nanoSec/]</nanosec>
+		</autopurge_nowriters_samples_delay>
+		[/if]
+	</writer_data_lifecycle>
+	[/if]
+</datareader_qos>
+[/let]
+[/if]
+[/for]
+</qos_profile>
+</dds>
+[/file]
+[/template]

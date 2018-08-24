@@ -1,0 +1,78 @@
+[comment encoding = UTF-8 /]
+[module generateCppFile('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::main::generateParticipantListener /]
+[import CppDdsGenerator::requests::domainParticipantStatus2Code /]
+[import CppDdsGenerator::main::generateDomainParticipantInit /]
+[import CppDdsGenerator::main::generatePublisherInit /]
+[import CppDdsGenerator::main::generateSubscriberInit /]
+
+[template public generateCppFile(aDdsSystem : DdsSystem)]
+[for (aDdsHost : DdsHost | aDdsSystem.hosts)]
+[for (aDdsApplication : DdsApplication | aDdsHost.applications)]
+[file (aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/').concat(aDdsApplication.applicationName).concat('.cpp'), false, 'UTF-8')]
+#include "[aDdsApplication.applicationName /].hpp"
+
+namespace [aDdsApplication.applicationName.toUpperFirst() /]
+{
+  [aDdsApplication.applicationName.toUpperFirst() /]::[aDdsApplication.applicationName.toUpperFirst() /]():
+    [aDdsApplication.applicationName.toUpperFirst()/](QosProvider("file://./qos/[aDdsSystem.systemName/]Qos.xml", "[aDdsSystem.systemName/]Qos"), [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')][generateDomainParticipantInit(aDomainParticipant)/][/for])
+  {
+  };
+
+  [aDdsApplication.applicationName.toUpperFirst()/]::[aDdsApplication.applicationName.toUpperFirst() /](QosProvider qosProvider, [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')]DomainParticipant param[aDomainParticipant.domainParticipantName.toUpperFirst()/][/for]):
+    qosProvider(qosProvider),
+    [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(',')]
+    [aDomainParticipant.domainParticipantName/](param[aDomainParticipant.domainParticipantName.toUpperFirst()/])
+    [if (aDomainParticipant.ddspublisher->notEmpty())]
+    ,
+    [for (aDdsPublisher : DdsPublisher | aDomainParticipant.ddspublisher) separator(', ')]
+    [generatePublisherInit(aDdsPublisher, aDomainParticipant.domainParticipantName)/]
+    [/for]
+    [/if]
+    [if (aDomainParticipant.ddssubscriber->notEmpty())]
+    ,
+    [for (aDdsSubscriber : DdsSubscriber | aDomainParticipant.ddssubscriber) separator(', ')]
+    [generateSubscriberInit(aDdsSubscriber, aDomainParticipant.domainParticipantName)/]
+    [/for]
+    [/if]
+    [/for]
+    //[protected ('User defined attributes initialization')]
+    //[/protected]
+  {
+  };
+
+  /*[aDdsApplication.applicationName.toUpperFirst()/]::~[aDdsApplication.applicationName.toUpperFirst()/]()
+  {
+    [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+    	[for (aDdsPublisher : DdsPublisher | aDomainParticipant.ddspublisher)]
+    	[for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter)]
+    	this->[aDdsDataWriter.publiableTopic.topicName/].close();
+    this->[aDdsDataWriter.dataWriterName/].close();	
+    [/for]
+    this->[aDdsPublisher.publisherName/].close();
+    	[/for]
+    [for (aDdsSubscriber : DdsSubscriber | aDomainParticipant.ddssubscriber)]
+    	[for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
+    	this->[aDdsDataReader.readableTopic.topicName/].close();
+    this->[aDdsDataReader.dataReaderName/].close();	
+    [/for]
+    this->[aDdsSubscriber.subscriberName/].close();
+    [/for]
+    this->[aDomainParticipant.domainParticipantName/].close();
+    [/for]
+  };*/
+
+  void [aDdsApplication.applicationName.toUpperFirst()/]::applicationBehavior()
+  {
+    //[protected ('Application behavior')]
+	//[/protected]
+  };
+
+  // [protected('User defined methods')]
+  // [/protected]
+}
+[/file]
+[/for]
+[/for]
+[/template]

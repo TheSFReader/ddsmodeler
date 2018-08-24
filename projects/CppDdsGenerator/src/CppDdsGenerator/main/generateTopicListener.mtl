@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module generateTopicListener('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::ddsModel2Code /]
+[import CppDdsGenerator::requests::topicStatus2Code /]
+
+[template public generateTopicListener(aDdsTopicListener : DdsTopicListener, srcPath : String, packageName : String, dataStructure : DdsDataStructure, systemName : String)]
+
+[file (srcPath.concat(aDdsTopicListener.name.toUpperFirst()).concat('.cpp'), false, 'UTF-8')]
+#ifndef __[aDdsTopicListener.name.toUpper()/]__
+#define __[aDdsTopicListener.name.toUpper()/]__
+
+#include "[systemName/]_DCPS.hpp"
+#include "[systemName/].h"
+
+#include <iostream>
+
+using namespace std;
+using namespace dds::topic;
+using namespace [for (aDdsModule : DdsDataModule | getModulesHierarchy(dataStructure)) separator('::')][aDdsModule.moduleName/][/for];
+using namespace dds::core::status;
+
+//[protected ('User code')]
+//[/protected]
+
+namespace [packageName/]
+{
+  class [aDdsTopicListener.name.toUpperFirst()/] : public virtual NoOpTopicListener<[dataStructure.structureName/]>
+  {
+    [for (aStatus : TopicStatus | aDdsTopicListener.listenedStatus)]
+    	[getMethodDefinition(aStatus, dataStructure.structureName)/]
+    {
+      //[protected ('Method body')]
+      //[/protected]
+    }
+    [/for]
+  };
+}
+#endif
+[/file]
+[/template]

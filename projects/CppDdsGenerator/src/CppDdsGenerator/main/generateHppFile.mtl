@@ -1,0 +1,134 @@
+[comment encoding = UTF-8 /]
+[module generateHppFile('http://www.example.org/ddsMetamodel')]
+
+[import CppDdsGenerator::requests::ddsModel2Code /]
+[import CppDdsGenerator::main::generateParticipantListener /]
+[import CppDdsGenerator::main::generatePublisherListener /]
+[import CppDdsGenerator::main::generateDataWriterListener /]
+[import CppDdsGenerator::main::generateDataReaderListener /]
+[import CppDdsGenerator::main::generateSubscriberListener /]
+[import CppDdsGenerator::main::generateTopicListener /]
+
+[template public generateHppFile(aDdsSystem : DdsSystem)]
+[for (aDdsHost : DdsHost | aDdsSystem.hosts)]
+[for (aDdsApplication : DdsApplication | aDdsHost.applications)]
+[file (aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/').concat(aDdsApplication.applicationName).concat('.hpp'), false, 'UTF-8')]
+#ifndef __[aDdsApplication.applicationName.toUpper() /]__
+#define __[aDdsApplication.applicationName.toUpper() /]__
+#include <iostream>
+#include <string>
+
+[for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+[if (aDomainParticipant.domainParticipantListener <> null)]
+[generateParticipantListener(aDomainParticipant.domainParticipantListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsSystem.systemName)/]
+#include "[aDomainParticipant.domainParticipantListener.name.toUpperFirst()/].cpp"
+[/if]
+[for (aDdsPublisher : DdsPublisher | aDomainParticipant.ddspublisher)]
+[if (aDdsPublisher.publisherListener <> null)]
+[generatePublisherListener(aDdsPublisher.publisherListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsSystem.systemName)/]
+#include "[aDdsPublisher.publisherListener.name.toUpperFirst()/].cpp"
+[/if]
+[for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter)]
+[if (aDdsDataWriter.publiableTopic.topicListener <> null)]
+[generateTopicListener(aDdsDataWriter.publiableTopic.topicListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsDataWriter.publiableTopic.ddsdatastructure, aDdsSystem.systemName)/]
+#include "[aDdsDataWriter.publiableTopic.topicListener.name.toUpperFirst()/].cpp"
+[/if]
+[if (aDdsDataWriter.dataWriterListener <> null)]
+[generateDataWriterListener(aDdsDataWriter.dataWriterListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsDataWriter.publiableTopic.ddsdatastructure, aDdsSystem.systemName)/]
+#include "[aDdsDataWriter.dataWriterListener.name.toUpperFirst()/].cpp"
+[/if]
+[/for]
+[/for]
+[for (aDdsSubscriber : DdsSubscriber | aDomainParticipant.ddssubscriber)]
+[if (aDdsSubscriber.subscriberListener <> null)]
+[generateSubscriberListener(aDdsSubscriber.subscriberListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsSystem.systemName)/]
+#include "[aDdsSubscriber.subscriberListener.name.toUpperFirst()/].cpp"
+[/if]
+[for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
+[if (aDdsDataReader.readableTopic.topicListener <> null)]
+[generateTopicListener(aDdsDataReader.readableTopic.topicListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsDataReader.readableTopic.ddsdatastructure, aDdsSystem.systemName)/]
+#include "[aDdsDataReader.readableTopic.topicListener.name.toUpperFirst()/].cpp"
+[/if]
+[if (aDdsDataReader.dataReaderListener <> null)]
+[generateDataReaderListener(aDdsDataReader.dataReaderListener, aDdsSystem.systemName.concat('/').concat(aDdsHost.hostName).concat('/src/').concat(aDdsApplication.applicationName).concat('/'), aDdsApplication.applicationName, aDdsDataReader.readableTopic.ddsdatastructure, aDdsSystem.systemName)/]
+#include "[aDdsDataReader.dataReaderListener.name.toUpperFirst()/].cpp"
+[/if]
+[/for]
+[/for]
+[/for]
+
+#include "[aDdsSystem.systemName/].h"
+#include "[aDdsSystem.systemName/]_DCPS.hpp"
+
+//[protected ('User defined includes')]
+//[/protected]
+
+using namespace std;
+using namespace dds::core;
+using namespace dds::domain;
+using namespace dds::domain::qos;
+using namespace dds::topic::qos;
+using namespace dds::topic;
+[for (aDdsDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+[if (aDdsDomainParticipant.ddspublisher->notEmpty())]
+using namespace dds::pub;
+using namespace dds::pub::qos;
+[/if]
+[if (aDdsDomainParticipant.ddssubscriber->notEmpty())]
+using namespace dds::sub;
+[/if]
+[/for]
+[if (aDdsApplication.waitset <> null)]
+using namespace dds::core::cond;
+using namespace dds::sub::cond;
+using namespace dds::sub::status;
+[/if]
+//[protected ('User defined using namespace')]
+//[/protected]
+
+namespace [aDdsApplication.applicationName.toUpperFirst()/]
+{
+  class [aDdsApplication.applicationName.toUpperFirst()/]
+  {
+  private:
+    QosProvider qosProvider;
+    [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants)]
+    //Attributes for participant [aDomainParticipant.domainParticipantName/]    
+	DomainParticipant [aDomainParticipant.domainParticipantName/];
+    [for (aDdsPublisher : DdsPublisher | aDomainParticipant.ddspublisher)]
+    Publisher [aDdsPublisher.publisherName /];
+    [for (aDdsDataWriter : DdsDataWriter | aDdsPublisher.ddsdatawriter)]
+    [if (aDdsDataWriter.publiableTopic <> null)]
+    Topic<[for (aDdsDataModule : DdsDataModule | getModulesHierarchy(aDdsDataWriter.publiableTopic.ddsdatastructure)) separator('::')][aDdsDataModule.moduleName/][/for]::[aDdsDataWriter.publiableTopic.ddsdatastructure.structureName/]> [aDdsDataWriter.publiableTopic.topicName/];
+    [/if]
+    DataWriter<[for (aDdsDataModule : DdsDataModule | getModulesHierarchy(aDdsDataWriter.publiableTopic.ddsdatastructure)) separator('::') ][aDdsDataModule.moduleName/][/for]::[aDdsDataWriter.publiableTopic.ddsdatastructure.structureName/]> [aDdsDataWriter.dataWriterName/];
+    [/for]
+    [/for]
+    [for (aDdsSubscriber : DdsSubscriber | aDomainParticipant.ddssubscriber)]
+    Subscriber [aDdsSubscriber.subscriberName/];
+    [for (aDdsDataReader : DdsDataReader | aDdsSubscriber.ddsdatareader)]
+    [if (aDdsDataReader.readableTopic <> null)]
+    Topic<[for (aDdsDataModule : DdsDataModule | getModulesHierarchy(aDdsDataReader.readableTopic.ddsdatastructure)) separator('::')][aDdsDataModule.moduleName/][/for]::[aDdsDataReader.readableTopic.ddsdatastructure.structureName/]> [aDdsDataReader.readableTopic.topicName/];
+    [/if]
+    DataReader<[for (aDdsDataModule : DdsDataModule | getModulesHierarchy(aDdsDataReader.readableTopic.ddsdatastructure)) separator('::')][aDdsDataModule.moduleName/][/for]::[aDdsDataReader.readableTopic.ddsdatastructure.structureName/]> [aDdsDataReader.dataReaderName/];
+    [/for]
+    [/for]
+    [/for]
+    //[protected ('User defined attributes and private methods')]
+    //[/protected]
+
+  public:
+    [aDdsApplication.applicationName.toUpperFirst() /]();
+    [aDdsApplication.applicationName.toUpperFirst() /](QosProvider qosProvider, [for (aDomainParticipant : DdsDomainParticipant | aDdsApplication.domainParticipants) separator(', ')]DomainParticipant param[aDomainParticipant.domainParticipantName/][/for]);
+    void applicationBehavior();
+    //~[aDdsApplication.applicationName.toUpperFirst()/]();
+    //[protected ('User defined methods')]
+    //[/protected]
+  };
+}
+
+#endif
+[/file]
+[/for]
+[/for]
+[/template]

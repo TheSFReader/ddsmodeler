@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module instanceStateKind2Code('http://www.example.org/ddsMetamodel')/]
+
+[query public getInstanceState(arg0 : InstanceStateKind) : String
+	= invoke('CppDdsGenerator.InstanceStateKind2Code', 'getInstanceState(ddsMetamodel.InstanceStateKind)', Sequence{arg0})
+/]
+
